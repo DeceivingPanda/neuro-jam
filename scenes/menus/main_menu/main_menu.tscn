@@ -1,12 +1,38 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcvjd7k0whl4p"]
 
-[ext_resource type="PackedScene" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/main_menu.tscn" id="1_nlytk"]
+[ext_resource type="PackedScene" uid="uid://c6k5nnpbypshi" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/main_menu.tscn" id="1_nlytk"]
 [ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu.gd" id="2_oj0xg"]
-[ext_resource type="PackedScene" path="res://scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="3_v70ky"]
-[ext_resource type="PackedScene" path="res://scenes/credits/credits.tscn" id="4_jfvy0"]
+[ext_resource type="PackedScene" uid="uid://bjg3nt2w84gko" path="res://scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="3_v70ky"]
+[ext_resource type="PackedScene" uid="uid://kyp35ftdg1ob" path="res://scenes/credits/credits.tscn" id="4_jfvy0"]
 
 [node name="MainMenu" instance=ExtResource("1_nlytk")]
 script = ExtResource("2_oj0xg")
 game_scene_path = "res://scenes/game_scene/game_ui.tscn"
 options_packed_scene = ExtResource("3_v70ky")
 credits_packed_scene = ExtResource("4_jfvy0")
+
+[node name="BackgroundMusicPlayer" parent="." index="1"]
+bus = &"Master"
+
+[node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
+theme_override_colors/font_color = Color(1, 0.490196, 0.666667, 1)
+theme_override_colors/font_shadow_color = Color(0.49, 0, 0.253167, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Neuro-sama Game Jam 2"
+
+[node name="SubTitleLabel" parent="MenuContainer/SubTitleMargin/SubTitleContainer" index="0"]
+theme_override_colors/font_color = Color(0.490196, 0, 0.254902, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.490196, 0.666667, 1)
+text = " Remnants of the Past"
+
+[node name="NewGameButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="0"]
+theme_override_colors/font_color = Color(1, 0.491817, 0.666961, 1)
+
+[node name="OptionsButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="1"]
+theme_override_colors/font_color = Color(1, 0.490196, 0.666667, 1)
+
+[node name="CreditsButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="2"]
+theme_override_colors/font_color = Color(1, 0.490196, 0.666667, 1)
+
+[node name="ExitButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="3"]
+theme_override_colors/font_color = Color(1, 0.490196, 0.666667, 1)

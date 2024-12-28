@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://c477kel30wvqd"]
+
+[ext_resource type="Script" path="res://scenes/minigames/seagull/seagull_swim.gd" id="1_o7epc"]
+[ext_resource type="PackedScene" uid="uid://b0e1m7m7f0r5b" path="res://scenes/enemies/seagull.tscn" id="2_n3wud"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mj2lh"]
+size = Vector2(1200, 800)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_atn73"]
+size = Vector2(1200, 350)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5u1l"]
+size = Vector2(1071, 17)
+
+[node name="Seagull Swim" type="Node2D"]
+script = ExtResource("1_o7epc")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.258824, 0.847059, 0.8, 1)
+position = Vector2(541, 358)
+texture = SubResource("PlaceholderTexture2D_mj2lh")
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="foreground" type="Sprite2D" parent="."]
+modulate = Color(0, 0.886275, 1, 0.784314)
+position = Vector2(541, 552)
+texture = SubResource("PlaceholderTexture2D_atn73")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Flyer" type="Marker2D" parent="Enemies"]
+position = Vector2(1200, 250)
+
+[node name="Swimmer" type="Marker2D" parent="Enemies"]
+position = Vector2(1200, 351)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(0, -28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(537, 517)
+shape = SubResource("RectangleShape2D_d5u1l")
+
+[node name="Marker2D" type="Marker2D" parent="Floor"]
+position = Vector2(89, 427)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(466, 400)
+limit_left = 5
+limit_top = -100
+limit_right = 1200
+limit_bottom = 400
+
+[node name="Seagull" parent="." instance=ExtResource("2_n3wud")]
+
+[connection signal="hitSomething" from="Seagull" to="." method="_on_enemeny_hit"]

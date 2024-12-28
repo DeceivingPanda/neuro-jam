@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED:float = 200.0
+@export var SPEED:float = 200.0
 const JUMP_VELOCITY:float = -625.0
 
 const MAX_TIME: float = 0.09

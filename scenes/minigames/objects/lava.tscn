@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg85gphu5uagl"]
+
+[ext_resource type="Texture2D" uid="uid://c1vnuf7byx8h1" path="res://assets/texture/lava_texture__2560_x_1440__by_mysteriousdove_d88wa0p-fullview.jpg" id="1_c5ddu"]
+[ext_resource type="Script" path="res://scenes/minigames/objects/lava.gd" id="1_mik8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0exgh"]
+size = Vector2(202, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfode"]
+size = Vector2(204, 24)
+
+[node name="Lava" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_mik8p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_c5ddu")
+region_enabled = true
+region_rect = Rect2(0, 0, 1024, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0exgh")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qfode")
+debug_color = Color(0.234315, 0.636518, 0.0840463, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

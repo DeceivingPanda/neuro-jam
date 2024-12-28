@@ -11,20 +11,19 @@ config_version=5
 [application]
 
 config/name="Neuro Jam"
-run/main_scene="res://scenes/opening/opening_with_logo.tscn"
+run/main_scene="res://scenes/menus/main menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-AppConfig="*res://addons/maaacks_game_template/base/scenes/autoloads/app_config.tscn"
-SceneLoader="*res://addons/maaacks_game_template/base/scenes/autoloads/scene_loader.tscn"
-ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/autoloads/project_music_controller.tscn"
-ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/autoloads/project_ui_sound_controller.tscn"
+Save="*res://scenes/menus/options/save.gd"
+GSettings="*res://scenes/menus/options/gobal_settings.gd"
 
-[editor_plugins]
+[display]
 
-enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
+window/size/viewport_width=1080
+window/size/viewport_height=720
 
 [input]
 

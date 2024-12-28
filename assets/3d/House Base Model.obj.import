@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cs16ptnfwaf2d"
+path="res://.godot/imported/House Base Model.obj-5c7895832eb98236ced0ef6e4f2ce66f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/House Base Model.obj-5c7895832eb98236ced0ef6e4f2ce66f.mesh"]
+
+source_file="res://assets/3d/House Base Model.obj"
+dest_files=["res://.godot/imported/House Base Model.obj-5c7895832eb98236ced0ef6e4f2ce66f.mesh", "res://.godot/imported/House Base Model.obj-5c7895832eb98236ced0ef6e4f2ce66f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

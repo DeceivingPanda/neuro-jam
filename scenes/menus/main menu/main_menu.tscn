@@ -9,6 +9,7 @@ script = ExtResource("1_05v5e")
 [node name="AudioStreamPlayerMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_66vky")
 autoplay = true
+bus = &"Music"
 
 [node name="BtnNewGame" type="Button" parent="."]
 offset_left = 468.0

@@ -15,6 +15,16 @@ run/main_scene="res://scenes/menus/main menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Save="*res://scenes/menus/options/save.gd"
+GSettings="*res://scenes/menus/options/gobal_settings.gd"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=720
+
 [input]
 
 Left={

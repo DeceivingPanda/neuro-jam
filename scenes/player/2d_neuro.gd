@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED:float = 300.0
-const JUMP_VELOCITY:float = -500.0
+const SPEED:float = 400.0
+const JUMP_VELOCITY:float = -625.0
 
 
 func _physics_process(delta: float) -> void:
@@ -15,7 +15,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED

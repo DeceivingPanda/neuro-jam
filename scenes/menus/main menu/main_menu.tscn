@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqrgkuo54gsq4"]
+[gd_scene load_steps=4 format=3 uid="uid://bqrgkuo54gsq4"]
 
 [ext_resource type="Script" path="res://scenes/menus/main menu/main_menu.gd" id="1_05v5e"]
 [ext_resource type="AudioStream" uid="uid://17lo8ka8krt7" path="res://assets/sounds/MENUSONG_2_OMGOMGOMGYAAAAAY.mp3" id="2_66vky"]
+[ext_resource type="PackedScene" uid="uid://cbfah0t4re54l" path="res://scenes/menus/options/options.tscn" id="3_6a2n2"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_05v5e")
@@ -68,5 +69,9 @@ theme_override_font_sizes/mono_font_size = 2
 theme_override_font_sizes/normal_font_size = 36
 text = "Game Title"
 
+[node name="Options" parent="." instance=ExtResource("3_6a2n2")]
+visible = false
+
 [connection signal="pressed" from="BtnNewGame" to="." method="_on_btn_new_game_pressed"]
+[connection signal="pressed" from="BtnOptions" to="." method="_on_btn_options_pressed"]
 [connection signal="pressed" from="BtnExit" to="." method="_on_btn_exit_pressed"]

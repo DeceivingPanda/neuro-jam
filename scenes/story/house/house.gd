@@ -1,10 +1,10 @@
-extends Node2D
+extends Node3D
 
 var opt = false
 # Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-#	pass # Replace with function body.
-
+func _ready() -> void:
+	
+	$Options.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -12,20 +12,8 @@ func _process(delta: float) -> void:
 		if opt == false:
 			$Options.show()
 			opt = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			opt = false
 			$Options.hide()
-
-
-
-
-func _on_btn_exit_pressed() -> void:
-	get_tree().quit()
-
-
-func _on_btn_new_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")
-
-
-func _on_btn_options_pressed() -> void:
-	$Options.show()
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

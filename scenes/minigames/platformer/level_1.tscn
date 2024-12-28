@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://gg6p47lgqkie"]
+
+[ext_resource type="PackedScene" uid="uid://cg85gphu5uagl" path="res://scenes/minigames/objects/lava.tscn" id="1_hwem0"]
+[ext_resource type="Script" path="res://scenes/minigames/platformer/level_1.gd" id="1_ioaof"]
+[ext_resource type="PackedScene" uid="uid://lqs4wrpbodf4" path="res://scenes/minigames/objects/platform.tscn" id="2_e2jan"]
+[ext_resource type="PackedScene" uid="uid://c5wbpha7blrh6" path="res://scenes/player/2d_neuro.tscn" id="3_adfe2"]
+[ext_resource type="Texture2D" uid="uid://k8xocusdv0lq" path="res://assets/images/screens/You-Lost.png" id="4_dg6q0"]
+[ext_resource type="Texture2D" uid="uid://c13nqfps015h7" path="res://assets/images/screens/You-Win.png" id="5_6dmoo"]
+[ext_resource type="PackedScene" uid="uid://b2v4r1byia8t6" path="res://scenes/minigames/objects/flag.tscn" id="6_5cy6h"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_ioaof")
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="Lava" parent="Ground" instance=ExtResource("1_hwem0")]
+position = Vector2(1378, 600)
+
+[node name="Platform" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(637, 600)
+scale = Vector2(10, 0.4)
+
+[node name="Platform4" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(2119, 600)
+scale = Vector2(10, 0.4)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Platform6" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-16, 296)
+rotation = -1.5708
+scale = Vector2(5, 0.4)
+
+[node name="Platform7" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2775, 296)
+rotation = 1.5708
+scale = Vector2(5, 0.4)
+
+[node name="Platform2" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(1648, 501)
+scale = Vector2(2, 0.2)
+
+[node name="Platform3" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(1145, 469)
+scale = Vector2(2, 0.2)
+
+[node name="2DNeuro" parent="." instance=ExtResource("3_adfe2")]
+position = Vector2(50, 474)
+
+[node name="Camera2D" type="Camera2D" parent="2DNeuro"]
+limit_left = -10
+limit_right = 2770
+limit_bottom = 600
+
+[node name="Result Screen" type="Node2D" parent="."]
+
+[node name="Lose Screen" type="Sprite2D" parent="Result Screen"]
+position = Vector2(-950, 360)
+texture = ExtResource("4_dg6q0")
+
+[node name="Camera2D" type="Camera2D" parent="Result Screen/Lose Screen"]
+enabled = false
+position_smoothing_enabled = true
+
+[node name="Win Screen" type="Sprite2D" parent="Result Screen"]
+position = Vector2(-950, 1110)
+texture = ExtResource("5_6dmoo")
+
+[node name="Camera2D" type="Camera2D" parent="Result Screen/Win Screen"]
+enabled = false
+position_smoothing_enabled = true
+
+[node name="Flag" parent="." instance=ExtResource("6_5cy6h")]
+position = Vector2(2560, 332)
+scale = Vector2(0.4, 0.4)
+
+[connection signal="player_entered_lava" from="Ground/Lava" to="." method="_on_lava_player_entered_lava"]
+[connection signal="player_entered_flag" from="Flag" to="." method="_on_flag_player_entered_flag"]

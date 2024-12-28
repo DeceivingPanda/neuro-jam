@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="Neuro Jam"
-run/main_scene="res://scenes/opening/opening_with_logo.tscn"
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+run/main_scene="res://scenes/menus/main menu/main_menu.tscn"
+=======
+run/main_scene="res://EasyMenus-825d5c0607cc4b3f0af636f4903527518404383c/addons/EasyMenus/Scenes/main_menu.tscn"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.svg"
+=======
+run/main_scene="res://EasyMenus-825d5c0607cc4b3f0af636f4903527518404383c/addons/EasyMenus/Scenes/main_menu.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
 
 [autoload]
 
@@ -21,10 +28,31 @@ AppConfig="*res://addons/maaacks_game_template/base/scenes/autoloads/app_config.
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/autoloads/scene_loader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/autoloads/project_music_controller.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/autoloads/project_ui_sound_controller.tscn"
+>>>>>>> Stashed changes
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
+enabled=PackedStringArray()
+
+[input]
+
+Left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+]
+}
+Right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+Jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
 
 [internationalization]
 

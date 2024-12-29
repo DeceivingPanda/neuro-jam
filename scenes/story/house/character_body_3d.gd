@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("Left", "Right", "Up", "Down")
-	if $"..".opt == true:
+	if $"..".ControlLock == true:
 		pass
 	else:
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -33,4 +33,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 func _input(event):
 		if event is InputEventMouseMotion:
-			rotate(global_transform.basis.y.normalized(), event.relative.x * Save.game_data.mouse_sens)
+			if $"..".ControlLock == true:
+				pass
+			else:
+				rotate(global_transform.basis.y.normalized(), event.relative.x * Save.game_data.mouse_sens)

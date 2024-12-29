@@ -18,7 +18,7 @@ script = ExtResource("1_xwcym")
 [node name="Options" parent="." instance=ExtResource("2_3qoh1")]
 visible = false
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+[node name="LavalLampLight" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.35008, 45.0656, 44.4474)
 light_color = Color(0.985123, 0.1754, 1, 1)
 light_energy = 0.525
@@ -50,3 +50,15 @@ shape = SubResource("ConcavePolygonShape3D_sftol")
 
 [node name="House Model2" parent="." instance=ExtResource("7_ooxre")]
 transform = Transform3D(2.985, 0, 0, 0, 2.985, 0, 0, 0, 2.985, 10.667, 41.545, 53.723)
+
+[node name="LavalLampLight2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23234, 48.6525, 44.4474)
+light_color = Color(0.946445, 0.954906, 0.840646, 1)
+light_energy = 0.848
+light_indirect_energy = 3.101
+light_volumetric_fog_energy = 0.353
+light_size = 0.142
+light_specular = 3.085
+omni_range = 101.592
+omni_attenuation = 1.404
+omni_shadow_mode = 0

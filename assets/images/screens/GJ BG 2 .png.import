@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c76ohyr28g04b"
-path="res://.godot/imported/Seagull.png-6397173911ba4ae9e0a610f1ab305fc2.ctex"
+uid="uid://bl1jcb3oh330a"
+path="res://.godot/imported/GJ BG 2 .png-3acfd14ae1dc3132d0844a6dc93e10a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/enemies/Seagull.png"
-dest_files=["res://.godot/imported/Seagull.png-6397173911ba4ae9e0a610f1ab305fc2.ctex"]
+source_file="res://assets/images/screens/GJ BG 2 .png"
+dest_files=["res://.godot/imported/GJ BG 2 .png-3acfd14ae1dc3132d0844a6dc93e10a6.ctex"]
 
 [params]
 

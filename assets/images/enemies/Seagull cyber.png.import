@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c76ohyr28g04b"
-path="res://.godot/imported/Seagull.png-6397173911ba4ae9e0a610f1ab305fc2.ctex"
+uid="uid://dfxed1ad108tm"
+path="res://.godot/imported/Seagull cyber.png-ac7d96672fa97e7dd5ff7506c75699ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/enemies/Seagull.png"
-dest_files=["res://.godot/imported/Seagull.png-6397173911ba4ae9e0a610f1ab305fc2.ctex"]
+source_file="res://assets/images/enemies/Seagull cyber.png"
+dest_files=["res://.godot/imported/Seagull cyber.png-ac7d96672fa97e7dd5ff7506c75699ee.ctex"]
 
 [params]
 

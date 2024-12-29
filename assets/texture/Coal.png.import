@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c76ohyr28g04b"
-path="res://.godot/imported/Seagull.png-6397173911ba4ae9e0a610f1ab305fc2.ctex"
+uid="uid://cfkhl4y47djlh"
+path="res://.godot/imported/Coal.png-90e1de543c6891eaf9bfdfd9497fa6fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/enemies/Seagull.png"
-dest_files=["res://.godot/imported/Seagull.png-6397173911ba4ae9e0a610f1ab305fc2.ctex"]
+source_file="res://assets/texture/Coal.png"
+dest_files=["res://.godot/imported/Coal.png-90e1de543c6891eaf9bfdfd9497fa6fb.ctex"]
 
 [params]
 

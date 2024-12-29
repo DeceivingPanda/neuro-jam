@@ -1,9 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c477kel30wvqd"]
 
 [ext_resource type="Script" path="res://scenes/minigames/seagull/seagull_swim.gd" id="1_o7epc"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mj2lh"]
-size = Vector2(1200, 800)
+[ext_resource type="Texture2D" uid="uid://bkfd6h6ue8kwk" path="res://assets/images/screens/GJ BG Sky.png" id="2_8vqvf"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_atn73"]
 size = Vector2(1200, 350)
@@ -15,9 +13,11 @@ size = Vector2(1071, 17)
 script = ExtResource("1_o7epc")
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.258824, 0.847059, 0.8, 1)
-position = Vector2(541, 358)
-texture = SubResource("PlaceholderTexture2D_mj2lh")
+texture_repeat = 1
+position = Vector2(551, 263)
+texture = ExtResource("2_8vqvf")
+region_enabled = true
+region_rect = Rect2(-161, -121, 1169, 780)
 
 [node name="Player" type="Node2D" parent="."]
 

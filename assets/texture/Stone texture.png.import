@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1vnuf7byx8h1"
-path="res://.godot/imported/lava_texture__2560_x_1440__by_mysteriousdove_d88wa0p-fullview.jpg-994ccc36aab62aed24d3dfd3045ea54e.ctex"
+uid="uid://ckh7boo8ifvqe"
+path="res://.godot/imported/Stone texture.png-6c5f59aea623f4159acf0a178a0801dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/texture/lava_texture__2560_x_1440__by_mysteriousdove_d88wa0p-fullview.jpg"
-dest_files=["res://.godot/imported/lava_texture__2560_x_1440__by_mysteriousdove_d88wa0p-fullview.jpg-994ccc36aab62aed24d3dfd3045ea54e.ctex"]
+source_file="res://assets/texture/Stone texture.png"
+dest_files=["res://.godot/imported/Stone texture.png-6c5f59aea623f4159acf0a178a0801dc.ctex"]
 
 [params]
 

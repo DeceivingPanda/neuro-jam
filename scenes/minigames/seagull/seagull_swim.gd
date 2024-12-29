@@ -3,8 +3,7 @@ extends Node2D
 var neuro: PackedScene = preload("res://scenes/player/2d_neuro.tscn")
 var seagullScene: PackedScene = preload("res://scenes/enemies/seagull.tscn")
 
-#character
-var posPlayer:Vector2 
+#player
 var player:CharacterBody2D 
 
 #enemies
@@ -39,8 +38,7 @@ func _ready() -> void:
 	$Player.add_child(player)
 	$Enemies.add_child(seagullSwimmer)
 	
-	posPlayer = $Player/Marker2D.global_position
-	player.global_position = posPlayer
+	player.global_position = $Player/Marker2D.global_position
 	
 	#used to change the physics for the scene
 	PhysicsServer2D.area_set_param(get_viewport().find_world_2d().space, PhysicsServer2D.AREA_PARAM_GRAVITY_VECTOR, Vector2.UP)

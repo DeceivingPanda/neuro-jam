@@ -50,3 +50,9 @@ shape = SubResource("ConcavePolygonShape3D_sftol")
 
 [node name="House Model2" parent="." instance=ExtResource("7_ooxre")]
 transform = Transform3D(2.985, 0, 0, 0, 2.985, 0, 0, 0, 2.985, 10.667, 41.545, 53.723)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -135,5 +135,5 @@ text = "Main Menu"
 [connection signal="value_changed" from="sliderSFXVol" to="." method="_on_slider_sfx_vol_value_changed"]
 [connection signal="value_changed" from="sliderMusicVol" to="." method="_on_slider_music_vol_value_changed"]
 [connection signal="pressed" from="btnClose" to="." method="_on_btn_close_pressed"]
-[connection signal="pressed" from="btnMain" to="." method="_on_btn_close_pressed"]
 [connection signal="pressed" from="btnMain" to="." method="_on_btn_main_pressed"]
+[connection signal="pressed" from="btnMain" to="." method="_on_btn_close_pressed"]

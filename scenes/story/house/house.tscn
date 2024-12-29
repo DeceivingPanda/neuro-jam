@@ -29,14 +29,18 @@ omni_attenuation = 1.202
 omni_shadow_mode = 0
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.318192, 0, 1.0561, 0, 1.61, 0, -0.600961, 0, 0.559176, 6.35774, 44.0185, 49.0235)
+transform = Transform3D(0.68, 0, 0, 0, 1.61, 0, 0, 0, 1.195, 6.358, 43.17, 49.023)
 script = ExtResource("3_feat5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_co7oo")
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1.47059, 0, 0, 0, 0.504321, 0.351006, 0, -0.233029, 0.759646, 0, 1.597, 0)
+[node name="Head" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(0.325568, -0.62652, 0.708152, 0, 0.748956, 0.66262, -0.945519, -0.215728, 0.243836, 0, 0.604712, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
+transform = Transform3D(1.47059, 0, 0, 0, 0.647213, 0, 0, 0, 0.816805, 0.00156021, 0.513037, -0.00603294)
+near = 0.025
 
 [node name="HouseModel" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.985, 0, 0, 0, 2.985, 0, 0, 0, 2.985, 10.6674, 41.5449, 53.7234)
@@ -46,6 +50,7 @@ mesh = ExtResource("3_dle3k")
 [node name="StaticBody3D" type="StaticBody3D" parent="HouseModel"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HouseModel/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000744104, 0.00678921, -0.000362396)
 shape = SubResource("ConcavePolygonShape3D_sftol")
 
 [node name="House Model2" parent="." instance=ExtResource("7_ooxre")]

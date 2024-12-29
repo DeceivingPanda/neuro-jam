@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddjekwwmi8fvd"]
+[gd_scene load_steps=10 format=3 uid="uid://ddjekwwmi8fvd"]
 
 [ext_resource type="Script" path="res://scenes/story/house/house.gd" id="1_xwcym"]
 [ext_resource type="PackedScene" uid="uid://cbfah0t4re54l" path="res://scenes/menus/options/options.tscn" id="2_3qoh1"]
@@ -10,6 +10,8 @@
 margin = 0.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_co7oo"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_fgl7p"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sftol"]
 margin = 0.036
@@ -44,6 +46,10 @@ script = ExtResource("3_feat5")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_co7oo")
 
+[node name="StairsCollision3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(-0.0348995, 0, -0.999391, 0, 1, 0, 0.999391, 0, -0.0348995, -0.546118, -0.790318, 0.0119209)
+shape = SubResource("SeparationRayShape3D_fgl7p")
+
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
 transform = Transform3D(0.325568, -0.62652, 0.708152, 0, 0.748956, 0.66262, -0.945519, -0.215728, 0.243836, 0, 0.66, 0)
 
@@ -66,32 +72,79 @@ shape = SubResource("ConcavePolygonShape3D_sftol")
 transform = Transform3D(2.985, 0, 0, 0, 2.985, 0, 0, 0, 2.985, 10.667, 41.545, 53.723)
 
 [node name="KitchenLight" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23234, 48.2116, 40.2794)
-light_color = Color(0.946445, 0.954906, 0.840646, 1)
-light_energy = 0.848
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23234, 47.4475, 40.2794)
+light_color = Color(0.945098, 0.87451, 0.760784, 1)
+light_energy = 5.0
 light_indirect_energy = 3.101
 light_volumetric_fog_energy = 0.353
 light_size = 0.142
-light_specular = 3.085
+light_specular = 0.499
 shadow_enabled = true
-omni_range = 101.592
-omni_attenuation = 1.404
+omni_range = 11.443
+omni_attenuation = 1.467
+omni_shadow_mode = 0
+
+[node name="KitchenLight2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23234, 48.2116, 48.3626)
+light_color = Color(0.945098, 0.87451, 0.760784, 1)
+light_energy = 5.0
+light_indirect_energy = 3.101
+light_volumetric_fog_energy = 0.353
+light_size = 0.142
+light_specular = 0.499
+shadow_enabled = true
+omni_range = 11.443
+omni_attenuation = 1.467
 omni_shadow_mode = 0
 
 [node name="VedalRoomLight" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.64305, 48.7019, 49.6656)
 light_color = Color(0.946445, 0.954906, 0.840646, 1)
-light_energy = 0.413
+light_energy = 10.11
 light_indirect_energy = 3.101
 light_volumetric_fog_energy = 0.353
 light_size = 0.142
-light_specular = 3.085
+light_specular = 0.57
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 1.909
 shadow_transmittance_bias = 0.115
-omni_range = 101.592
+omni_range = 10.512
 omni_attenuation = 1.404
 omni_shadow_mode = 0
+
+[node name="StairsLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0353835, 54.7731, 38.1546)
+light_energy = 2.778
+shadow_enabled = true
+omni_range = 10.65
+
+[node name="BathroomLight" type="OmniLight3D" parent="."]
+transform = Transform3D(0.999989, -0.00213383, 0.00410703, 0, 0.887378, 0.461043, -0.00462828, -0.461038, 0.887368, -6.783, 55.2029, 36.3181)
+light_energy = 4.5
+light_specular = 0.662
+shadow_enabled = true
+omni_range = 10.65
+
+[node name="TvRoomLight" type="OmniLight3D" parent="."]
+transform = Transform3D(0.0131251, 0.29992, -0.953874, 0, 0.953956, 0.299946, 0.999914, -0.00393683, 0.0125208, -5.12703, 55.1436, 22.2762)
+light_color = Color(0.384314, 0.568627, 0.701961, 1)
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 10.65
+
+[node name="TvRoomLight2" type="OmniLight3D" parent="."]
+transform = Transform3D(0.0131251, 0.29992, -0.953874, 0, 0.953956, 0.299946, 0.999914, -0.00393683, 0.0125208, 5.19684, 55.1436, 22.2762)
+light_color = Color(0.384666, 0.567918, 0.701999, 1)
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 10.65
+
+[node name="RoomLight" type="OmniLight3D" parent="."]
+transform = Transform3D(-0.96922, 0.0116163, -0.245921, 0, 0.998886, 0.0471834, 0.246195, 0.0457311, -0.968141, 7.21416, 54.9029, 35.9675)
+light_color = Color(0.53272, 0.271941, 0.0565458, 1)
+light_energy = 2.778
+shadow_enabled = true
+omni_range = 10.65
 
 [connection signal="body_entered" from="LavaLampInit" to="." method="_on_lava_lamp_init_body_entered"]

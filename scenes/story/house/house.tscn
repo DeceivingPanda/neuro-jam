@@ -51,7 +51,7 @@ transform = Transform3D(-0.0348995, 0, -0.999391, 0, 1, 0, 0.999391, 0, -0.03489
 shape = SubResource("SeparationRayShape3D_fgl7p")
 
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
-transform = Transform3D(0.325568, -0.62652, 0.708152, 0, 0.748956, 0.66262, -0.945519, -0.215728, 0.243836, 0, 0.66, 0)
+transform = Transform3D(0.325568, -0.62652, 0.708152, 0, 0.748956, 0.66262, -0.945519, -0.215728, 0.243836, 0, 1.30999, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
 transform = Transform3D(1.47059, 0, 0, 0, 0.647213, 0, 0, 0, 0.816805, 0.00156021, 0.513037, -0.00603294)

@@ -20,3 +20,5 @@ func updateMusicVol(vol):
 	AudioServer.set_bus_volume_db(1, vol)
 func updateSFXVol(vol):
 	AudioServer.set_bus_volume_db(2, vol)
+
+	

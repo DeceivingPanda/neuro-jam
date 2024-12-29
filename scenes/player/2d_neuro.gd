@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var SPEED:float = 200.0
-const JUMP_VELOCITY:float = -625.0
+@export var JUMP_VELOCITY:float = -625.0
 
 const MAX_TIME: float = 0.09
 var coyote_timer: float = 0
@@ -10,7 +10,7 @@ var can_jump: bool = true
 
 
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
+	if (not is_on_floor()) or (not is_on_ceiling()):
 		if can_jump: #coyote jump
 			coyote_timer += delta
 			#print("setting timer: %s" % coyote_timer)
@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 	
 	
-	if is_on_floor():
+	if is_on_floor() or is_on_ceiling():
 		can_jump = true
 		coyote_timer = 0
 		#print("can_jump: %s" % can_jump)

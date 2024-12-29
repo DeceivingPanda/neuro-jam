@@ -46,4 +46,4 @@ func _input(event):
 			if event is InputEventMouseMotion:
 				head.rotate_y(event.relative.x * Save.game_data.mouse_sens)
 				camera.rotate_x(event.relative.y * Save.game_data.mouse_sens)
-				camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-65), deg_to_rad(100))
+				camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(125))

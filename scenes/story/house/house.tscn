@@ -36,7 +36,7 @@ script = ExtResource("3_feat5")
 shape = SubResource("CapsuleShape3D_co7oo")
 
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
-transform = Transform3D(0.325568, -0.62652, 0.708152, 0, 0.748956, 0.66262, -0.945519, -0.215728, 0.243836, 0, 0.604712, 0)
+transform = Transform3D(0.325568, -0.62652, 0.708152, 0, 0.748956, 0.66262, -0.945519, -0.215728, 0.243836, 0, 0.66, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
 transform = Transform3D(1.47059, 0, 0, 0, 0.647213, 0, 0, 0, 0.816805, 0.00156021, 0.513037, -0.00603294)
@@ -56,14 +56,31 @@ shape = SubResource("ConcavePolygonShape3D_sftol")
 [node name="House Model2" parent="." instance=ExtResource("7_ooxre")]
 transform = Transform3D(2.985, 0, 0, 0, 2.985, 0, 0, 0, 2.985, 10.667, 41.545, 53.723)
 
-[node name="LavalLampLight2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23234, 48.6525, 44.4474)
+[node name="KitchenLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23234, 48.2116, 40.2794)
 light_color = Color(0.946445, 0.954906, 0.840646, 1)
 light_energy = 0.848
 light_indirect_energy = 3.101
 light_volumetric_fog_energy = 0.353
 light_size = 0.142
 light_specular = 3.085
+shadow_enabled = true
+omni_range = 101.592
+omni_attenuation = 1.404
+omni_shadow_mode = 0
+
+[node name="VedalRoomLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.64305, 48.7019, 49.6656)
+light_color = Color(0.946445, 0.954906, 0.840646, 1)
+light_energy = 0.413
+light_indirect_energy = 3.101
+light_volumetric_fog_energy = 0.353
+light_size = 0.142
+light_specular = 3.085
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 1.909
+shadow_transmittance_bias = 0.115
 omni_range = 101.592
 omni_attenuation = 1.404
 omni_shadow_mode = 0

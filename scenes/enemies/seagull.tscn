@@ -1,76 +1,39 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0e1m7m7f0r5b"]
+[gd_scene load_steps=5 format=3 uid="uid://b0e1m7m7f0r5b"]
 
 [ext_resource type="Script" path="res://scenes/enemies/seagull.gd" id="1_a66de"]
-[ext_resource type="Texture2D" uid="uid://qkgmimksipi2" path="res://assets/images/enemies/seagull/0001.png" id="1_mebxh"]
-[ext_resource type="Texture2D" uid="uid://jl3nhfv1t530" path="res://assets/images/enemies/seagull/0002.png" id="2_lthbn"]
-[ext_resource type="Texture2D" uid="uid://beitasm6kpnj2" path="res://assets/images/enemies/seagull/0003.png" id="3_pxu25"]
-[ext_resource type="Texture2D" uid="uid://0csywbbwvtso" path="res://assets/images/enemies/seagull/0004.png" id="4_ax4ed"]
-[ext_resource type="Texture2D" uid="uid://dt6obn4auiuey" path="res://assets/images/enemies/seagull/0005.png" id="5_3s3xp"]
-[ext_resource type="Texture2D" uid="uid://th7fr84f3v22" path="res://assets/images/enemies/seagull/0006.png" id="6_4lwlc"]
-[ext_resource type="Texture2D" uid="uid://ctuotk3uqilyn" path="res://assets/images/enemies/seagull/0007.png" id="7_d63q5"]
-[ext_resource type="Texture2D" uid="uid://bmf60dkrkbjmw" path="res://assets/images/enemies/seagull/0008.png" id="8_mvdbj"]
-[ext_resource type="Texture2D" uid="uid://bv6akjcqfjn1g" path="res://assets/images/enemies/seagull/0009.png" id="9_f1ko2"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_x24pt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_mebxh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_lthbn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_pxu25")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ax4ed")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_3s3xp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_4lwlc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_d63q5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_mvdbj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_f1ko2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mpuyj"]
-radius = 11.0
-height = 80.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3gsn1"]
-radius = 24.0
-height = 106.0
+[ext_resource type="Texture2D" uid="uid://c76ohyr28g04b" path="res://assets/images/enemies/Seagull.png" id="2_umclf"]
+[ext_resource type="Texture2D" uid="uid://cmbwcnofs88fp" path="res://assets/images/enemies/Seagull half.png" id="3_arh2a"]
+[ext_resource type="Texture2D" uid="uid://dfxed1ad108tm" path="res://assets/images/enemies/Seagull cyber.png" id="4_taf7m"]
 
 [node name="Seagull" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 19
 script = ExtResource("1_a66de")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -22)
-sprite_frames = SubResource("SpriteFrames_x24pt")
+[node name="Sprites" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Normal" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("2_umclf")
+
+[node name="Half" type="Sprite2D" parent="Sprites"]
+visible = false
+texture = ExtResource("3_arh2a")
+
+[node name="Cyber" type="Sprite2D" parent="Sprites"]
+visible = false
+texture = ExtResource("4_taf7m")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+visible = false
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_mpuyj")
+scale = Vector2(0.95, 0.95)
+polygon = PackedVector2Array(7.00001, 1.99997, 7.00002, 4.99997, 6.00002, 4.99998, 6.00002, 5.99998, 5.00002, 5.99998, 5.00003, 7.99998, 2.89599e-05, 8, 2.53399e-05, 7, -2.99997, 7.00001, -2.99997, 9.00001, -5.99997, 9.00002, -5.99998, 6.00002, -6.99998, 6.00003, -6.99999, 2.00003, -5.99999, 2.00002, -6, 1.00002, -0.999996, 1, -1, -0.999996, -3.61999e-06, -1, -1.448e-05, -4, -1.00001, -4, -1.00002, -6, -2.17199e-05, -6, -2.89599e-05, -8, 0.999971, -8, 0.999975, -7, 1.99997, -7.00001, 1.99998, -6.00001, 2.99998, -6.00001, 2.99997, -7.00001, 4.99997, -7.00002, 4.99998, -5.00002, 5.99998, -5.00002, 5.99999, -3.00002, 6.99999, -3.00003)
+disabled = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="HitArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="HitArea"]
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_3gsn1")
+polygon = PackedVector2Array(7.00001, 1.99997, 7.00002, 4.99997, 6.00002, 4.99998, 6.00002, 5.99998, 5.00002, 5.99998, 5.00003, 7.99998, 2.89599e-05, 8, 2.53399e-05, 7, -2.99997, 7.00001, -2.99997, 9.00001, -5.99997, 9.00002, -5.99998, 6.00002, -6.99998, 6.00003, -6.99999, 2.00003, -5.99999, 2.00002, -6, 1.00002, -0.999996, 1, -1, -0.999996, -3.61999e-06, -1, -1.448e-05, -4, -1.00001, -4, -1.00002, -6, -2.17199e-05, -6, -2.89599e-05, -8, 0.999971, -8, 0.999975, -7, 1.99997, -7.00001, 1.99998, -6.00001, 2.99998, -6.00001, 2.99997, -7.00001, 4.99997, -7.00002, 4.99998, -5.00002, 5.99998, -5.00002, 5.99999, -3.00002, 6.99999, -3.00003)
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="HitArea" to="." method="_on_area_2d_body_entered"]

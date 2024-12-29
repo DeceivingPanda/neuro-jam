@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://go0ogseme3la"]
+
+[ext_resource type="Script" path="res://scenes/minigames/hacking/laser.gd" id="1_aops4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2le0w"]
+size = Vector2(10, 10)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iamdh"]
+radius = 5.0
+
+[node name="Laser" type="Area2D"]
+script = ExtResource("1_aops4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_2le0w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_iamdh")

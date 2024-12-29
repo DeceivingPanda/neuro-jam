@@ -131,6 +131,4 @@ func deltaT(value: float,  min: float, max: float, minChange: float, maxChange: 
 
 func _on_win() -> void:
 	print("player won: Scored %s points" % [score])
-	seagullSwimmer.set_physics_process(false)
-	seagullFlyer.set_physics_process(false)
-	player.set_physics_process(false)
+	get_tree().paused = true

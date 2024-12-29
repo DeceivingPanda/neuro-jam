@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://lqs4wrpbodf4" path="res://scenes/minigames/objects/platform.tscn" id="2_e2jan"]
 [ext_resource type="Texture2D" uid="uid://cu14fq1xpwdu" path="res://assets/texture/light/circle.png" id="3_5ds1l"]
 [ext_resource type="PackedScene" uid="uid://c5wbpha7blrh6" path="res://scenes/player/2d_neuro.tscn" id="3_adfe2"]
-[ext_resource type="Shader" uid="uid://bbcd0gblc61hy" path="res://scenes/minigames/platformer/level_1.tres" id="3_rtiew"]
+[ext_resource type="Shader" path="res://scenes/minigames/platformer/level_1.tres" id="3_rtiew"]
 [ext_resource type="Texture2D" uid="uid://bl1jcb3oh330a" path="res://assets/images/screens/GJ BG 2 .png" id="4_ckdgk"]
 [ext_resource type="Texture2D" uid="uid://k8xocusdv0lq" path="res://assets/images/screens/You-Lost.png" id="4_dg6q0"]
 [ext_resource type="Texture2D" uid="uid://bmgbccpmdb26g" path="res://assets/texture/lava.png" id="4_f68yq"]

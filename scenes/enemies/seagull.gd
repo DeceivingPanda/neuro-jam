@@ -2,7 +2,7 @@ extends StaticBody2D
 
 signal hitSomething(body:CharacterBody2D)
 
-var SPEED:float = 300.0
+@export var SPEED:float = 300.0
 var direction:Vector2 = Vector2.LEFT
 
 func _process(delta: float) -> void:

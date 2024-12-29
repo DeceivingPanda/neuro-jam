@@ -27,7 +27,8 @@ directories/dch_directory={
 "Vedal": "res://scenes/story/house/Vedal.dch"
 }
 directories/dtl_directory={
-"House": "res://scenes/story/house/House.dtl"
+"House": "res://scenes/story/house/House.dtl",
+"Lava Lamp": "res://scenes/story/house/Lava Lamp.dtl"
 }
 
 [display]

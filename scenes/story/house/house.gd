@@ -24,3 +24,9 @@ func _narative(argument: String):
 		ControlLock = true
 	elif argument == "unlock":
 		ControlLock = false
+	elif argument == "lava":
+		get_tree().change_scene_to_file("res://scenes/minigames/platformer/level_1.tscn")
+
+
+func _on_lava_lamp_init_body_entered(body: CharacterBody3D) -> void:
+	Dialogic.start("Lava Lamp")

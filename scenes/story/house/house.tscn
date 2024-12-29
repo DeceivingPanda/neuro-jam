@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddjekwwmi8fvd"]
+[gd_scene load_steps=9 format=3 uid="uid://ddjekwwmi8fvd"]
 
 [ext_resource type="Script" path="res://scenes/story/house/house.gd" id="1_xwcym"]
 [ext_resource type="PackedScene" uid="uid://cbfah0t4re54l" path="res://scenes/menus/options/options.tscn" id="2_3qoh1"]
 [ext_resource type="ArrayMesh" uid="uid://84vfoibd5mg" path="res://assets/3d/House Model.obj" id="3_dle3k"]
 [ext_resource type="Script" path="res://scenes/story/house/character_body_3d.gd" id="3_feat5"]
 [ext_resource type="PackedScene" uid="uid://csw244m8noubb" path="res://assets/3d/House Model.glb" id="7_ooxre"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e0idb"]
+margin = 0.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_co7oo"]
 
@@ -27,6 +30,12 @@ light_specular = 0.338
 omni_range = 1.677
 omni_attenuation = 1.202
 omni_shadow_mode = 0
+
+[node name="LavaLampInit" type="Area3D" parent="."]
+transform = Transform3D(2.215, 0, 0, 0, 2.215, 0, 0, 0, 2.215, -8.49311, 43.0773, 44.947)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LavaLampInit"]
+shape = SubResource("SphereShape3D_e0idb")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.68, 0, 0, 0, 1.61, 0, 0, 0, 1.195, 6.358, 43.17, 49.023)
@@ -84,3 +93,5 @@ shadow_transmittance_bias = 0.115
 omni_range = 101.592
 omni_attenuation = 1.404
 omni_shadow_mode = 0
+
+[connection signal="body_entered" from="LavaLampInit" to="." method="_on_lava_lamp_init_body_entered"]

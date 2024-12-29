@@ -11,6 +11,12 @@ var player:CharacterBody2D
 var seagullFlyer:StaticBody2D
 var seagullSwimmer:StaticBody2D
 
+var seagullFlyerSprites:Array[Node]
+var seagullSwimmerSprites:Array[Node]
+
+var seagullFlyerSpritesCurr: int = 0
+var seagullSwimmerSpritesCurr: int = 0
+
 var posFlyer:Vector2 
 var posSwimmer:Vector2 
 
@@ -47,14 +53,30 @@ func _ready() -> void:
 	$Enemies.add_child(seagullFlyer)
 	$Enemies.add_child(seagullSwimmer)
 	
-	posPlayer = $Floor/Marker2D.global_position
+	posPlayer = $Player/Marker2D.global_position
 	player.global_position = posPlayer
 	
+	#used to change the physics for the scene
+	PhysicsServer2D.area_set_param(get_viewport().find_world_2d().space, PhysicsServer2D.AREA_PARAM_GRAVITY_VECTOR, Vector2.UP)
+	#change player movement to be inverted
+	player.up_direction = Vector2.DOWN
+	player.JUMP_VELOCITY = -player.JUMP_VELOCITY
+	
+	#move and apply scale on enemies
 	posFlyer = $Enemies/Flyer.global_position
-	seagullFlyer.global_position = Vector2(-110, posFlyer.y)
+	seagullFlyer.apply_scale(Vector2(3,3))
+	seagullFlyer.global_position = Vector2(-200, posFlyer.y)
 	
 	posSwimmer = $Enemies/Swimmer.global_position
-	seagullSwimmer.global_position = Vector2(-110, posSwimmer.y)
+	seagullSwimmer.apply_scale(Vector2(3,3))
+	seagullSwimmer.global_position = Vector2(-200, posSwimmer.y)
+	
+	#set normal sprite
+	seagullFlyerSprites = seagullFlyer.get_node("Sprites").get_children(false)
+	seagullFlyerSprites[seagullFlyerSpritesCurr].visible = true
+	
+	seagullSwimmerSprites = seagullSwimmer.get_node("Sprites").get_children(false)
+	seagullSwimmerSprites[seagullSwimmerSpritesCurr].visible = true
 	
 	if seagullFlyer.has_signal("hitSomething"):
 		seagullFlyer.hitSomething.connect(_on_enemeny_hit,2)
@@ -73,24 +95,31 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	#$"Player/2DNeuro".set_physics_process(true)
 	#$Enemies/Seagull.set_physics_process(true)
-	
+	get_tree().root.content_scale_size
 	#move timer forward
 	timeElapsedFlyer += _delta
 	timeElapsedSwimmer += _delta
 	distanceTraveled += _delta
 	
-	if seagullFlyer.global_position.x < -100 && timeElapsedFlyer >= spawnerDelayFlyer:
+	if seagullFlyer.global_position.x < -200 && timeElapsedFlyer <= spawnerDelayFlyer:
 		seagullFlyer.visible = false
 		seagullFlyer.set_physics_process(false)
 	
-	if seagullSwimmer.global_position.x < -100 && timeElapsedSwimmer >= spawnerDelaySwimmer:
+	if seagullSwimmer.global_position.x < -200 && timeElapsedSwimmer <= spawnerDelaySwimmer:
 		seagullSwimmer.visible = false
 		seagullSwimmer.set_physics_process(false)
 	
 	#spawn enemies
-	if timeElapsedFlyer >= spawnerDelayFlyer:
+	if timeElapsedFlyer >= spawnerDelayFlyer && seagullFlyer.global_position.x < -200:
 		print("we can spawn some flyers")
 		timeElapsedFlyer=0
+		
+		#change to random sprite type
+		seagullFlyerSprites[seagullFlyerSpritesCurr].visible = false
+		print("changing flyer sprite to %s" % seagullFlyerSprites[seagullFlyerSpritesCurr].name)
+		seagullFlyerSpritesCurr = randi_range(0,seagullFlyerSprites.size()-1)
+		seagullFlyerSprites[seagullFlyerSpritesCurr].visible = true
+		
 		seagullFlyer.global_position = posFlyer
 		seagullFlyer.visible = true
 		seagullFlyer.set_physics_process(true)
@@ -99,9 +128,16 @@ func _process(_delta: float) -> void:
 		spawnerDelayFlyer = deltaT(spawnerDelayFlyer, spawnerDelayFlyerMIN, spawnerDelayFlyerMAX, spawnerDelayFlyerMINChange, spawnerDelayFlyerMAXChange)
 		print(spawnerDelayFlyer)
 	
-	if timeElapsedSwimmer >= spawnerDelaySwimmer:
+	if timeElapsedSwimmer >= spawnerDelaySwimmer && seagullSwimmer.global_position.x < -200:
 		print("we can spawn some swimmers")
 		timeElapsedSwimmer = 0
+		
+		#change to random sprite type
+		seagullSwimmerSprites[seagullSwimmerSpritesCurr].visible = false
+		print("changing Swimmer sprite to %s" % seagullSwimmerSprites[seagullSwimmerSpritesCurr].name)
+		seagullSwimmerSpritesCurr = randi_range(0,seagullSwimmerSprites.size()-1)
+		seagullSwimmerSprites[seagullSwimmerSpritesCurr].visible = true
+		
 		seagullSwimmer.global_position = posSwimmer
 		seagullSwimmer.visible = true
 		seagullSwimmer.set_physics_process(true)
@@ -115,7 +151,6 @@ func _process(_delta: float) -> void:
 	#print("distance: %s, addScore: %s, score: %s," % [distanceTraveled, addScore, score])
 	
 	$Control/Score.text = "Score: %s " % floor(score)
-	
 	if score > SCORE_WIN: _on_win()
 
 
@@ -124,9 +159,9 @@ func _on_enemeny_hit(body: CharacterBody2D):
 	get_tree().paused = true
 
 
-func deltaT(value: float,  min: float, max: float, minChange: float, maxChange: float) -> float:
+func deltaT(value: float,  minF: float, maxF: float, minChange: float, maxChange: float) -> float:
 	var change: float = randf_range(minChange,maxChange)
-	return clamp(value+change, min, max)
+	return clamp(value+change, minF, maxF)
 
 
 func _on_win() -> void:

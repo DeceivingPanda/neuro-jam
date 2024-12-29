@@ -3,28 +3,33 @@
 [ext_resource type="Script" path="res://scenes/minigames/seagull/seagull_swim.gd" id="1_o7epc"]
 [ext_resource type="Texture2D" uid="uid://bkfd6h6ue8kwk" path="res://assets/images/screens/GJ BG Sky.png" id="2_8vqvf"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_atn73"]
-size = Vector2(1200, 350)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5u1l"]
-size = Vector2(1071, 17)
+size = Vector2(177.5, 17)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_j5r01"]
 
 [node name="Seagull Swim" type="Node2D"]
 script = ExtResource("1_o7epc")
 
 [node name="Background" type="Sprite2D" parent="."]
-texture_repeat = 1
-position = Vector2(551, 263)
+texture_filter = 2
+texture_repeat = 3
+position = Vector2(550, 260)
 texture = ExtResource("2_8vqvf")
 region_enabled = true
-region_rect = Rect2(-161, -121, 1169, 780)
+region_rect = Rect2(0, 0, 1300, 800)
 
 [node name="Player" type="Node2D" parent="."]
 
-[node name="foreground" type="Sprite2D" parent="."]
-modulate = Color(0, 0.886275, 1, 0.784314)
-position = Vector2(541, 552)
-texture = SubResource("PlaceholderTexture2D_atn73")
+[node name="Marker2D" type="Marker2D" parent="Player"]
+position = Vector2(89, 399)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(89, 427)
+limit_left = 5
+limit_top = -100
+limit_right = 1200
+limit_bottom = 400
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -32,24 +37,27 @@ texture = SubResource("PlaceholderTexture2D_atn73")
 position = Vector2(1200, 250)
 
 [node name="Swimmer" type="Marker2D" parent="Enemies"]
-position = Vector2(1200, 351)
+position = Vector2(1200, 350)
 
-[node name="Floor" type="StaticBody2D" parent="."]
+[node name="foreground" type="Sprite2D" parent="."]
+modulate = Color(0, 0.886275, 1, 0.784314)
+texture_filter = 4
+texture_repeat = 2
+position = Vector2(550, 550)
+texture = ExtResource("2_8vqvf")
+region_enabled = true
+region_rect = Rect2(0, 0, 1300, 400)
+
+[node name="Bounds" type="StaticBody2D" parent="."]
 position = Vector2(0, -28)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(537, 517)
+[node name="Floor" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(90, 700)
 shape = SubResource("RectangleShape2D_d5u1l")
 
-[node name="Marker2D" type="Marker2D" parent="Floor"]
-position = Vector2(89, 427)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(89, 427)
-limit_left = 5
-limit_top = -100
-limit_right = 1200
-limit_bottom = 400
+[node name="Ceiling" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(90, 330)
+shape = SubResource("RectangleShape2D_d5u1l")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -57,10 +65,19 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 96.0
+offset_right = 599.0
+offset_bottom = 121.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_j5r01")
+
 [node name="Score" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 499.0
 offset_top = 96.0
-offset_right = 539.0
+offset_right = 551.0
 offset_bottom = 119.0
 text = "Score: "

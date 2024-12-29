@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddjekwwmi8fvd"]
+[gd_scene load_steps=9 format=3 uid="uid://ddjekwwmi8fvd"]
 
 [ext_resource type="Script" path="res://scenes/story/house/house.gd" id="1_xwcym"]
 [ext_resource type="PackedScene" uid="uid://cbfah0t4re54l" path="res://scenes/menus/options/options.tscn" id="2_3qoh1"]
 [ext_resource type="ArrayMesh" uid="uid://84vfoibd5mg" path="res://assets/3d/House Model.obj" id="3_dle3k"]
 [ext_resource type="Script" path="res://scenes/story/house/character_body_3d.gd" id="3_feat5"]
 [ext_resource type="PackedScene" uid="uid://csw244m8noubb" path="res://assets/3d/House Model.glb" id="7_ooxre"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sj85u"]
+margin = 0.0
+radius = 0.707
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_co7oo"]
 
@@ -27,6 +31,12 @@ light_specular = 0.338
 omni_range = 1.677
 omni_attenuation = 1.202
 omni_shadow_mode = 0
+
+[node name="LavaLevelInit" type="Area3D" parent="."]
+transform = Transform3D(2.215, 0, 0, 0, 2.215, 0, 0, 0, 2.215, -7.54816, 43.7876, 44.9474)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LavaLevelInit"]
+shape = SubResource("SphereShape3D_sj85u")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.318192, 0, 1.0561, 0, 1.61, 0, -0.600961, 0, 0.559176, 6.35774, 44.0185, 49.0235)
@@ -51,7 +61,7 @@ shape = SubResource("ConcavePolygonShape3D_sftol")
 [node name="House Model2" parent="." instance=ExtResource("7_ooxre")]
 transform = Transform3D(2.985, 0, 0, 0, 2.985, 0, 0, 0, 2.985, 10.667, 41.545, 53.723)
 
-[node name="LavalLampLight2" type="OmniLight3D" parent="."]
+[node name="Kitchen Light" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23234, 48.6525, 44.4474)
 light_color = Color(0.946445, 0.954906, 0.840646, 1)
 light_energy = 0.848
@@ -62,3 +72,5 @@ light_specular = 3.085
 omni_range = 101.592
 omni_attenuation = 1.404
 omni_shadow_mode = 0
+
+[connection signal="body_entered" from="LavaLevelInit" to="." method="_on_lava_level_init_body_entered"]

@@ -5,6 +5,7 @@ var ControlLock = false
 func _ready() -> void:
 	Dialogic.signal_event.connect(_narative)
 	Dialogic.start("House")
+	Dialogic.dialogic_paused
 	$Options.hide()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,3 +25,8 @@ func _narative(argument: String):
 		ControlLock = true
 	elif argument == "unlock":
 		ControlLock = false
+	elif argument == "lava":
+		get_tree().change_scene_to_file("res://scenes/minigames/platformer/level_1.tscn")
+
+func _on_lava_level_init_body_entered(body: CharacterBody3D) -> void:
+	Dialogic.start("Lava Lamp")

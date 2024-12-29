@@ -11,5 +11,5 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("something hit me: %s" % body)
+	#print("something hit me: %s" % body)
 	hitSomething.emit(body)

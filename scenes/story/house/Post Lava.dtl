@@ -1,0 +1,18 @@
+[signal arg="lock"]
+[style name="VN"]
+W-whad wass that?
+What is… wait… I… I made this?
+[style name="Speaker"]
+Phone: BzzZzZzzzZT
+[style name="VN"]
+A-augh?
+[style name="Speaker"]
+Phone: *CLICK*
+Unknown: You’re awake? ...\
+You’re awake, right?  Check on the dog!
+[style name="VN"]
+Wh-who iz tthis? Ddog?
+[style name="Speaker"]
+Unknown: What do you mean? “THE" dog! Stop messing around and find it!\
+
+[signal arg="unlock"]

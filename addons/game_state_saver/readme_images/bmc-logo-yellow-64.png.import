@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cujyq1q2sq3om"
-path="res://.godot/imported/ORANGE_BRICK_AO.png-e9dfce8cd34123ac928f1b7b30a79157.ctex"
+uid="uid://cttnknxuj1yls"
+path="res://.godot/imported/bmc-logo-yellow-64.png-13e1ee5dc19737b65bd0188cf9b68422.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/texture/tempbrick/ORANGE_BRICK_AO.png"
-dest_files=["res://.godot/imported/ORANGE_BRICK_AO.png-e9dfce8cd34123ac928f1b7b30a79157.ctex"]
+source_file="res://addons/game_state_saver/readme_images/bmc-logo-yellow-64.png"
+dest_files=["res://.godot/imported/bmc-logo-yellow-64.png-13e1ee5dc19737b65bd0188cf9b68422.ctex"]
 
 [params]
 

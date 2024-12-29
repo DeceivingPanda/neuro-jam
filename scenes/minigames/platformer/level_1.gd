@@ -20,7 +20,7 @@ func _on_lava_player_entered_lava(body: CharacterBody2D) -> void:
 	
 	$"2DNeuro/Camera2D".enabled = false
 	$"Result Screen/Lose Screen/Camera2D".enabled = true
-	player_lose.emit(levelNum)
+	get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")
 
 
 

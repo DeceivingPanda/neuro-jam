@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv8wkh02evj8f"
-path="res://.godot/imported/ORANGE_BRICK_DISP.png-a8b058b5de11d1677a66488f4edded0c.ctex"
+uid="uid://bk455el6sahs6"
+path="res://.godot/imported/game_state_helper_dynamic_setup.png-b157b8bb756e3dadc20476a01dd7a35f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/texture/tempbrick/ORANGE_BRICK_DISP.png"
-dest_files=["res://.godot/imported/ORANGE_BRICK_DISP.png-a8b058b5de11d1677a66488f4edded0c.ctex"]
+source_file="res://addons/game_state_saver/readme_images/game_state_helper_dynamic_setup.png"
+dest_files=["res://.godot/imported/game_state_helper_dynamic_setup.png-b157b8bb756e3dadc20476a01dd7a35f.ctex"]
 
 [params]
 

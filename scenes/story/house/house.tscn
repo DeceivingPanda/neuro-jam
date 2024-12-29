@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddjekwwmi8fvd"]
+[gd_scene load_steps=12 format=3 uid="uid://ddjekwwmi8fvd"]
 
 [ext_resource type="Script" path="res://scenes/story/house/house.gd" id="1_xwcym"]
 [ext_resource type="PackedScene" uid="uid://cbfah0t4re54l" path="res://scenes/menus/options/options.tscn" id="2_3qoh1"]
+[ext_resource type="Script" path="res://addons/game_state_saver/game_state_service.gd" id="2_xlnnv"]
 [ext_resource type="ArrayMesh" uid="uid://84vfoibd5mg" path="res://assets/3d/House Model.obj" id="3_dle3k"]
 [ext_resource type="Script" path="res://scenes/story/house/character_body_3d.gd" id="3_feat5"]
+[ext_resource type="Script" path="res://addons/game_state_saver/game_state_helper.gd" id="5_oadsk"]
 [ext_resource type="PackedScene" uid="uid://csw244m8noubb" path="res://assets/3d/House Model.glb" id="7_ooxre"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e0idb"]
@@ -20,6 +22,9 @@ data = PackedVector3Array(-4.6268, 1.9245, -1.7852, -4.6268, 1.8401, -1.8605, -4
 [node name="House" type="Node3D"]
 script = ExtResource("1_xwcym")
 
+[node name="GameStateServiceAutoload" type="Node" parent="."]
+script = ExtResource("2_xlnnv")
+
 [node name="Options" parent="." instance=ExtResource("2_3qoh1")]
 visible = false
 
@@ -34,9 +39,16 @@ omni_attenuation = 1.202
 omni_shadow_mode = 0
 
 [node name="LavaLampInit" type="Area3D" parent="."]
-transform = Transform3D(2.215, 0, 0, 0, 2.215, 0, 0, 0, 2.215, -8.49311, 43.0773, 44.947)
+transform = Transform3D(3.685, 0, 0, 0, 3.685, 0, 0, 0, 3.685, -8.49311, 43.0773, 44.947)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LavaLampInit"]
+shape = SubResource("SphereShape3D_e0idb")
+
+[node name="LavaLampInit2" type="Area3D" parent="."]
+transform = Transform3D(3.685, 0, 0, 0, 3.685, 0, 0, 0, 3.685, -8.493, 43.077, 44.947)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LavaLampInit2"]
 shape = SubResource("SphereShape3D_e0idb")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
@@ -56,6 +68,10 @@ transform = Transform3D(0.325568, -0.62652, 0.708152, 0, 0.748956, 0.66262, -0.9
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
 transform = Transform3D(1.47059, 0, 0, 0, 0.647213, 0, 0, 0, 0.816805, 0.00156021, 0.513037, -0.00603294)
 near = 0.025
+
+[node name="GameStateHelper" type="Node" parent="CharacterBody3D"]
+script = ExtResource("5_oadsk")
+save_properties = Array[String](["position"])
 
 [node name="HouseModel" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.985, 0, 0, 0, 2.985, 0, 0, 0, 2.985, 10.6674, 41.5449, 53.7234)
@@ -100,7 +116,7 @@ omni_shadow_mode = 0
 [node name="VedalRoomLight" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.64305, 48.7019, 49.6656)
 light_color = Color(0.946445, 0.954906, 0.840646, 1)
-light_energy = 10.11
+light_energy = 0.736
 light_indirect_energy = 3.101
 light_volumetric_fog_energy = 0.353
 light_size = 0.142
@@ -147,4 +163,12 @@ light_energy = 2.778
 shadow_enabled = true
 omni_range = 10.65
 
+[node name="StartDialogInit" type="Area3D" parent="."]
+transform = Transform3D(2.215, 0, 0, 0, 2.215, 0, 0, 0, 2.215, 6.70721, 43.0773, 49.1513)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StartDialogInit"]
+shape = SubResource("SphereShape3D_e0idb")
+
 [connection signal="body_entered" from="LavaLampInit" to="." method="_on_lava_lamp_init_body_entered"]
+[connection signal="body_entered" from="LavaLampInit2" to="." method="_on_lava_lamp_init_2_body_entered"]
+[connection signal="body_entered" from="StartDialogInit" to="." method="_on_start_dialog_init_body_entered"]

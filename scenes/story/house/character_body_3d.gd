@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+class_name Vedal
 @onready var head := $Head
 @onready var camera := $Head/Camera3D
 var gamestage = 0

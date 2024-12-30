@@ -115,29 +115,27 @@ func _on_shower_init_body_entered(body: Node3D) -> void:
 			$Dialog/cutscene.play()
 			$Vedal.gamestage += 1
 
-func _on_office_door_interacted(body: Variant) -> void:
+func _on_office_door_interacted(body:Variant) -> void:
 	if $Vedal.gamestage == 9:
 		Dialogic.start("Office Door - Locked")
 	if $Vedal.gamestage == 11:
 		Dialogic.start("Office Door - Unlocked")
-		$Dialog/OfficeDoor.queue_free()
+		$Vedal.gamestage += 1
+		$House/Door.queue_free()
 
 func _on_evils_harpoon_interacted(body: Variant) -> void:
 	if $Vedal.gamestage == 10:
-		$Vedal.gamestage += 1
 		Dialogic.VAR._set("get_harpoon_flag", true)
 	Dialogic.start("Harpoon")
-			
+
 func _on_office_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 12:
 			Dialogic.start("seagull")
-			$Vedal.gamestage += 1
 		if $Vedal.gamestage == 13:
 			Dialogic.start("Final Act")
 
 func _on_evil_birthday_card_interacted(body:Variant) -> void:
-	$Vedal.gamestage = 9
 	Dialogic.start("Evil Birthday Card")
 
 #END Dialogic Section
@@ -148,4 +146,3 @@ func _on_objective_locate_dog_init_body_entered(body) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 6:
 			$Vedal.gamestage = 7
-			

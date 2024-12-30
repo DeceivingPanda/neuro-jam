@@ -59,6 +59,8 @@ func _narative(argument: String):
 	elif argument == "unlock":
 		ControlLock = false
 		$Vedal.gamestage += 1
+	elif argument == "unlockhint":
+		ControlLock = false
 	elif argument == "lava":
 		GameStateService.on_scene_transitioning()
 		get_tree().change_scene_to_file("res://scenes/minigames/platformer/level_1.tscn")
@@ -110,7 +112,8 @@ func _on_stairs_init_body_entered(body: Node3D) -> void:
 func _on_shower_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 8:
-			Dialogic.start("seagull")
+			$Dialog/cutscene.play()
+			$Vedal.gamestage += 1
 
 func _on_office_door_interacted(body: Variant) -> void:
 	if $Vedal.gamestage == 9:
@@ -124,7 +127,7 @@ func _on_evils_harpoon_interacted(body: Variant) -> void:
 		$Vedal.gamestage += 1
 		Dialogic.VAR._set("get_harpoon_flag", true)
 	Dialogic.start("Harpoon")
-
+			
 func _on_office_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 12:

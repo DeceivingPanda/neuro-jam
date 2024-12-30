@@ -11,7 +11,6 @@ const SPRINT_VELOCITY = 2
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	starting_position = position
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

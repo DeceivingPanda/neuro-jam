@@ -11,12 +11,17 @@ var can_jump: bool = true
 
 func _physics_process(delta: float) -> void:
 	if (not is_on_floor()) or (not is_on_ceiling()):
+		
 		if can_jump: #coyote jump
 			coyote_timer += delta
+			
 			#print("setting timer: %s" % coyote_timer)
 		else: # Add the gravity.
 			velocity += get_gravity() * delta
+			
 			#print("gravity working: %s" % velocity)
+	if not is_on_floor():
+		$AnimatedSprite2D.stop()
 	
 	#handle coyote jumping
 	if coyote_timer > MAX_TIME:
@@ -37,10 +42,10 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED
-		if velocity.x == 300:
+		if velocity.x == SPEED:
 			$AnimatedSprite2D.flip_h = false
 			$AnimatedSprite2D.play("default")
-		elif velocity.x == -300:
+		elif velocity.x == SPEED * -1:
 			$AnimatedSprite2D.flip_h = true
 			$AnimatedSprite2D.play("default")
 	else:

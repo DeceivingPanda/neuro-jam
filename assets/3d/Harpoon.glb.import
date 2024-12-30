@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://qe8mkb6uiai8"
-path="res://.godot/imported/Harpoon(1).glb-cf6357aa44f4c3ecb4432227c664f7aa.scn"
+uid="uid://cw3wrmenp8osv"
+path="res://.godot/imported/Harpoon.glb-129ea12224f19c8bfe86820b38f3375f.scn"
 
 [deps]
 
-source_file="res://assets/3d/Harpoon(1).glb"
-dest_files=["res://.godot/imported/Harpoon(1).glb-cf6357aa44f4c3ecb4432227c664f7aa.scn"]
+source_file="res://assets/3d/Harpoon.glb"
+dest_files=["res://.godot/imported/Harpoon.glb-129ea12224f19c8bfe86820b38f3375f.scn"]
 
 [params]
 

@@ -19,4 +19,4 @@ func _on_player_lose(_name:String) -> void:
 
 func _on_player_win(_name:String) -> void:
 	print("player beat level %s" % [_name])
-	get_tree().paused = true
+	get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://go0ogseme3la"]
 
 [ext_resource type="Script" path="res://scenes/minigames/hacking/objects/harpoon.gd" id="1_5oy3l"]
-[ext_resource type="PackedScene" uid="uid://prestctxyrkb" path="res://assets/3d/Harpoon(1).glb" id="2_hy0mn"]
+[ext_resource type="PackedScene" uid="uid://qe8mkb6uiai8" path="res://assets/3d/Harpoon(1).glb" id="2_hy0mn"]
 [ext_resource type="Texture2D" uid="uid://5xqhtdnv05qn" path="res://assets/images/objects/Harpoon_sprite.png" id="2_npms6"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ypwcv"]

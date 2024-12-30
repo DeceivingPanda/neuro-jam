@@ -2,7 +2,7 @@ extends CharacterBody3D
 class_name Vedal
 @onready var head := $Head
 @onready var camera := $Head/Camera3D
-var gamestage = 0
+var gamestage = 10
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SPRINT_VELOCITY = 2

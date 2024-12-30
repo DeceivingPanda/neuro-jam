@@ -1,9 +1,0 @@
-[signal arg="lock"]
-This ia the dog… ribht?
-*Click*
-[sound path="res://assets/sounds/dawg wakeup.mp3" volume="0.0" bus="SFX"]
-neurodog: *Powering on*
-Right, erm.. Someonw made thks for… zomeone...
-Someonw… I live woth...
-But who?
-[signal arg="unlock"]

@@ -184,7 +184,7 @@ func _on_office_init_body_entered(body: Node3D) -> void:
 		if $Vedal.gamestage == 13:
 			#Dialogic.start("final start")
 			GameStateService.on_scene_transitioning()
-			get_tree().change_scene_to_file("res://scenes/minigames/hacking/levels/level_1.tscn")
+			get_tree().change_scene_to_file("res://scenes/minigames/hacking/hacking.tscn")
 		if $Vedal.gamestage == 14:
 			Dialogic.start("Final Act")
 

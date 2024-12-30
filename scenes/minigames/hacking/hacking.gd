@@ -48,7 +48,7 @@ func _handle_level_up(levelNum: int) -> void:
 			get_tree().paused = false
 		4:
 			#print("going back the 3d house scene")
-			get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")
+			get_tree().change_scene_to_file("res://scenes/story/endings/good_ending.tscn")
 			get_tree().paused = false
 		_:
 			pass

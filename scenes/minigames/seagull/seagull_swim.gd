@@ -32,7 +32,7 @@ var level2: int = 30
 var max_time: float = 40.0
 
 
-func _ready() -> void:
+func _ready() -> void:	
 	player = neuro.instantiate()
 	seagullSwimmer = seagullScene.instantiate()
 	Dialogic.signal_event.connect(_narative)
@@ -91,7 +91,7 @@ func _process(_delta: float) -> void:
 		
 		#change sprite
 		if distanceTraveled > 10 && changeSprite[0]:
-			#print("sprite changed - 10")
+			print("sprite changed - 10")
 			changeSprite[0] = false;
 			seagullSwimmerSprites[seagullSwimmerSpritesCurr].visible = false
 			seagullSwimmerSpritesCurr += 1
@@ -103,7 +103,7 @@ func _process(_delta: float) -> void:
 			vedal2 = true
 			Dialogic.start("vedalvedalvedal2")
 		elif distanceTraveled > 35 && changeSprite[1]:
-			#print("sprite changed - 35")
+			print("sprite changed - 35")
 			changeSprite[1] = false;
 			seagullSwimmerSprites[seagullSwimmerSpritesCurr].visible = false
 			seagullSwimmerSpritesCurr += 1

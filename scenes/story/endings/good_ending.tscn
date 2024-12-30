@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb6gc31gj2los"]
+[gd_scene load_steps=4 format=3 uid="uid://bb6gc31gj2los"]
 
+[ext_resource type="Script" path="res://scenes/story/endings/good_ending.gd" id="1_8x1jp"]
 [ext_resource type="Texture2D" uid="uid://cgqj70mb2mav" path="res://assets/images/screens/good_ending.png" id="1_267a2"]
+[ext_resource type="PackedScene" uid="uid://cbfah0t4re54l" path="res://scenes/menus/options/options.tscn" id="3_f7q1p"]
 
 [node name="GoodEnding" type="Node2D"]
+script = ExtResource("1_8x1jp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_267a2")
 
 [node name="Camera2D" type="Camera2D" parent="Sprite2D"]
 position = Vector2(0, -30)
+
+[node name="Options" parent="." instance=ExtResource("3_f7q1p")]

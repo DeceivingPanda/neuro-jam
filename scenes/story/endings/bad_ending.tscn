@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2wmh6mkwlaph"]
+[gd_scene load_steps=4 format=3 uid="uid://b2wmh6mkwlaph"]
 
 [ext_resource type="Texture2D" uid="uid://bxvd1y1ibax5a" path="res://assets/images/screens/bad_ending.png" id="1_qoih4"]
+[ext_resource type="Script" path="res://scenes/story/endings/bad_ending.gd" id="1_yla30"]
+[ext_resource type="PackedScene" uid="uid://cbfah0t4re54l" path="res://scenes/menus/options/options.tscn" id="3_w42wa"]
 
 [node name="BadEnding" type="Node2D"]
+script = ExtResource("1_yla30")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qoih4")
 
 [node name="Camera2D" type="Camera2D" parent="Sprite2D"]
 position = Vector2(0, -30)
+
+[node name="Options" parent="." instance=ExtResource("3_w42wa")]

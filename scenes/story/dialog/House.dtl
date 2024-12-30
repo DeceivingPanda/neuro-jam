@@ -1,4 +1,15 @@
 [signal arg="lock"]
+[background arg="res://assets/images/screens/black-screen.jpg" fade="1.5"]
+[wait time="1.5"]
+[background fade="2.0"]
+[wait time="2.0"]
+[background arg="res://assets/images/screens/black-screen.jpg" fade="2.0"]
+[wait time="2.0"]
+[background fade="1.0"]
+[wait time="1.0"]
+[background arg="res://assets/images/screens/black-screen.jpg" fade="1.0"]
+[wait time="1.5"]
+[background fade="1.5"]
 uuuugh
 whefe am I?
 I need dpme watrr

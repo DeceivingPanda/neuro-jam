@@ -118,9 +118,7 @@ func _process(_delta: float) -> void:
 
 func _on_enemeny_hit(_body: Node2D):
 	#print("player hit something: %s, distance: %s" % [_body, distanceTraveled])
-	get_tree().paused = true
-	#TODO: move to bad ending screen
-	#get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")
+	get_tree().change_scene_to_file("res://scenes/story/endings/bad_ending.tscn")
 
 
 func deltaT(value: float,  minF: float, maxF: float, minChange: float, maxChange: float) -> float:

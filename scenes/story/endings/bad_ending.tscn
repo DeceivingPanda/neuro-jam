@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2wmh6mkwlaph"]
+
+[ext_resource type="Texture2D" uid="uid://bxvd1y1ibax5a" path="res://assets/images/screens/bad_ending.png" id="1_qoih4"]
+
+[node name="BadEnding" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qoih4")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+position = Vector2(0, -30)

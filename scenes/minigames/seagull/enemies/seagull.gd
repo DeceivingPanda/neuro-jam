@@ -10,6 +10,6 @@ func _process(delta: float) -> void:
 	move_and_collide(vel)
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: StaticBody2D) -> void:
 	#print("something hit me: %s" % body)
 	hitSomething.emit(body)

@@ -112,7 +112,7 @@ func _process(_delta: float) -> void:
 		#print(spawnerDelaySwimmer)
 
 
-func _on_enemeny_hit(body: CharacterBody2D):
+func _on_enemeny_hit(body: StaticBody2D):
 	#print("player hit something: %s, distance: %s" % [body, distanceTraveled])
 	get_tree().paused = true
 	#TODO: move to bad ending screen

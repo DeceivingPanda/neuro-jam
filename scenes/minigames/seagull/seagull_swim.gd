@@ -94,6 +94,9 @@ func _process(_delta: float) -> void:
 			seagullSwimmerSprites[seagullSwimmerSpritesCurr].visible = true
 			spawnerDelaySwimmer -= 1
 			seagullSwimmer.SPEED = 350
+			Dialogic.start("vedalvedalvedal")
+		if distanceTraveled > 20  && changeSprite[1]:
+			Dialogic.start("vedalvedalvedal2")
 		elif distanceTraveled > 35 && changeSprite[1]:
 			#print("sprite changed - 35")
 			changeSprite[1] = false;
@@ -102,6 +105,7 @@ func _process(_delta: float) -> void:
 			seagullSwimmerSprites[seagullSwimmerSpritesCurr].visible = true
 			spawnerDelaySwimmer -= 1
 			seagullSwimmer.SPEED = 400
+			
 		
 		seagullSwimmer.visible = true
 		seagullSwimmer.set_physics_process(true)

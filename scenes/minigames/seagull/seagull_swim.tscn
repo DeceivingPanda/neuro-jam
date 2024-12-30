@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c477kel30wvqd"]
+[gd_scene load_steps=5 format=3 uid="uid://c477kel30wvqd"]
 
 [ext_resource type="Script" path="res://scenes/minigames/seagull/seagull_swim.gd" id="1_o7epc"]
 [ext_resource type="Texture2D" uid="uid://bkfd6h6ue8kwk" path="res://assets/images/screens/GJ BG Sky.png" id="2_8vqvf"]
+[ext_resource type="AudioStream" uid="uid://bhi5ehneewon8" path="res://assets/sounds/Eagle.mp3" id="3_q5myr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5u1l"]
 size = Vector2(177.5, 17)
@@ -24,6 +25,11 @@ position = Vector2(89, 566)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(89, 399)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("3_q5myr")
+autoplay = true
+bus = &"Music"
 
 [node name="Enemies" type="Node2D" parent="."]
 

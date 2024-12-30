@@ -23,7 +23,7 @@ func _on_level_player_win(level: int) -> void:
 
 
 func _on_level_player_lose(level: int) -> void:
-	print('player lost in level %s' % level)
+	#print('player lost in level %s' % level)
 	get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")
 
 

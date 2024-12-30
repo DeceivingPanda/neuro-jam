@@ -136,6 +136,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 8500, 256)
 
 [node name="Lights" type="Node2D" parent="TileSets/Lava"]
+visible = false
 position = Vector2(-3994, -735)
 
 [node name="PointLight2D" type="PointLight2D" parent="TileSets/Lava/Lights"]

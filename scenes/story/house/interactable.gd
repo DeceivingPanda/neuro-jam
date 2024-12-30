@@ -7,7 +7,7 @@ signal interacted(body)
 @export var prompt_input = "Interact"
 
 func get_prompt():
-    return prompt_message + "\n(E)"
+	return prompt_message + "\n(E)"
 
 func interact(body):
-    interacted.emit(body)
+	interacted.emit(body)

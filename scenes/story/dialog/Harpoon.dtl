@@ -1,0 +1,8 @@
+[signal arg="lock"]
+Vedal: A harpoon?
+if {get_harpoon_flag} == true:
+	Evil: My harpoon! Destroy that door!
+	Vedal: Fine, it is an emergency.
+	[signal arg="unlock"]
+else:
+	[signal arg="unlockhint"]

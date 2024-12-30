@@ -8,4 +8,6 @@ update Evil right [animation="Shake X" repeat="30" move_time="0.5"]
 Evil: We- We- We- locke- We’re stu-stu-stu- locked out- ever- locked- stuck- locked- locked- stuckforeverstuckforever- AAAAAAAAAAAAAAAaaaaaaaaaaaa
 Vedal: Calm down, just calm down! We’ll find a way.
 [signal arg="unlock"]
+leave Vedal [animation="Instant Out"]
+leave Evil [animation="Instant Out"]
 jump Office Door - After/

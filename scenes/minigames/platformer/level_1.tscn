@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://gg6p47lgqkie"]
+[gd_scene load_steps=12 format=3 uid="uid://gg6p47lgqkie"]
 
 [ext_resource type="PackedScene" uid="uid://cg85gphu5uagl" path="res://scenes/minigames/objects/lava.tscn" id="1_hwem0"]
 [ext_resource type="Script" path="res://scenes/minigames/platformer/level_1.gd" id="1_ioaof"]
@@ -9,12 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://c13nqfps015h7" path="res://assets/images/screens/You-Win.png" id="5_6dmoo"]
 [ext_resource type="PackedScene" uid="uid://b2v4r1byia8t6" path="res://scenes/minigames/objects/flag.tscn" id="6_5cy6h"]
 [ext_resource type="Script" path="res://addons/game_state_saver/game_state_helper.gd" id="10_7cepi"]
+[ext_resource type="AudioStream" uid="uid://bb7315di6xdh2" path="res://assets/sounds/Glowing ember.mp3" id="10_rhhr4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2hq6"]
 size = Vector2(632, 55)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ioaof")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_rhhr4")
+autoplay = true
+bus = &"Music"
 
 [node name="Background" type="Control" parent="."]
 layout_mode = 3

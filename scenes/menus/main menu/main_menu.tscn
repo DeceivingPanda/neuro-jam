@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqrgkuo54gsq4"]
 
 [ext_resource type="Script" path="res://scenes/menus/main menu/main_menu.gd" id="1_05v5e"]
-[ext_resource type="AudioStream" uid="uid://17lo8ka8krt7" path="res://assets/sounds/MENUSONG_2_OMGOMGOMGYAAAAAY.mp3" id="2_66vky"]
+[ext_resource type="AudioStream" uid="uid://ysb7wm4e37hu" path="res://assets/sounds/Remnants of the Past.mp3" id="2_vnw1w"]
 [ext_resource type="PackedScene" uid="uid://cbfah0t4re54l" path="res://scenes/menus/options/options.tscn" id="3_6a2n2"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_05v5e")
 
 [node name="AudioStreamPlayerMenu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_66vky")
+stream = ExtResource("2_vnw1w")
 autoplay = true
 bus = &"Music"
 

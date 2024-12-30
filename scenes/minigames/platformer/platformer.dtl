@@ -1,3 +1,4 @@
 [signal arg="auto"]
+[style name="VN"]
 Something seems off...
 [signal arg="manual"]

@@ -25,15 +25,14 @@ GameStateService="*res://addons/game_state_saver/game_state_service.gd"
 [dialogic]
 
 directories/dch_directory={
-"Door": "res://assets/sounds/Door.dch",
 "Evil": "res://scenes/story/dialog/characters/Evil.dch",
 "Evil Birthday Card": "res://scenes/story/dialog/characters/Evil Birthday Card.dch",
 "Neuro": "res://scenes/story/dialog/characters/Neuro.dch",
 "Phone": "res://scenes/story/dialog/characters/Phone.dch",
 "Unknown": "res://scenes/story/dialog/characters/Unknown.dch",
 "Vedal": "res://scenes/story/dialog/characters/Vedal.dch",
-"neurodog": "res://scenes/story/dialog/characters/neurodog.dch",
-"sounds/Evil": "res://assets/sounds/Evil.dch"
+"characters/Door": "res://scenes/story/dialog/characters/Door.dch",
+"neurodog": "res://scenes/story/dialog/characters/neurodog.dch"
 }
 directories/dtl_directory={
 "Evil Birthday Card": "res://scenes/story/dialog/Evil Birthday Card.dtl",
@@ -54,8 +53,9 @@ directories/dtl_directory={
 "Post Lava": "res://scenes/story/dialog/Post Lava.dtl",
 "Post Seagull": "res://scenes/story/dialog/Post Seagull.dtl",
 "Post Shower": "res://scenes/story/dialog/Post Shower.dtl",
-"platformer": "res://platformer.dtl",
-"seagull": "res://assets/sounds/seagull.dtl"
+"dialog/seagull": "res://scenes/story/dialog/seagull.dtl",
+"platformer": "res://scenes/minigames/platformer/platformer.dtl",
+"vedalvedalvedal": "res://vedalvedalvedal.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

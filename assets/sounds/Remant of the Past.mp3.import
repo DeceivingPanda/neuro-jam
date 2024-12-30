@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://urdjooa08fts"
+path="res://.godot/imported/Remant of the Past.mp3-f2bfd5ae9d5ee2e460c54076ac5cf78a.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Remant of the Past.mp3"
+dest_files=["res://.godot/imported/Remant of the Past.mp3-f2bfd5ae9d5ee2e460c54076ac5cf78a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 		8:
 			$Control/lblTask.text = "Follow the dog to the Bathroom"
 		9:
-			$Control/lblTask.text = "Head to the office (Right next to stairs)"
+			$Control/lblTask.text = "Head to the office"
 		10:
 			$Control/lblTask.text = "Find a way to get into the office"
 		11:
@@ -44,6 +44,22 @@ func _process(delta: float) -> void:
 		12:
 			$Control/lblTask.text = "Access Neuro's computer in the office"
 	$Control/lblObjective.text = str($Vedal.gamestage)
+	
+	if $Vedal.gamestage > 5:
+		$"House/neuro dog sitting".position.y = -10
+		$"House/neuro dog Standing".position.y = -10
+	if $Vedal.gamestage >= 0 && $Vedal.gamestage < 7:
+		$House/halldog.position.y = -10
+		$"House/neuro dog Standing2".position.y = -10
+	if $Vedal.gamestage == 7:
+		$House/halldog.position.y = 48.687
+		$"House/neuro dog Standing2".position.y = -10
+	if $Vedal.gamestage == 8:
+		$House/halldog.position.y =-10
+		$"House/neuro dog Standing2".position.y = 46.553
+	if $Vedal.gamestage > 8:
+		$House/halldog.position.y =-10
+		$"House/neuro dog Standing2".position.y = -10
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #This section controls the dialog progression using Dialogic.
 #the variable gamestage in Vedal determines which dialogs can display when. 
@@ -71,7 +87,12 @@ func _narative(argument: String):
 		Dialogic.Inputs.auto_advance.enabled_forced = true
 	elif argument == "manual":
 		Dialogic.Inputs.auto_advance.enabled_forced = false
-
+	elif argument == "stand":
+		$"House/neuro dog sitting".hide()
+		$"House/neuro dog Standing".show()
+	elif argument == "stairdog":
+		$House/halldog.hide()
+		$"House/neuro dog Standing2/bathdog".show()
 
 func _on_start_dialog_init_body_entered(body) -> void:
 	if body is Vedal:
@@ -84,15 +105,15 @@ func _on_lava_lamp_init_body_entered(body) -> void:
 			Dialogic.start("Lava Lamp")
 
 func _on_lava_lamp_init_2_body_entered(body) -> void:
-	if body is Vedal:
-		if $Vedal.gamestage == 2:
-			Dialogic.start("Post Lava")
-
-func _on_neurodog_init_1_body_entered(body) -> void:
-	if body is Vedal:
+	if $Vedal.gamestage == 2:
+		Dialogic.start("Post Lava")
+		
+	
+			
+func _on_neuro_sit_interacted(body: Variant) -> void:
 		if $Vedal.gamestage == 3:
 			Dialogic.start("Neurodog")
-
+			
 func _on_beach_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 4:
@@ -103,16 +124,18 @@ func _on_neurodog_init_2_body_entered(body) -> void:
 		if $Vedal.gamestage == 5:
 			print("POST SEAGULL")
 			Dialogic.start("Post Seagull")
+			
 
 func _on_stairs_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 7:
-			Dialogic.start("seagull")
+			Dialogic.start("stairs")
 
 func _on_shower_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 8:
 			$Dialog/cutscene.play()
+			$"House/neuro dog Standing2/bathdog".hide()
 			$Vedal.gamestage += 1
 
 func _on_office_door_interacted(body:Variant) -> void:
@@ -120,6 +143,7 @@ func _on_office_door_interacted(body:Variant) -> void:
 		Dialogic.start("Office Door - Locked")
 	if $Vedal.gamestage == 11:
 		Dialogic.start("Office Door - Unlocked")
+		$House/Door.hide()
 		$Vedal.gamestage += 1
 		$House/Door.queue_free()
 
@@ -127,11 +151,13 @@ func _on_evils_harpoon_interacted(body: Variant) -> void:
 	if $Vedal.gamestage == 10:
 		Dialogic.VAR._set("get_harpoon_flag", true)
 	Dialogic.start("Harpoon")
+	$House/Harpoon.hide()
 
 func _on_office_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 12:
 			Dialogic.start("seagull")
+			pass
 		if $Vedal.gamestage == 13:
 			Dialogic.start("Final Act")
 

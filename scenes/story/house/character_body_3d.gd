@@ -2,7 +2,7 @@ extends CharacterBody3D
 class_name Vedal
 @onready var head := $Head
 @onready var camera := $Head/Camera3D
-var gamestage = 0
+var gamestage = 11
 var starting_position
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -54,4 +54,3 @@ func _input(event):
 
 		if Input.is_action_just_pressed("Unstuck"):
 			position = starting_position
-

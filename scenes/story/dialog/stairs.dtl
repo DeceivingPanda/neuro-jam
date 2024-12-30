@@ -1,0 +1,7 @@
+[signal arg="auto"]
+[background arg="res://assets/images/black.png" fade="1.0"]
+Huh? the bathroom?
+[background fade="0.5"]
+[signal arg="manual"]
+[signal arg="stairdog"]
+[signal arg="unlock"]

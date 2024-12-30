@@ -2,10 +2,6 @@
 Vedal: Ig was juat here earlier
 [background arg="res://assets/images/screens/black-screen.jpg" fade="1.5"]
 [wait time="2.0"]
-[background fade="2.0"]
-[wait time="1.0"]
-[background arg="res://assets/images/screens/black-screen.jpg" fade="1.0"]
-[wait time="1.5"]
 [background fade="1.5"]
 Vedal: *hurl*
 [sound path="res://assets/sounds/dawg walking.mp3" volume="0.0" bus="SFX"]

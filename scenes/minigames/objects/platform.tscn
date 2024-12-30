@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://lqs4wrpbodf4"]
 
-[ext_resource type="Texture2D" uid="uid://bmgam0h6q1axe" path="res://assets/texture/dirt-2.png" id="1_ac7un"]
+[ext_resource type="Texture2D" uid="uid://dkeetkunjl33x" path="res://assets/images/platformer/Stone.png" id="1_divl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5uf8"]
-size = Vector2(128, 81)
+size = Vector2(79, 78.5)
 
 [node name="Platform" type="StaticBody2D"]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_b5uf8")
+[node name="Stone" type="Sprite2D" parent="."]
+position = Vector2(-24, -3)
+texture = ExtResource("1_divl5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -24)
-texture = ExtResource("1_ac7un")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-24.5, -3.25)
+shape = SubResource("RectangleShape2D_b5uf8")

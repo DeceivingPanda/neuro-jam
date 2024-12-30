@@ -39,6 +39,7 @@ directories/dtl_directory={
 "Post Lava": "res://scenes/story/house/Post Lava.dtl",
 "Post Seagull": "res://scenes/story/house/Post Seagull.dtl",
 "Post Shower": "res://scenes/story/house/Post Shower.dtl",
+"platformer": "res://platformer.dtl",
 "seagull": "res://assets/sounds/seagull.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"

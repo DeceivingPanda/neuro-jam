@@ -40,4 +40,6 @@ func _on_btn_close_pressed() -> void:
 
 
 func _on_btn_main_pressed() -> void:
+	Dialogic.clear()
+	Dialogic.end_timeline()
 	get_tree().change_scene_to_file("res://scenes/menus/main menu/main_menu.tscn")

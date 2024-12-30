@@ -25,7 +25,7 @@ GameStateService="*res://addons/game_state_saver/game_state_service.gd"
 [dialogic]
 
 directories/dch_directory={
-"Door": "res://scenes/story/dialog/characters/Door.dch",
+"characters/Door": "res://scenes/story/dialog/characters/Door.dch",
 "Evil": "res://scenes/story/dialog/characters/Evil.dch",
 "Evil Birthday Card": "res://scenes/story/dialog/characters/Evil Birthday Card.dch",
 "Neuro": "res://scenes/story/dialog/characters/Neuro.dch",
@@ -53,7 +53,7 @@ directories/dtl_directory={
 "Post Lava": "res://scenes/story/dialog/Post Lava.dtl",
 "Post Seagull": "res://scenes/story/dialog/Post Seagull.dtl",
 "Post Shower": "res://scenes/story/dialog/Post Shower.dtl",
-"platformer": "res://scenes/minigames/platformer/platformer.dtl",
+"platformer/platformer": "res://scenes/minigames/platformer/platformer.dtl",
 "seagull": "res://scenes/story/dialog/seagull.dtl",
 "stairs": "res://scenes/story/dialog/stairs.dtl",
 "vedalvedalvedal": "res://vedalvedalvedal.dtl"

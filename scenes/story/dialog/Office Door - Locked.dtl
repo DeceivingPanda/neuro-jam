@@ -1,13 +1,4 @@
 [signal arg="lock"]
-[style name="VN"]
-join Vedal left [animation="Slide In Right"]
-join Evil right [animation="Slide In Left"]
-Vedal: It’s blocked.
-Evil: No way, it’s blocked? Are you serious? We’re locked out here?
-update Evil right [animation="Shake X" repeat="30" move_time="0.5"]
-Evil: We- We- We- locke- We’re stu-stu-stu- locked out- ever- locked- stuck- locked- locked- stuckforeverstuckforever- AAAAAAAAAAAAAAAaaaaaaaaaaaa
-Vedal: Calm down, just calm down! We’ll find a way.
-[signal arg="unlock"]
-leave Vedal [animation="Instant Out"]
-leave Evil [animation="Instant Out"]
-jump Office Door - After/
+[style]
+The door won't budge.
+[signal arg="unlockhint"]

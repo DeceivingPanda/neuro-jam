@@ -133,7 +133,13 @@ func _on_neurodog_init_2_body_entered(body) -> void:
 			Dialogic.start("Post Seagull")
 		if $Vedal.gamestage == 3:
 			$"Sounds/Caged Protocol".play()
-			
+
+func _on_objective_locate_dog_init_body_entered(body) -> void:
+	pass # Replace with function body.
+	if body is Vedal:
+		if $Vedal.gamestage == 6:
+			Dialogic.start("Missing Dawg")
+			$Sounds/Chase.play()
 
 func _on_stairs_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
@@ -154,9 +160,11 @@ func _on_shower_init_body_entered(body: Node3D) -> void:
 			
 
 func _on_office_door_interacted(body:Variant) -> void:
-	if $Vedal.gamestage == 10:
+	if $Vedal.gamestage < 10:
 		Dialogic.start("Office Door - Locked")
-	if $Vedal.gamestage == 12:
+	elif $Vedal.gamestage == 10:
+		Dialogic.start("Office Door - Chase")
+	elif $Vedal.gamestage == 12:
 		Dialogic.start("Office Door - Unlocked")
 		#$House/Door.hide()
 		$House/Door.position.y = -10
@@ -183,10 +191,3 @@ func _on_evil_birthday_card_interacted(body:Variant) -> void:
 
 #END Dialogic Section
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-func _on_objective_locate_dog_init_body_entered(body) -> void:
-	pass # Replace with function body.
-	if body is Vedal:
-		if $Vedal.gamestage == 6:
-			$Vedal.gamestage = 7
-			$Sounds/Chase.play()

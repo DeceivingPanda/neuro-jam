@@ -118,3 +118,7 @@ func _on_objective_locate_dog_init_body_entered(body) -> void:
 		if $Vedal.gamestage == 6:
 			$Vedal.gamestage = 7
 			
+
+
+func _on_evil_birthday_card_interacted(body:Variant) -> void:
+	Dialogic.start("Evil Birthday Card")

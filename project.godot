@@ -25,14 +25,21 @@ GameStateService="*res://addons/game_state_saver/game_state_service.gd"
 [dialogic]
 
 directories/dch_directory={
+"Door": "res://assets/sounds/Door.dch",
+"Evil": "res://assets/sounds/Evil.dch",
 "Phone": "res://scenes/story/house/Phone.dch",
 "Unknown": "res://scenes/story/house/Unknown.dch",
-"Vedal": "res://scenes/story/house/Vedal.dch"
+"Vedal": "res://scenes/story/house/Vedal.dch",
+"neurodog": "res://scenes/story/house/neurodog.dch"
 }
 directories/dtl_directory={
 "House": "res://scenes/story/house/House.dtl",
 "Lava Lamp": "res://scenes/story/house/Lava Lamp.dtl",
-"Post Lava": "res://scenes/story/house/Post Lava.dtl"
+"Neurodog": "res://scenes/story/house/Neurodog.dtl",
+"Post Lava": "res://scenes/story/house/Post Lava.dtl",
+"Post Seagull": "res://scenes/story/house/Post Seagull.dtl",
+"Post Shower": "res://scenes/story/house/Post Shower.dtl",
+"seagull": "res://assets/sounds/seagull.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -62,12 +69,15 @@ translation/add_separator=false
 text/autopauses={}
 layout/style_list=["res://scenes/story/house/Speaker.tres", "res://scenes/story/house/VN.tres"]
 layout/default_style="res://Speaker.tres"
+text/autocolor_names=true
+text/autoadvance_fixed_delay=1.0
+text/autoadvance_enabled=false
 
 [display]
 
 window/size/viewport_width=1080
 window/size/viewport_height=720
-window/stretch/aspect="expand"
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [editor_plugins]

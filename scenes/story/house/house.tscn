@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ddjekwwmi8fvd"]
+[gd_scene load_steps=13 format=3 uid="uid://ddjekwwmi8fvd"]
 
 [ext_resource type="Script" path="res://scenes/story/house/house.gd" id="1_xwcym"]
 [ext_resource type="PackedScene" uid="uid://cbfah0t4re54l" path="res://scenes/menus/options/options.tscn" id="2_3qoh1"]
@@ -18,6 +18,8 @@ data = PackedVector3Array(-4.6268, 1.9245, -1.7852, -4.6268, 1.8401, -1.8605, -4
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e0idb"]
 margin = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qa8qb"]
 
 [node name="House" type="Node3D"]
 script = ExtResource("1_xwcym")
@@ -146,6 +148,7 @@ transform = Transform3D(2.985, 0, 0, 0, 2.985, 0, 0, 0, 2.985, 10.667, 41.545, 5
 
 [node name="HouseCollision" type="MeshInstance3D" parent="House"]
 transform = Transform3D(2.985, 0, 0, 0, 2.985, 0, 0, 0, 2.985, 10.6674, 41.5449, 53.7234)
+visible = false
 mesh = ExtResource("3_dle3k")
 skeleton = NodePath("../..")
 
@@ -178,9 +181,83 @@ transform = Transform3D(3.685, 0, 0, 0, 3.685, 0, 0, 0, 3.685, -8.493, 43.077, 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/LavaLampInit2"]
 shape = SubResource("SphereShape3D_e0idb")
 
+[node name="NeurodogInit1" type="Area3D" parent="Dialog"]
+transform = Transform3D(6.105, 0, 0, 0, 6.105, 0, 0, 0, 6.105, 6.70963, 43.077, 38.407)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/NeurodogInit1"]
+shape = SubResource("SphereShape3D_e0idb")
+
+[node name="NeurodogInit2" type="Area3D" parent="Dialog"]
+transform = Transform3D(6.105, 0, 0, 0, 6.105, 0, 0, 0, 6.105, -5.20736, 43.077, 31.6321)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/NeurodogInit2"]
+shape = SubResource("SphereShape3D_e0idb")
+
+[node name="BeachInit" type="Area3D" parent="Dialog"]
+transform = Transform3D(6.105, 0, 0, 0, 6.105, 0, 0, 0, 6.105, -5.20736, 43.077, 31.6321)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/BeachInit"]
+shape = SubResource("SphereShape3D_e0idb")
+
+[node name="ObjectiveLocateDogInit" type="Area3D" parent="Dialog"]
+transform = Transform3D(6.105, 0, 0, 0, 6.105, 0, 0, 0, 6.105, 5.54967, 43.077, 32.2465)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/ObjectiveLocateDogInit"]
+shape = SubResource("SphereShape3D_e0idb")
+
+[node name="StairsInit" type="Area3D" parent="Dialog"]
+transform = Transform3D(3.685, 0, 0, 0, 3.685, 0, 0, 0, 3.685, 0.0414085, 48.9873, 32.5607)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/StairsInit"]
+transform = Transform3D(1.81, 0, 0, 0, 1.53, 0, 0, 0, 0.365, 0, 0, 0.0540771)
+shape = SubResource("BoxShape3D_qa8qb")
+
+[node name="ShowerInit" type="Area3D" parent="Dialog"]
+transform = Transform3D(3.485, 0, 0, 0, 3.685, 0, 0, 0, 6.17, -6.65044, 48.9873, 36.7962)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/ShowerInit"]
+transform = Transform3D(1.81, 0, 0, 0, 1.53, 0, 0, 0, 0.365, 0, 0, 0.0540771)
+shape = SubResource("BoxShape3D_qa8qb")
+
+[node name="OfficeInit" type="Area3D" parent="Dialog"]
+transform = Transform3D(2.19, 0, 0, 0, 3.71, 0, 0, 0, 11.79, 5.03882, 48.9873, 30.9986)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/OfficeInit"]
+transform = Transform3D(1.81, 0, 0, 0, 1.53, 0, 0, 0, 0.365, 0, 0, 0.0540771)
+shape = SubResource("BoxShape3D_qa8qb")
+
 [node name="Options" parent="." instance=ExtResource("2_3qoh1")]
 visible = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.788
+anchor_right = 0.788
+offset_left = -0.0400391
+offset_top = 4.0
+offset_right = 228.96
+offset_bottom = 60.0
+
+[node name="lblObjective" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_right = 87.0
+offset_bottom = 41.0
+text = "Objective:"
+
+[node name="lblTask" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 226.0
+offset_bottom = 53.0
+bbcode_enabled = true
 
 [connection signal="body_entered" from="Dialog/StartDialogInit" to="." method="_on_start_dialog_init_body_entered"]
 [connection signal="body_entered" from="Dialog/LavaLampInit" to="." method="_on_lava_lamp_init_body_entered"]
 [connection signal="body_entered" from="Dialog/LavaLampInit2" to="." method="_on_lava_lamp_init_2_body_entered"]
+[connection signal="body_entered" from="Dialog/NeurodogInit1" to="." method="_on_neurodog_init_1_body_entered"]
+[connection signal="body_entered" from="Dialog/NeurodogInit2" to="." method="_on_neurodog_init_2_body_entered"]
+[connection signal="body_entered" from="Dialog/BeachInit" to="." method="_on_beach_init_body_entered"]
+[connection signal="body_entered" from="Dialog/ObjectiveLocateDogInit" to="." method="_on_objective_locate_dog_init_body_entered"]
+[connection signal="body_entered" from="Dialog/StairsInit" to="." method="_on_stairs_init_body_entered"]
+[connection signal="body_entered" from="Dialog/ShowerInit" to="." method="_on_shower_init_body_entered"]
+[connection signal="body_entered" from="Dialog/OfficeInit" to="." method="_on_office_init_body_entered"]

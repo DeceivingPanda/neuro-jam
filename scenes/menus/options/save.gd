@@ -22,6 +22,7 @@ func load_data():
 			"sfx_vol": -10,
 			"fov": 70,
 			"mouse_sens": .1,
+			"gamestage": 0,
 		}
 		save_data()
 	game_data = file.get_var()

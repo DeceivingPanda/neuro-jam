@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://yyn35i06yjjk"]
+
+[ext_resource type="Script" path="res://scenes/player/2d_neuro_swim.gd" id="1_5l7f8"]
+[ext_resource type="Texture2D" uid="uid://c0pr4crqqro5v" path="res://assets/images/player/Neuro_swom.png" id="1_213ks"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8cv8"]
+atlas = ExtResource("1_213ks")
+region = Rect2(0, 0, 162, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqrbb"]
+atlas = ExtResource("1_213ks")
+region = Rect2(162, 0, 162, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm8vp"]
+atlas = ExtResource("1_213ks")
+region = Rect2(324, 0, 162, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml6xm"]
+atlas = ExtResource("1_213ks")
+region = Rect2(486, 0, 162, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avjrr"]
+atlas = ExtResource("1_213ks")
+region = Rect2(648, 0, 162, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv4d6"]
+atlas = ExtResource("1_213ks")
+region = Rect2(810, 0, 162, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdslh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8cv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqrbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nm8vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml6xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avjrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv4d6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42t7j"]
+size = Vector2(40, 96)
+
+[node name="2dNeuroSwim" type="CharacterBody2D"]
+script = ExtResource("1_5l7f8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fdslh")
+frame_progress = 0.114773
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(-1, 0)
+scale = Vector2(0.7, 0.7)
+polygon = PackedVector2Array(-5, -112, -10, -110, -16, -104, -19, -98, -18, -79, -20, -49, -25, -31, -19, -20, -17, 9, -10, 34, -13, 49, -12, 61, -6, 91, -8, 109, -8, 112, -3, 115, 15, 115, 20, 111, 18, 101, 18, 94, 17, 90, 19, 54, 15, 35, 21, 8, 24, -10, 26, -30, 20, -52, 19, -83, 18, -99, 12, -108, 3, -112)
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_42t7j")

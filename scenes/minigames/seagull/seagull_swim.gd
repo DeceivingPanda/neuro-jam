@@ -1,6 +1,6 @@
 extends Node2D
-
-var neuro: PackedScene = preload("res://scenes/player/2d_neuro.tscn")
+var vedal2 = false
+var neuro: PackedScene = preload("res://scenes/player/2d_neuro_swim.tscn")
 var seagullScene: PackedScene = preload("res://scenes/minigames/seagull/enemies/seagull.tscn")
 
 #player
@@ -95,7 +95,8 @@ func _process(_delta: float) -> void:
 			spawnerDelaySwimmer -= 1
 			seagullSwimmer.SPEED = 350
 			Dialogic.start("vedalvedalvedal")
-		if distanceTraveled > 20  && changeSprite[1]:
+		if distanceTraveled > 20 and vedal2 == false:
+			vedal2 = true
 			Dialogic.start("vedalvedalvedal2")
 		elif distanceTraveled > 35 && changeSprite[1]:
 			#print("sprite changed - 35")

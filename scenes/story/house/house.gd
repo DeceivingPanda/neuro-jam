@@ -60,6 +60,8 @@ func _process(delta: float) -> void:
 	if $Vedal.gamestage > 8:
 		$House/halldog.position.y =-10
 		$"House/neuro dog Standing2".position.y = -10
+	if $Vedal.gamestage >= 12:
+		$House/Door.position.y = -10
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #This section controls the dialog progression using Dialogic.
 #the variable gamestage in Vedal determines which dialogs can display when. 

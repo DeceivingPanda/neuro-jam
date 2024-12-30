@@ -116,18 +116,25 @@ offset_bottom = 270.0
 text = "Music Volume"
 
 [node name="btnClose" type="Button" parent="."]
-offset_left = 333.585
+offset_left = 282.89
 offset_top = 325.0
-offset_right = 383.585
+offset_right = 332.89
 offset_bottom = 356.0
 text = "Close"
 
 [node name="btnMain" type="Button" parent="."]
-offset_left = 187.755
+offset_left = 153.135
 offset_top = 325.0
-offset_right = 283.755
+offset_right = 249.135
 offset_bottom = 356.0
 text = "Main Menu"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 17.64
+offset_top = 364.685
+offset_right = 192.64
+offset_bottom = 387.685
+text = "Tip: Press R to unstuck"
 
 [connection signal="toggled" from="chkFullScreen" to="." method="_on_chk_full_screen_toggled"]
 [connection signal="value_changed" from="sliderMouseSensitivity" to="." method="_on_slider_mouse_sensitivity_value_changed"]
@@ -136,4 +143,3 @@ text = "Main Menu"
 [connection signal="value_changed" from="sliderMusicVol" to="." method="_on_slider_music_vol_value_changed"]
 [connection signal="pressed" from="btnClose" to="." method="_on_btn_close_pressed"]
 [connection signal="pressed" from="btnMain" to="." method="_on_btn_main_pressed"]
-[connection signal="pressed" from="btnMain" to="." method="_on_btn_close_pressed"]

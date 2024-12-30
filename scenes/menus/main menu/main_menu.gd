@@ -3,7 +3,7 @@ extends Node2D
 var opt = false
 # Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
-#	pass # Replace with function body.
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,7 +15,8 @@ func _process(delta: float) -> void:
 		else:
 			opt = false
 			$Options.hide()
-
+	if $Options.visible == false:
+		opt = false	
 
 
 
@@ -24,6 +25,7 @@ func _on_btn_exit_pressed() -> void:
 
 
 func _on_btn_new_game_pressed() -> void:
+	GameStateService.new_game()
 	get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")
 
 

@@ -25,12 +25,14 @@ GameStateService="*res://addons/game_state_saver/game_state_service.gd"
 [dialogic]
 
 directories/dch_directory={
-"Evil": "res://scenes/story/dialog/characters/Evil.dch",
-"Evil Birthday Card": "res://scenes/story/dialog/characters/Evil Birthday Card.dch",
 "Neuro": "res://scenes/story/dialog/characters/Neuro.dch",
+"Vedal": "res://scenes/story/house/Vedal.dch",
+"Evil": "res://assets/sounds/Evil.dch",
+"Door": "res://assets/sounds/Door.dch",
 "Phone": "res://scenes/story/house/Phone.dch",
 "Unknown": "res://scenes/story/house/Unknown.dch",
-"Vedal": "res://scenes/story/house/Vedal.dch"
+"neurodog": "res://scenes/story/house/neurodog.dch",
+"Evil Birthday Card": "res://scenes/story/dialog/characters/Evil Birthday Card.dch"
 }
 directories/dtl_directory={
 "Evils Birthday Card": "res://scenes/story/dialog/Evils Birthday Card.dtl",
@@ -46,7 +48,12 @@ directories/dtl_directory={
 "Office Door - After": "res://scenes/story/dialog/Office Door - After.dtl",
 "Office Door - Locked": "res://scenes/story/dialog/Office Door - Locked.dtl",
 "Office Door - Unlocked": "res://scenes/story/dialog/Office Door - Unlocked.dtl",
-"Post Lava": "res://scenes/story/house/Post Lava.dtl"
+"Post Lava": "res://scenes/story/house/Post Lava.dtl",
+"Neurodog": "res://scenes/story/house/Neurodog.dtl",
+"Post Lava": "res://scenes/story/house/Post Lava.dtl",
+"Post Seagull": "res://scenes/story/house/Post Seagull.dtl",
+"Post Shower": "res://scenes/story/house/Post Shower.dtl",
+"seagull": "res://assets/sounds/seagull.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -78,12 +85,15 @@ layout/style_list=["res://scenes/story/house/Speaker.tres", "res://scenes/story/
 layout/default_style="res://Speaker.tres"
 variables={}
 glossary/default_case_sensitive=true
+text/autocolor_names=true
+text/autoadvance_fixed_delay=1.0
+text/autoadvance_enabled=false
 
 [display]
 
 window/size/viewport_width=1080
 window/size/viewport_height=720
-window/stretch/aspect="expand"
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [editor_plugins]

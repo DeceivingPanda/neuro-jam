@@ -16,9 +16,15 @@ func updateMouseSense(value):
 	
 func updateMasterVol(vol):
 	AudioServer.set_bus_volume_db(0, vol)
+	Save.game_data.master_vol = vol
+	Save.save_data()
 func updateMusicVol(vol):
 	AudioServer.set_bus_volume_db(1, vol)
+	Save.game_data.music_vol = vol
+	Save.save_data()
 func updateSFXVol(vol):
 	AudioServer.set_bus_volume_db(2, vol)
+	Save.game_data.sfx_vol = vol
+	Save.save_data()
 
 	

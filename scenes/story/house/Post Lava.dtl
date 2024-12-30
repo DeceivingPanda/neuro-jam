@@ -13,6 +13,13 @@ You’re awake, right?  Check on the dog!
 [style name="VN"]
 Wh-who iz tthis? Ddog?
 [style name="Speaker"]
-Unknown: What do you mean? “THE" dog! Stop messing around and find it!\
-
+Unknown: What do you mean? “THE" dog!
+[sound path="res://assets/sounds/dawg walking.mp3" volume="0.0" bus="SFX"]
+[wait time="0.4"]
+[sound path="res://assets/sounds/dawg walking.mp3" volume="0.0" bus="SFX"]
+[wait time="0.5"]
+[sound path="res://assets/sounds/dawg walking.mp3" volume="0.0" bus="SFX"]
+[wait time="0.4"]
+[sound path="res://assets/sounds/dawg walking.mp3" volume="0.0" bus="SFX"]
+Unknown: Stop messing around and find it!
 [signal arg="unlock"]

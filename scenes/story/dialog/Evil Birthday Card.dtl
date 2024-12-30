@@ -1,0 +1,11 @@
+# OPTIONAL HINT - Evil's Birthday Card
+[signal arg="lock"]
+[style name="VN"]
+join "Evil Birthday Card" center [animation="Slide In Up" wait="true"]
+"Evil Birthday Card": "Happy Birthday Evil! You probably wouldn’t have let me in your birthday stream, so I have a surprise for you instead!"
+"Evil Birthday Card": "It’s tucked away in the [living room], but knowing our situation, you probably wouldn’t be able to touch it until Vedal gets a job."
+"Evil Birthday Card": "So I had Anny deliver it! Maybe one day, we could finally [harpoon] at those people on the street! That would be fun!"
+"Evil Birthday Card":  "Anyway, Happy Birthday, and I hope it won’t be lonely! From your sister, Neuro. <3.”
+[clear time="0.5" portraits="false" music="false" background="false" positions="false" style="false"]
+leave "Evil Birthday Card" [animation="Slide Out Down" wait="true"]
+[signal arg="unlock"]

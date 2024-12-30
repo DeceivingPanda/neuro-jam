@@ -26,16 +26,30 @@ GameStateService="*res://addons/game_state_saver/game_state_service.gd"
 
 directories/dch_directory={
 "Door": "res://assets/sounds/Door.dch",
-"Evil": "res://assets/sounds/Evil.dch",
+"Evil": "res://scenes/story/dialog/characters/Evil.dch",
+"Evil Birthday Card": "res://scenes/story/dialog/characters/Evil Birthday Card.dch",
+"Neuro": "res://scenes/story/dialog/characters/Neuro.dch",
 "Phone": "res://scenes/story/house/Phone.dch",
 "Unknown": "res://scenes/story/house/Unknown.dch",
 "Vedal": "res://scenes/story/house/Vedal.dch",
-"neurodog": "res://scenes/story/house/neurodog.dch"
+"neurodog": "res://scenes/story/house/neurodog.dch",
+"sounds/Evil": "res://assets/sounds/Evil.dch"
 }
 directories/dtl_directory={
+"Evil Birthday Card": "res://scenes/story/dialog/Evil Birthday Card.dtl",
+"Final - Boss 1": "res://scenes/story/dialog/Final - Boss 1.dtl",
+"Final - Boss 2": "res://scenes/story/dialog/Final - Boss 2.dtl",
+"Final - Boss 3": "res://scenes/story/dialog/Final - Boss 3.dtl",
+"Final - Boss 4": "res://scenes/story/dialog/Final - Boss 4.dtl",
+"Final - Fighting": "res://scenes/story/dialog/Final - Fighting.dtl",
+"Final - Tutorial": "res://scenes/story/dialog/Final - Tutorial.dtl",
+"Final Act": "res://scenes/story/dialog/Final Act.dtl",
 "House": "res://scenes/story/house/House.dtl",
 "Lava Lamp": "res://scenes/story/house/Lava Lamp.dtl",
 "Neurodog": "res://scenes/story/house/Neurodog.dtl",
+"Office Door - After": "res://scenes/story/dialog/Office Door - After.dtl",
+"Office Door - Locked": "res://scenes/story/dialog/Office Door - Locked.dtl",
+"Office Door - Unlocked": "res://scenes/story/dialog/Office Door - Unlocked.dtl",
 "Post Lava": "res://scenes/story/house/Post Lava.dtl",
 "Post Seagull": "res://scenes/story/house/Post Seagull.dtl",
 "Post Shower": "res://scenes/story/house/Post Shower.dtl",
@@ -69,6 +83,8 @@ translation/add_separator=false
 text/autopauses={}
 layout/style_list=["res://scenes/story/house/Speaker.tres", "res://scenes/story/house/VN.tres"]
 layout/default_style="res://Speaker.tres"
+variables={}
+glossary/default_case_sensitive=true
 text/autocolor_names=true
 text/autoadvance_fixed_delay=1.0
 text/autoadvance_enabled=false
@@ -86,6 +102,11 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/game
 
 [input]
 
+Sprint={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
 Left={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
@@ -127,6 +148,11 @@ dialogic_default_action={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+Interact={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

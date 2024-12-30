@@ -124,6 +124,8 @@ func _on_enemny_projectile_despawn(projectile: Node2D) -> void:
 	
 func _on_player_death() -> void:
 	playerLose.emit()
+	Dialogic.clear()
+	get_tree().change_scene_to_file("res://scenes/story/endings/bad_ending.tscn")
 
 
 func _spawn_enemy_projectiles(body:Node2D, numProj: int, _name:String, _type:String) -> void:

@@ -9,9 +9,7 @@ size = Vector2(79, 78.5)
 collision_layer = 4
 
 [node name="Stone" type="Sprite2D" parent="."]
-position = Vector2(-24, -3)
 texture = ExtResource("1_divl5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-24.5, -3.25)
 shape = SubResource("RectangleShape2D_b5uf8")

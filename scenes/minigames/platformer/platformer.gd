@@ -13,7 +13,6 @@ func _ready() -> void:
 	if current_level.has_signal("player_lose"):
 		var lose:Signal = current_level.player_lose
 		lose.connect(_on_level_player_lose)
-		print(lose.get_connections())
 
 
 func _on_level_player_win(level: int) -> void:

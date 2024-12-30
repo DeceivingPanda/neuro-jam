@@ -1,0 +1,344 @@
+[gd_scene load_steps=12 format=3 uid="uid://gg6p47lgqkie"]
+
+[ext_resource type="Script" path="res://scenes/minigames/platformer/level_1.gd" id="1_ioaof"]
+[ext_resource type="PackedScene" uid="uid://lqs4wrpbodf4" path="res://scenes/minigames/platformer/objects/platform.tscn" id="2_e2jan"]
+[ext_resource type="Texture2D" uid="uid://bc66qpm0t48sv" path="res://assets/images/platformer/GJ_BG_2C.png" id="2_pnncg"]
+[ext_resource type="PackedScene" uid="uid://c5wbpha7blrh6" path="res://scenes/player/2d_neuro.tscn" id="3_adfe2"]
+[ext_resource type="Texture2D" uid="uid://k8xocusdv0lq" path="res://assets/images/screens/You-Lost.png" id="4_dg6q0"]
+[ext_resource type="Texture2D" uid="uid://bmgbccpmdb26g" path="res://assets/texture/lava.png" id="4_f68yq"]
+[ext_resource type="Texture2D" uid="uid://c13nqfps015h7" path="res://assets/images/screens/You-Win.png" id="5_6dmoo"]
+[ext_resource type="PackedScene" uid="uid://b2v4r1byia8t6" path="res://scenes/minigames/platformer/objects/flag.tscn" id="6_5cy6h"]
+[ext_resource type="Script" path="res://addons/game_state_saver/game_state_helper.gd" id="10_7cepi"]
+[ext_resource type="AudioStream" uid="uid://bb7315di6xdh2" path="res://assets/sounds/Glowing ember.mp3" id="10_rhhr4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2hq6"]
+size = Vector2(632, 55)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_ioaof")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_rhhr4")
+autoplay = true
+bus = &"Music"
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 852.0
+offset_top = 562.0
+offset_right = 892.0
+offset_bottom = 602.0
+
+[node name="GjBg2c" type="Sprite2D" parent="Background"]
+position = Vector2(529, -458)
+scale = Vector2(0.785, 0.785)
+texture = ExtResource("2_pnncg")
+
+[node name="2DNeuro" parent="." instance=ExtResource("3_adfe2")]
+position = Vector2(65, 438)
+scale = Vector2(1.445, 1.445)
+
+[node name="Camera2D" type="Camera2D" parent="2DNeuro"]
+scale = Vector2(0.435, 0.435)
+limit_left = -10
+limit_right = 2770
+limit_bottom = 600
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="lava" type="Control" parent="Ground"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lava2" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1823.0
+offset_top = 585.0
+offset_right = 1823.0
+offset_bottom = 585.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava3" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1823.0
+offset_top = 601.0
+offset_right = 1823.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava4" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1823.0
+offset_top = 617.0
+offset_right = 1823.0
+offset_bottom = 617.0
+
+[node name="Lava75" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2394.0
+offset_top = 601.0
+offset_right = 2394.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava76" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2394.0
+offset_top = 617.0
+offset_right = 2394.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava78" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2426.0
+offset_top = 585.0
+offset_right = 2426.0
+offset_bottom = 585.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava79" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2426.0
+offset_top = 601.0
+offset_right = 2426.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava80" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2426.0
+offset_top = 617.0
+offset_right = 2426.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
+
+[node name="Platform" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(54, 566)
+
+[node name="Platform2" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(133, 566)
+
+[node name="Platform3" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(213, 566)
+
+[node name="Platform4" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(292, 566)
+
+[node name="Platform5" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(371, 566)
+
+[node name="Platform6" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(450, 566)
+
+[node name="Platform7" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(530, 566)
+
+[node name="Platform8" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(609, 566)
+
+[node name="Platform9" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(689, 566)
+
+[node name="Platform10" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(768, 566)
+
+[node name="Platform11" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(848, 566)
+
+[node name="Platform12" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(927, 566)
+
+[node name="Platform13" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(1006, 566)
+
+[node name="Platform14" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(1085, 566)
+
+[node name="Platform15" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(1165, 566)
+
+[node name="Platform16" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(1244, 566)
+
+[node name="Platform17" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(1324, 566)
+
+[node name="Platform18" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(1403, 566)
+
+[node name="Platform19" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(1483, 566)
+
+[node name="Platform20" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(1562, 566)
+
+[node name="Platform21" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(1641, 566)
+
+[node name="Platform22" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(1720, 566)
+
+[node name="Platform23" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(1800, 566)
+
+[node name="Platform27" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(2483, 563)
+
+[node name="Platform28" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(2562, 563)
+
+[node name="Platform29" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(2641, 563)
+
+[node name="Platform30" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(2720, 563)
+
+[node name="Platform31" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, 563)
+
+[node name="Platform32" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(2013, 440)
+
+[node name="Platform33" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(2092, 440)
+
+[node name="Platform34" parent="Ground" instance=ExtResource("2_e2jan")]
+position = Vector2(2172, 440)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Platform31" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, 484)
+
+[node name="Platform32" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, 405)
+
+[node name="Platform33" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, 326)
+
+[node name="Platform34" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, 247)
+
+[node name="Platform35" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, 168)
+
+[node name="Platform36" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, 89)
+
+[node name="Platform37" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, 10)
+
+[node name="Platform38" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, -69)
+
+[node name="Platform39" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, -148)
+
+[node name="Platform40" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, -227)
+
+[node name="Platform41" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, -306)
+
+[node name="Platform42" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(2800, -385)
+
+[node name="Platform43" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-26, 566)
+
+[node name="Platform44" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-26, 487)
+
+[node name="Platform45" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-26, 408)
+
+[node name="Platform46" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-26, 329)
+
+[node name="Platform47" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-26, 250)
+
+[node name="Platform48" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-26, 171)
+
+[node name="Platform49" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-26, 92)
+
+[node name="Platform50" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-26, 13)
+
+[node name="Platform51" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-26, -66)
+
+[node name="Platform52" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-26, -145)
+
+[node name="Platform53" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-26, -224)
+
+[node name="Platform54" parent="Walls" instance=ExtResource("2_e2jan")]
+position = Vector2(-26, -303)
+
+[node name="Result Screen" type="Node2D" parent="."]
+
+[node name="Lose Screen" type="Sprite2D" parent="Result Screen"]
+position = Vector2(-950, 360)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_dg6q0")
+
+[node name="Camera2D" type="Camera2D" parent="Result Screen/Lose Screen"]
+enabled = false
+position_smoothing_enabled = true
+
+[node name="Win Screen" type="Sprite2D" parent="Result Screen"]
+position = Vector2(-950, 1110)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_6dmoo")
+
+[node name="Camera2D" type="Camera2D" parent="Result Screen/Win Screen"]
+enabled = false
+position_smoothing_enabled = true
+
+[node name="winarea" type="Area2D" parent="."]
+position = Vector2(2065, 594)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="winarea"]
+position = Vector2(73, 38)
+shape = SubResource("RectangleShape2D_o2hq6")
+
+[node name="Flag2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Flag" parent="Flag2" instance=ExtResource("6_5cy6h")]
+position = Vector2(2357, 182)
+
+[node name="GameStateHelper" type="Node" parent="Flag2/Flag"]
+script = ExtResource("10_7cepi")
+save_properties = Array[String](["input_pickable"])
+
+[node name="Flag2" parent="Flag2" instance=ExtResource("6_5cy6h")]
+position = Vector2(2439, 182)
+
+[node name="GameStateHelper" type="Node" parent="Flag2/Flag2"]
+script = ExtResource("10_7cepi")
+save_properties = Array[String](["input_pickable"])
+
+[node name="Flag3" parent="Flag2" instance=ExtResource("6_5cy6h")]
+position = Vector2(2439, 102)
+
+[node name="GameStateHelper" type="Node" parent="Flag2/Flag3"]
+script = ExtResource("10_7cepi")
+save_properties = Array[String](["input_pickable"])
+
+[connection signal="body_entered" from="winarea" to="." method="_on_winarea_body_entered"]
+[connection signal="player_entered_flag" from="Flag2/Flag" to="." method="_on_flag_player_entered_flag"]
+[connection signal="player_entered_flag" from="Flag2/Flag2" to="." method="_on_flag_player_entered_flag"]
+[connection signal="player_entered_flag" from="Flag2/Flag3" to="." method="_on_flag_player_entered_flag"]

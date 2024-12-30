@@ -68,7 +68,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4sxl"]
-size = Vector2(46, 101)
+size = Vector2(40, 96)
 
 [node name="2DNeuro" type="CharacterBody2D"]
 collision_mask = 31
@@ -79,11 +79,12 @@ sprite_frames = SubResource("SpriteFrames_irsyy")
 frame_progress = 0.824467
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(-1, 0)
 scale = Vector2(0.7, 0.7)
 polygon = PackedVector2Array(-5, -112, -10, -110, -16, -104, -19, -98, -18, -79, -20, -49, -25, -31, -19, -20, -17, 9, -10, 34, -13, 49, -12, 61, -6, 91, -8, 109, -8, 112, -3, 115, 15, 115, 20, 111, 18, 101, 18, 94, 17, 90, 19, 54, 15, 35, 21, 8, 24, -10, 26, -30, 20, -52, 19, -83, 18, -99, 12, -108, 3, -112)
+disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 6.5)
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_o4sxl")
-disabled = true

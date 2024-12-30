@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://gg6p47lgqkie"]
 
 [ext_resource type="Script" path="res://scenes/minigames/platformer/level_1.gd" id="1_ioaof"]
-[ext_resource type="PackedScene" uid="uid://lqs4wrpbodf4" path="res://scenes/minigames/objects/platform.tscn" id="2_e2jan"]
+[ext_resource type="PackedScene" uid="uid://lqs4wrpbodf4" path="res://scenes/minigames/platformer/objects/platform.tscn" id="2_e2jan"]
 [ext_resource type="Texture2D" uid="uid://bc66qpm0t48sv" path="res://assets/images/platformer/GJ_BG_2C.png" id="2_pnncg"]
 [ext_resource type="PackedScene" uid="uid://c5wbpha7blrh6" path="res://scenes/player/2d_neuro.tscn" id="3_adfe2"]
 [ext_resource type="Texture2D" uid="uid://k8xocusdv0lq" path="res://assets/images/screens/You-Lost.png" id="4_dg6q0"]
 [ext_resource type="Texture2D" uid="uid://bmgbccpmdb26g" path="res://assets/texture/lava.png" id="4_f68yq"]
 [ext_resource type="Texture2D" uid="uid://c13nqfps015h7" path="res://assets/images/screens/You-Win.png" id="5_6dmoo"]
-[ext_resource type="PackedScene" uid="uid://b2v4r1byia8t6" path="res://scenes/minigames/objects/flag.tscn" id="6_5cy6h"]
+[ext_resource type="PackedScene" uid="uid://b2v4r1byia8t6" path="res://scenes/minigames/platformer/objects/flag.tscn" id="6_5cy6h"]
 [ext_resource type="Script" path="res://addons/game_state_saver/game_state_helper.gd" id="10_7cepi"]
 [ext_resource type="AudioStream" uid="uid://bb7315di6xdh2" path="res://assets/sounds/Glowing ember.mp3" id="10_rhhr4"]
 
@@ -53,185 +53,865 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Lava2" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1823, 585)
+[node name="Lava2" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1823.0
+offset_top = 585.0
+offset_right = 1823.0
+offset_bottom = 585.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava3" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1823, 601)
+[node name="Lava3" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1823.0
+offset_top = 601.0
+offset_right = 1823.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava4" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1823, 617)
+[node name="Lava4" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1823.0
+offset_top = 617.0
+offset_right = 1823.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava6" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1855, 585)
+[node name="Lava6" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1823.0
+offset_top = 633.0
+offset_right = 1855.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava7" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1855, 601)
+[node name="Lava7" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1823.0
+offset_top = 648.0
+offset_right = 1855.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava8" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1855, 617)
+[node name="Lava5" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1855.0
+offset_top = 585.0
+offset_right = 1887.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava10" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1886, 585)
+[node name="Lava8" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1855.0
+offset_top = 601.0
+offset_right = 1887.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava11" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1886, 601)
+[node name="Lava9" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1855.0
+offset_top = 617.0
+offset_right = 1887.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava12" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1886, 617)
+[node name="Lava10" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1855.0
+offset_top = 633.0
+offset_right = 1887.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava14" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1918, 585)
+[node name="Lava11" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1855.0
+offset_top = 648.0
+offset_right = 1887.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava15" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1918, 601)
+[node name="Lava12" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1887.0
+offset_top = 585.0
+offset_right = 1919.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava16" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1918, 617)
+[node name="Lava13" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1887.0
+offset_top = 601.0
+offset_right = 1919.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava18" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1950, 585)
+[node name="Lava14" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1887.0
+offset_top = 617.0
+offset_right = 1919.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava19" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1950, 601)
+[node name="Lava15" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1887.0
+offset_top = 633.0
+offset_right = 1919.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava20" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1950, 617)
+[node name="Lava16" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1887.0
+offset_top = 648.0
+offset_right = 1919.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava22" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1982, 585)
+[node name="Lava17" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1919.0
+offset_top = 585.0
+offset_right = 1951.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava23" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1982, 601)
+[node name="Lava18" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1919.0
+offset_top = 601.0
+offset_right = 1951.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava24" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(1982, 617)
+[node name="Lava19" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1919.0
+offset_top = 617.0
+offset_right = 1951.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava26" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2013, 585)
+[node name="Lava20" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1919.0
+offset_top = 633.0
+offset_right = 1951.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava27" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2013, 601)
+[node name="Lava21" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1919.0
+offset_top = 648.0
+offset_right = 1951.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava28" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2013, 617)
+[node name="Lava22" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1951.0
+offset_top = 585.0
+offset_right = 1983.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava30" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2045, 585)
+[node name="Lava23" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1951.0
+offset_top = 601.0
+offset_right = 1983.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava31" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2045, 601)
+[node name="Lava24" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1951.0
+offset_top = 617.0
+offset_right = 1983.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava32" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2045, 617)
+[node name="Lava25" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1951.0
+offset_top = 633.0
+offset_right = 1983.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava34" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2077, 585)
+[node name="Lava26" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1951.0
+offset_top = 648.0
+offset_right = 1983.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava35" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2077, 601)
+[node name="Lava27" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1983.0
+offset_top = 585.0
+offset_right = 2015.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava36" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2077, 617)
+[node name="Lava28" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 1983.0
+offset_top = 601.0
+offset_right = 2015.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava38" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2109, 585)
+[node name="Lava29" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1983.0
+offset_top = 617.0
+offset_right = 2015.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava39" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2109, 601)
+[node name="Lava30" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1983.0
+offset_top = 633.0
+offset_right = 2015.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava40" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2109, 617)
+[node name="Lava31" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1983.0
+offset_top = 648.0
+offset_right = 2015.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava42" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2140, 585)
+[node name="Lava32" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2015.0
+offset_top = 585.0
+offset_right = 2047.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava43" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2140, 601)
+[node name="Lava33" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2015.0
+offset_top = 601.0
+offset_right = 2047.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava44" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2140, 617)
+[node name="Lava34" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2015.0
+offset_top = 617.0
+offset_right = 2047.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava46" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2172, 585)
+[node name="Lava35" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2015.0
+offset_top = 633.0
+offset_right = 2047.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava47" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2172, 601)
+[node name="Lava36" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2015.0
+offset_top = 648.0
+offset_right = 2047.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava48" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2172, 617)
+[node name="Lava37" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2047.0
+offset_top = 585.0
+offset_right = 2079.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava50" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2204, 585)
+[node name="Lava38" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2047.0
+offset_top = 601.0
+offset_right = 2079.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava51" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2204, 601)
+[node name="Lava39" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2047.0
+offset_top = 617.0
+offset_right = 2079.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava52" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2204, 617)
+[node name="Lava40" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2047.0
+offset_top = 633.0
+offset_right = 2079.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava54" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2236, 585)
+[node name="Lava41" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2047.0
+offset_top = 648.0
+offset_right = 2079.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava55" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2236, 601)
+[node name="Lava42" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2079.0
+offset_top = 585.0
+offset_right = 2111.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava56" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2236, 617)
+[node name="Lava43" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2079.0
+offset_top = 601.0
+offset_right = 2111.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava58" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2267, 585)
+[node name="Lava44" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2079.0
+offset_top = 617.0
+offset_right = 2111.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava59" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2267, 601)
+[node name="Lava45" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2079.0
+offset_top = 633.0
+offset_right = 2111.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava60" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2267, 617)
+[node name="Lava46" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2079.0
+offset_top = 648.0
+offset_right = 2111.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava62" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2299, 585)
+[node name="Lava47" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2111.0
+offset_top = 585.0
+offset_right = 2143.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava63" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2299, 601)
+[node name="Lava48" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2111.0
+offset_top = 601.0
+offset_right = 2143.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava64" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2299, 617)
+[node name="Lava49" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2111.0
+offset_top = 617.0
+offset_right = 2143.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava66" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2331, 585)
+[node name="Lava50" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2111.0
+offset_top = 633.0
+offset_right = 2143.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava67" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2331, 601)
+[node name="Lava51" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2111.0
+offset_top = 648.0
+offset_right = 2143.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava68" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2331, 617)
+[node name="Lava52" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2143.0
+offset_top = 585.0
+offset_right = 2175.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava70" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2363, 585)
+[node name="Lava53" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2143.0
+offset_top = 601.0
+offset_right = 2175.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava71" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2363, 601)
+[node name="Lava54" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2143.0
+offset_top = 617.0
+offset_right = 2175.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava72" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2363, 617)
+[node name="Lava55" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2143.0
+offset_top = 633.0
+offset_right = 2175.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava74" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2394, 585)
+[node name="Lava56" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2143.0
+offset_top = 648.0
+offset_right = 2175.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava75" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2394, 601)
+[node name="Lava57" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2175.0
+offset_top = 585.0
+offset_right = 2207.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava76" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2394, 617)
+[node name="Lava58" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2175.0
+offset_top = 601.0
+offset_right = 2207.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava78" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2426, 585)
+[node name="Lava59" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2175.0
+offset_top = 617.0
+offset_right = 2207.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava79" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2426, 601)
+[node name="Lava60" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2175.0
+offset_top = 633.0
+offset_right = 2207.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
 
-[node name="Lava80" parent="Ground/lava" instance=ExtResource("1_hwem0")]
-position = Vector2(2426, 617)
+[node name="Lava61" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2175.0
+offset_top = 648.0
+offset_right = 2207.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava62" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2207.0
+offset_top = 585.0
+offset_right = 2239.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava63" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2207.0
+offset_top = 601.0
+offset_right = 2239.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava64" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2207.0
+offset_top = 617.0
+offset_right = 2239.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava65" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2207.0
+offset_top = 633.0
+offset_right = 2239.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava66" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2207.0
+offset_top = 648.0
+offset_right = 2239.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava67" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2239.0
+offset_top = 585.0
+offset_right = 2271.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava68" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2239.0
+offset_top = 601.0
+offset_right = 2271.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava69" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2239.0
+offset_top = 617.0
+offset_right = 2271.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava70" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2239.0
+offset_top = 633.0
+offset_right = 2271.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava71" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2239.0
+offset_top = 648.0
+offset_right = 2271.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava72" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2271.0
+offset_top = 585.0
+offset_right = 2303.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava73" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2271.0
+offset_top = 601.0
+offset_right = 2303.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava74" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2271.0
+offset_top = 617.0
+offset_right = 2303.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava75" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2271.0
+offset_top = 633.0
+offset_right = 2303.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava76" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2271.0
+offset_top = 648.0
+offset_right = 2303.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava77" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2303.0
+offset_top = 585.0
+offset_right = 2335.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava78" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2303.0
+offset_top = 601.0
+offset_right = 2335.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava79" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2303.0
+offset_top = 617.0
+offset_right = 2335.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava80" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2303.0
+offset_top = 633.0
+offset_right = 2335.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava81" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2303.0
+offset_top = 648.0
+offset_right = 2335.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava82" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2335.0
+offset_top = 585.0
+offset_right = 2367.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava83" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2335.0
+offset_top = 601.0
+offset_right = 2367.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava84" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2335.0
+offset_top = 617.0
+offset_right = 2367.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava85" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2335.0
+offset_top = 633.0
+offset_right = 2367.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava86" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2335.0
+offset_top = 648.0
+offset_right = 2367.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava87" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2367.0
+offset_top = 585.0
+offset_right = 2399.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava88" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2367.0
+offset_top = 601.0
+offset_right = 2399.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava89" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2367.0
+offset_top = 617.0
+offset_right = 2399.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava90" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2367.0
+offset_top = 633.0
+offset_right = 2399.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava91" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2367.0
+offset_top = 648.0
+offset_right = 2399.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava92" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2398.0
+offset_top = 585.0
+offset_right = 2430.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava93" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2398.0
+offset_top = 601.0
+offset_right = 2430.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava94" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2398.0
+offset_top = 617.0
+offset_right = 2430.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava95" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2398.0
+offset_top = 633.0
+offset_right = 2430.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava96" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2398.0
+offset_top = 648.0
+offset_right = 2430.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava97" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2430.0
+offset_top = 585.0
+offset_right = 2462.0
+offset_bottom = 601.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava98" type="TextureRect" parent="Ground/lava"]
+layout_mode = 0
+offset_left = 2430.0
+offset_top = 601.0
+offset_right = 2462.0
+offset_bottom = 617.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava99" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2430.0
+offset_top = 617.0
+offset_right = 2462.0
+offset_bottom = 633.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava100" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2430.0
+offset_top = 633.0
+offset_right = 2462.0
+offset_bottom = 649.0
+texture = ExtResource("4_f68yq")
+
+[node name="Lava101" type="TextureRect" parent="Ground/lava"]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 2430.0
+offset_top = 648.0
+offset_right = 2462.0
+offset_bottom = 664.0
+texture = ExtResource("4_f68yq")
 
 [node name="Platform" parent="Ground" instance=ExtResource("2_e2jan")]
 position = Vector2(54, 566)
@@ -421,10 +1101,11 @@ enabled = false
 position_smoothing_enabled = true
 
 [node name="winarea" type="Area2D" parent="."]
+visible = false
 position = Vector2(2065, 594)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="winarea"]
-position = Vector2(35, 64)
+position = Vector2(73, 38)
 shape = SubResource("RectangleShape2D_o2hq6")
 
 [node name="Flag2" type="Control" parent="."]
@@ -454,66 +1135,6 @@ position = Vector2(2439, 102)
 script = ExtResource("10_7cepi")
 save_properties = Array[String](["input_pickable"])
 
-[connection signal="player_entered_lava" from="Ground/lava/Lava2" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava3" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava4" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava6" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava7" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava8" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava10" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava11" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava12" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava14" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava15" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava16" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava18" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava19" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava20" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava22" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava23" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava24" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava26" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava27" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava28" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava30" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava31" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava32" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava34" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava35" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava36" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava38" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava39" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava40" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava42" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava43" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava44" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava46" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava47" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava48" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava50" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava51" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava52" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava54" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava55" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava56" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava58" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava59" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava60" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava62" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava63" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava64" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava66" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava67" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava68" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava70" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava71" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava72" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava74" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava75" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava76" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava78" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava79" to="." method="_on_lava_player_entered_lava"]
-[connection signal="player_entered_lava" from="Ground/lava/Lava80" to="." method="_on_lava_player_entered_lava"]
 [connection signal="body_entered" from="winarea" to="." method="_on_winarea_body_entered"]
 [connection signal="player_entered_flag" from="Flag2/Flag" to="." method="_on_flag_player_entered_flag"]
 [connection signal="player_entered_flag" from="Flag2/Flag2" to="." method="_on_flag_player_entered_flag"]

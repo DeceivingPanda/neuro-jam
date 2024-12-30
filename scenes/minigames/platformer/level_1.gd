@@ -18,19 +18,16 @@ func _on_lava_player_entered_lava(body: CharacterBody2D) -> void:
 	pass
 
 func _on_flag_player_entered_flag(body: PhysicsBody2D) -> void:
-	print("player touched flag pole: %s" % body)
-	
+	#print("player touched flag pole: %s" % body)
 	$"2DNeuro/Camera2D".enabled = false
 	$"Result Screen/Win Screen/Camera2D".enabled = true
-	Dialogic.start("platformer")
+	Dialogic.start("res://scenes/minigames/platformer/platformer.dtl")
 	get_tree().change_scene_to_file("res://scenes/minigames/platformer/level_1.tscn")
 
 
 
-
 func _on_winarea_body_entered(body: PhysicsBody2D) -> void:
-	print("player in lava")
-#print(body)
+	#print("player in lava: %s" % body)
 	$"2DNeuro/Camera2D".enabled = false
 	$"Result Screen/Lose Screen/Camera2D".enabled = true
 	get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")

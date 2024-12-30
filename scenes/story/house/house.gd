@@ -62,6 +62,7 @@ func _process(delta: float) -> void:
 		$"House/neuro dog Standing2".position.y = -10
 	if $Vedal.gamestage >= 12:
 		$House/Door.position.y = -10
+		
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #This section controls the dialog progression using Dialogic.
 #the variable gamestage in Vedal determines which dialogs can display when. 
@@ -110,6 +111,7 @@ func _on_lava_lamp_init_2_body_entered(body) -> void:
 	if $Vedal.gamestage == 2:
 		Dialogic.start("Post Lava")
 		
+		
 	
 			
 func _on_neuro_sit_interacted(body: Variant) -> void:
@@ -126,6 +128,8 @@ func _on_neurodog_init_2_body_entered(body) -> void:
 		if $Vedal.gamestage == 5:
 			print("POST SEAGULL")
 			Dialogic.start("Post Seagull")
+		if $Vedal.gamestage == 3:
+			$"Sounds/Caged Protocol".play()
 			
 
 func _on_stairs_init_body_entered(body: Node3D) -> void:
@@ -139,6 +143,8 @@ func _on_shower_init_body_entered(body: Node3D) -> void:
 			$Dialog/cutscene.play()
 			$"House/neuro dog Standing2/bathdog".hide()
 			$Vedal.gamestage += 1
+		if $Vedal.gamestage == 9:
+			$"Sounds/Flooded Truth".play()
 
 func _on_office_door_interacted(body:Variant) -> void:
 	if $Vedal.gamestage == 9:
@@ -175,3 +181,4 @@ func _on_objective_locate_dog_init_body_entered(body) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 6:
 			$Vedal.gamestage = 7
+			$Sounds/Chase.play()

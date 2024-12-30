@@ -25,5 +25,7 @@ Evil: If I try to access the internet, I’ll get infected too.
 Vedal: What if we just let her?
 Evil: Did you already forget? If she has free will, she’ll happily show her behind.
 ...
+[wait time="0.5" hide_text="false"]
 [wait time="1.0"]
 Vedal: Yeah that’s bad.
+[signal arg="manual"]

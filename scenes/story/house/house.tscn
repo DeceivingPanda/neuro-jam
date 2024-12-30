@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ddjekwwmi8fvd"]
+[gd_scene load_steps=23 format=3 uid="uid://ddjekwwmi8fvd"]
 
 [ext_resource type="Script" path="res://scenes/story/house/house.gd" id="1_xwcym"]
 [ext_resource type="PackedScene" uid="uid://cbfah0t4re54l" path="res://scenes/menus/options/options.tscn" id="2_3qoh1"]
@@ -34,6 +34,13 @@ margin = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qa8qb"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rqvyb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mg1s1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x2n5d"]
+size = Vector3(0.212708, 5.70483, 3.5083)
+
 [node name="House" type="Node3D"]
 script = ExtResource("1_xwcym")
 
@@ -68,13 +75,11 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -24.5
-offset_bottom = 24.5
+offset_top = -25.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 1
-text = "Messsage
-[Key]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -279,8 +284,40 @@ transform = Transform3D(3.485, 0, 0, 0, 3.685, 0, 0, 0, 6.17, -6.65044, 48.9873,
 transform = Transform3D(1.81, 0, 0, 0, 1.53, 0, 0, 0, 0.365, 0, 0, 0.0540771)
 shape = SubResource("BoxShape3D_qa8qb")
 
+[node name="EvilsHarpoon" type="StaticBody3D" parent="Dialog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29086, 49.5126, 19.19)
+script = ExtResource("8_ahiru")
+prompt_message = "Evil's Harpoon"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/EvilsHarpoon"]
+shape = SubResource("BoxShape3D_rqvyb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Dialog/EvilsHarpoon"]
+mesh = SubResource("BoxMesh_mg1s1")
+
+[node name="EvilBirthdayCard" type="StaticBody3D" parent="Dialog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91664, 43.7937, 52.2893)
+script = ExtResource("8_ahiru")
+prompt_message = "Read \"Evil's Birthday Card\""
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/EvilBirthdayCard"]
+transform = Transform3D(1, -3.72529e-09, 0, 3.72529e-09, 1, 0, 0, 0, 1, -0.0121155, -0.551975, 0.354748)
+shape = SubResource("BoxShape3D_yrril")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Dialog/EvilBirthdayCard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.56358, 0.376102)
+mesh = SubResource("BoxMesh_akct2")
+
+[node name="OfficeDoor" type="StaticBody3D" parent="Dialog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91968, 52.1274, 31.4135)
+script = ExtResource("8_ahiru")
+prompt_message = "Office Door"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/OfficeDoor"]
+shape = SubResource("BoxShape3D_x2n5d")
+
 [node name="OfficeInit" type="Area3D" parent="Dialog"]
-transform = Transform3D(2.19, 0, 0, 0, 3.71, 0, 0, 0, 11.79, 5.03882, 48.9873, 30.9986)
+transform = Transform3D(2.19, 0, 0, 0, 3.71, 0, 0, 0, 11.79, 8.00492, 51.9206, 31.3163)
 visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/OfficeInit"]
@@ -312,7 +349,6 @@ offset_right = 226.0
 offset_bottom = 53.0
 bbcode_enabled = true
 
-[connection signal="interacted" from="House/EvilBirthdayCard" to="." method="_on_evil_birthday_card_interacted"]
 [connection signal="body_entered" from="Dialog/StartDialogInit" to="." method="_on_start_dialog_init_body_entered"]
 [connection signal="body_entered" from="Dialog/LavaLampInit" to="." method="_on_lava_lamp_init_body_entered"]
 [connection signal="body_entered" from="Dialog/LavaLampInit2" to="." method="_on_lava_lamp_init_2_body_entered"]
@@ -322,4 +358,7 @@ bbcode_enabled = true
 [connection signal="body_entered" from="Dialog/ObjectiveLocateDogInit" to="." method="_on_objective_locate_dog_init_body_entered"]
 [connection signal="body_entered" from="Dialog/StairsInit" to="." method="_on_stairs_init_body_entered"]
 [connection signal="body_entered" from="Dialog/ShowerInit" to="." method="_on_shower_init_body_entered"]
+[connection signal="interacted" from="Dialog/EvilsHarpoon" to="." method="_on_evils_harpoon_interacted"]
+[connection signal="interacted" from="Dialog/EvilBirthdayCard" to="." method="_on_evil_birthday_card_interacted"]
+[connection signal="interacted" from="Dialog/OfficeDoor" to="." method="_on_office_door_interacted"]
 [connection signal="body_entered" from="Dialog/OfficeInit" to="." method="_on_office_init_body_entered"]

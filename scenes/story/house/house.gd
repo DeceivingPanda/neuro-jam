@@ -6,6 +6,7 @@ var OptionLock = false
 func _ready() -> void:
 	Dialogic.signal_event.connect(_narative)
 	$Options.hide()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#controls the Option menu, ControlLock is used in Vedal's script to lock character movement
@@ -31,11 +32,17 @@ func _process(delta: float) -> void:
 		6:
 			$Control/lblTask.text = "Check on the dog"
 		7:
-				$Control/lblTask.text = "Catch the dog"
+			$Control/lblTask.text = "Catch the dog"
 		8:
-				$Control/lblTask.text = "Follow the dog to the Bathroom"
+			$Control/lblTask.text = "Follow the dog to the Bathroom"
 		9:
-				$Control/lblTask.text = "Head to the office (Right next to stairs)"
+			$Control/lblTask.text = "Head to the office (Right next to stairs)"
+		10:
+			$Control/lblTask.text = "Find a way to get into the office"
+		11:
+			$Control/lblTask.text = "Break the office door with Evil's harpoon"
+		12:
+			$Control/lblTask.text = "Access Neuro's computer in the office"
 	$Control/lblObjective.text = str($Vedal.gamestage)
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #This section controls the dialog progression using Dialogic.
@@ -78,47 +85,64 @@ func _on_lava_lamp_init_2_body_entered(body) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 2:
 			Dialogic.start("Post Lava")
-			
+
 func _on_neurodog_init_1_body_entered(body) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 3:
 			Dialogic.start("Neurodog")
 
-func _on_neurodog_init_2_body_entered(body) -> void:
-	if body is Vedal:
-		if $Vedal.gamestage == 5:
-			Dialogic.start("Post Seagull")
-
 func _on_beach_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 4:
 			Dialogic.start("seagull")
-			
+
+func _on_neurodog_init_2_body_entered(body) -> void:
+	if body is Vedal:
+		if $Vedal.gamestage == 5:
+			print("POST SEAGULL")
+			Dialogic.start("Post Seagull")
+
 func _on_stairs_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 7:
 			Dialogic.start("seagull")
 
-
 func _on_shower_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 8:
 			Dialogic.start("seagull")
-			
+
+func _on_office_door_interacted(body: Variant) -> void:
+	if $Vedal.gamestage == 9:
+		Dialogic.start("Office Door - Locked")
+	if $Vedal.gamestage == 11:
+		Dialogic.start("Office Door - Unlocked")
+		$Dialog/OfficeDoor.queue_free()
+
+func _on_evils_harpoon_interacted(body: Variant) -> void:
+	if $Vedal.gamestage == 10:
+		$Vedal.gamestage += 1
+		Dialogic.VAR._set("get_harpoon_flag", true)
+	Dialogic.start("Harpoon")
+
 func _on_office_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
-		if $Vedal.gamestage == 9:
-			Dialogic.start("Office Door - Locked")
+		if $Vedal.gamestage == 12:
+			Dialogic.start("seagull")
+			$Vedal.gamestage += 1
+		if $Vedal.gamestage == 13:
+			Dialogic.start("Final Act")
+
+func _on_evil_birthday_card_interacted(body:Variant) -> void:
+	$Vedal.gamestage = 9
+	Dialogic.start("Evil Birthday Card")
+
 #END Dialogic Section
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
 func _on_objective_locate_dog_init_body_entered(body) -> void:
+	pass # Replace with function body.
 	if body is Vedal:
 		if $Vedal.gamestage == 6:
 			$Vedal.gamestage = 7
 			
-
-
-func _on_evil_birthday_card_interacted(body:Variant) -> void:
-	Dialogic.start("Evil Birthday Card")

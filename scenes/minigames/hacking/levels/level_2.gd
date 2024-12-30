@@ -12,6 +12,7 @@ signal playerLose
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Dialogic.signal_event.connect(_narative)
 	Dialogic.start("Final Boss 1")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	#create enemies
@@ -149,7 +150,11 @@ func _on_player_death() -> void:
 	Dialogic.clear()
 	get_tree().change_scene_to_file("res://scenes/story/endings/bad_ending.tscn")
 
-
+func _narative(argument: String):
+	if argument == "auto":
+		Dialogic.Inputs.auto_advance.enabled_forced = true
+	elif argument == "manual":
+		Dialogic.Inputs.auto_advance.enabled_forced = false
 func _spawn_enemy_projectiles(body:Node2D, numProj: int, _name:String, _type:String) -> void:
 	#get markers
 	var markers:Node2D = marker_sprial_scene.instantiate()

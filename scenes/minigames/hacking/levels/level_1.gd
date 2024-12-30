@@ -12,6 +12,7 @@ signal playerLose
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Dialogic.signal_event.connect(_narative)
 	Dialogic.start("Final - Tutorial")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	#create enemies
@@ -48,6 +49,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+func _narative(argument: String):
+	if argument == "auto":
+		Dialogic.Inputs.auto_advance.enabled_forced = true
+	elif argument == "manual":
+		Dialogic.Inputs.auto_advance.enabled_forced = false
 
 func _on_player_shoot_harpon(pos: Vector2, player_direction: Vector2) -> void:
 	var harpoon:Area2D = harpoon_scene.instantiate()

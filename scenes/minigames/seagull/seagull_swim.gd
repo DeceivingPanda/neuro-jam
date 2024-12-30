@@ -35,7 +35,7 @@ var max_time: float = 40.0
 func _ready() -> void:
 	player = neuro.instantiate()
 	seagullSwimmer = seagullScene.instantiate()
-	
+	Dialogic.signal_event.connect(_narative)
 	#add scenes to current tree
 	$Player.add_child(player)
 	$Enemies.add_child(seagullSwimmer)
@@ -66,7 +66,11 @@ func _ready() -> void:
 	randomize()
 	$LevelWin.start(max_time)
 
-
+func _narative(argument: String):
+	if argument == "auto":
+		Dialogic.Inputs.auto_advance.enabled_forced = true
+	elif argument == "manual":
+		Dialogic.Inputs.auto_advance.enabled_forced = false
 func _process(_delta: float) -> void:
 	#$"Player/2DNeuro".set_physics_process(true)
 	#$Enemies/Seagull.set_physics_process(true)

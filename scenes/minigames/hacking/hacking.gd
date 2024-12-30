@@ -31,22 +31,25 @@ func _handle_level_up(levelNum: int) -> void:
 	match levelNum:
 		1:
 			current_level = level1.instantiate()
-			add_child(current_level)
+			call_deferred("add_child", current_level)
 			current_level.connect("playerLose", _on_player_lose.bind(current_level.name))
 			current_level.connect("playerWin", _on_player_win.bind(current_level.name))
+			get_tree().paused = false
 		2:
 			current_level = level2.instantiate()
-			add_child(current_level)
+			call_deferred("add_child", current_level)
 			current_level.connect("playerLose", _on_player_lose.bind(current_level.name))
 			current_level.connect("playerWin", _on_player_win.bind(current_level.name))
+			get_tree().paused = false
 		3:
 			current_level = level3.instantiate()
-			add_child(current_level)
+			call_deferred("add_child", current_level)
 			current_level.connect("playerLose", _on_player_lose.bind(current_level.name))
 			current_level.connect("playerWin", _on_player_win.bind(current_level.name))
+			get_tree().paused = false
 		4:
 			#print("going back the 3d house scene")
 			get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")
+			get_tree().paused = false
 		_:
 			pass
-	get_tree().paused = false

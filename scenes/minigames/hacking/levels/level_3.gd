@@ -14,33 +14,56 @@ signal playerLose
 func _ready() -> void:
 	#create enemies
 	var neuro:StaticBody2D = neuro_scene.instantiate()
-	
+	neuro._max_health *= 1.5
+	neuro.health = neuro._max_health
 	neuro.position = $Enemies/Markers/Boss.global_position
 	neuro.connect("death", _on_enemy_death.bind(neuro.type))
-	neuro.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(10, "neuro_", "CircleShape2D"))
+	neuro.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(20, "neuro_", "CircleShape2D"))
 	$Enemies.add_child(neuro)
 	
 	var circle1:StaticBody2D = circle_scene.instantiate()
 	circle1.position = $Enemies/Markers/Enemy1.global_position
 	circle1.connect("death", _on_enemy_death.bind(circle1.type))
-	circle1.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(4, "circle1_", "CircleShape2D"))
+	circle1.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(6, "circle1_", "CircleShape2D"))
 	circle1.name = "Circle1"
 	$Enemies.add_child(circle1)
 	
 	var circle2:StaticBody2D = circle_scene.instantiate()
 	circle2.position = $Enemies/Markers/Enemy2.global_position
 	circle2.connect("death", _on_enemy_death.bind(circle2.type))
-	circle2.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(4, "circle2_", "CircleShape2D"))
+	circle2.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(6, "circle2_", "CircleShape2D"))
 	circle2.name = "Circle2"
 	$Enemies.add_child(circle2)
+	
+	var circle3:StaticBody2D = circle_scene.instantiate()
+	circle3._max_health *= 1.5
+	circle3.health = circle3._max_health
+	circle3.position = $Enemies/Markers/Enemy3.global_position
+	circle3.connect("death", _on_enemy_death.bind(circle3.type))
+	circle3.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(8, "circle3_", "CircleShape2D"))
+	circle3.name = "Circle3"
+	$Enemies.add_child(circle3)
+
+	
+	var circle4:StaticBody2D = circle_scene.instantiate()
+	circle4._max_health *= 1.5
+	circle4.health = circle4._max_health
+	circle4.position = $Enemies/Markers/Enemy4.global_position
+	circle4.connect("death", _on_enemy_death.bind(circle4.type))
+	circle4.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(8, "circle4_", "CircleShape2D"))
+	circle4.name = "Circle4"
+	$Enemies.add_child(circle4)
+
 	
 	$Player.connect("shootHarpoon", _on_player_shoot_harpon)
 	$Player.connect("death", _on_player_death)
 	
-	neuro.find_child("FireTimer").start(4)
-	circle1.find_child("FireTimer").start(2)
-	circle2.find_child("FireTimer").start(2)
-	
+	neuro.find_child("FireTimer").start(2)
+	circle1.find_child("FireTimer").start(1.5)
+	circle2.find_child("FireTimer").start(1.5)
+	circle3.find_child("FireTimer").start(1)
+	circle4.find_child("FireTimer").start(1)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -104,6 +127,7 @@ func _on_enemy_death(body: Node2D, type: String) -> void:
 	#print("enemy died: %s" % [body.name])
 	$Enemies.remove_child(body)
 	if type == "Enemy_Boss":
+		get_tree().paused = true
 		playerWin.emit()
 
 
@@ -147,5 +171,5 @@ func _spawn_enemy_projectiles(body:Node2D, numProj: int, _name:String, _type:Str
 			emProjectile.direction = player_direction
 			emProjectile.visible = true
 			$EnemyProjectiles.add_child(emProjectile)
-			emProjectile.find_child("despawnTimer").start(5)
+			emProjectile.find_child("despawnTimer").start(10)
 	pass

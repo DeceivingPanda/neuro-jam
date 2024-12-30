@@ -1,7 +1,7 @@
 extends Node2D
 
 var neuro: PackedScene = preload("res://scenes/player/2d_neuro.tscn")
-var seagullScene: PackedScene = preload("res://scenes/enemies/seagull.tscn")
+var seagullScene: PackedScene = preload("res://scenes/minigames/seagull/enemies/seagull.tscn")
 
 #player
 var player:CharacterBody2D 

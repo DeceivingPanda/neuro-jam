@@ -1,14 +1,14 @@
 [gd_scene load_steps=21 format=4 uid="uid://gg6p47lgqkie"]
 
 [ext_resource type="Script" path="res://scenes/minigames/platformer/level_1.gd" id="1_ioaof"]
-[ext_resource type="PackedScene" uid="uid://lqs4wrpbodf4" path="res://scenes/minigames/objects/platform.tscn" id="2_e2jan"]
+[ext_resource type="PackedScene" uid="uid://lqs4wrpbodf4" path="res://scenes/minigames/platformer/objects/platform.tscn" id="2_e2jan"]
 [ext_resource type="Texture2D" uid="uid://cu14fq1xpwdu" path="res://assets/texture/light/circle.png" id="3_5ds1l"]
 [ext_resource type="PackedScene" uid="uid://c5wbpha7blrh6" path="res://scenes/player/2d_neuro.tscn" id="3_adfe2"]
 [ext_resource type="Texture2D" uid="uid://bl1jcb3oh330a" path="res://assets/images/screens/GJ BG 2 .png" id="4_ckdgk"]
 [ext_resource type="Texture2D" uid="uid://k8xocusdv0lq" path="res://assets/images/screens/You-Lost.png" id="4_dg6q0"]
 [ext_resource type="Texture2D" uid="uid://bmgbccpmdb26g" path="res://assets/texture/lava.png" id="4_f68yq"]
 [ext_resource type="Texture2D" uid="uid://c13nqfps015h7" path="res://assets/images/screens/You-Win.png" id="5_6dmoo"]
-[ext_resource type="PackedScene" uid="uid://b2v4r1byia8t6" path="res://scenes/minigames/objects/flag.tscn" id="6_5cy6h"]
+[ext_resource type="PackedScene" uid="uid://b2v4r1byia8t6" path="res://scenes/minigames/platformer/objects/flag.tscn" id="6_5cy6h"]
 [ext_resource type="Texture2D" uid="uid://bij8hqmkh51qv" path="res://assets/images/screens/GJ BG clear.png" id="6_cwwr0"]
 [ext_resource type="Texture2D" uid="uid://bmgam0h6q1axe" path="res://assets/texture/dirt-2.png" id="9_bb0s2"]
 

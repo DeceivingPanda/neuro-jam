@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2v4r1byia8t6"]
 
-[ext_resource type="Script" path="res://scenes/minigames/objects/flag.gd" id="1_2rura"]
+[ext_resource type="Script" path="res://scenes/minigames/platformer/objects/flag.gd" id="1_2rura"]
 [ext_resource type="Texture2D" uid="uid://fb1xdv18nfir" path="res://assets/images/objects/toppng.com-marios-flag-without-mario-by-banjo2015-donkey-kong-fla-367x1328.png" id="1_brhxb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ali46"]

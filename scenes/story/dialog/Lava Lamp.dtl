@@ -1,0 +1,4 @@
+[signal arg="lock"]
+this lamp is familiar...
+[signal arg="unlock"]
+[signal arg="lava"]

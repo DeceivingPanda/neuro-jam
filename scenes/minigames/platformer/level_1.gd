@@ -9,31 +9,34 @@ signal player_win(level: int)
 signal player_lose(level: int)
 
 func _ready() -> void:
+	Dialogic.signal_event.connect(_narative)
 	$"2DNeuro/Camera2D".enabled = true
 	$"Result Screen/Lose Screen/Camera2D".enabled = false
 	$"Result Screen/Win Screen/Camera2D".enabled = false
 
-
 func _on_lava_player_entered_lava(body: CharacterBody2D) -> void:
-	print("player in lava: %s" % body)
-	
-	$"2DNeuro/Camera2D".enabled = false
-	$"Result Screen/Lose Screen/Camera2D".enabled = true
-	player_lose.emit(levelNum)
-
-
+	pass
 
 func _on_flag_player_entered_flag(body: PhysicsBody2D) -> void:
 	print("player touched flag pole: %s" % body)
 	
 	$"2DNeuro/Camera2D".enabled = false
 	$"Result Screen/Win Screen/Camera2D".enabled = true
-	player_win.emit(levelNum)
+	Dialogic.start("platformer")
+	get_tree().change_scene_to_file("res://scenes/minigames/platformer/level_1.tscn")
 
 
-func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
-	print("player in lava: %s" % body)
-	
+
+
+func _on_winarea_body_entered(body: PhysicsBody2D) -> void:
+	print("player in lava")
+#print(body)
 	$"2DNeuro/Camera2D".enabled = false
 	$"Result Screen/Lose Screen/Camera2D".enabled = true
-	player_lose.emit(levelNum)
+	get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")
+
+func _narative(argument: String):
+	if argument == "auto":
+		Dialogic.Inputs.auto_advance.enabled_forced = true
+	elif argument == "manual":
+		Dialogic.Inputs.auto_advance.enabled_forced = false

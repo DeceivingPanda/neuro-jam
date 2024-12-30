@@ -19,26 +19,18 @@ offset_right = 613.0
 offset_bottom = 263.0
 text = "New Game"
 
-[node name="BtnContinue" type="Button" parent="."]
+[node name="BtnOptions" type="Button" parent="."]
 offset_left = 468.0
 offset_top = 296.0
 offset_right = 613.0
 offset_bottom = 343.0
-disabled = true
-text = "Load Game"
-
-[node name="BtnOptions" type="Button" parent="."]
-offset_left = 468.0
-offset_top = 376.0
-offset_right = 613.0
-offset_bottom = 423.0
 text = "Options"
 
 [node name="BtnExit" type="Button" parent="."]
 offset_left = 468.0
-offset_top = 456.0
+offset_top = 376.0
 offset_right = 613.0
-offset_bottom = 503.0
+offset_bottom = 423.0
 text = "Exit Game"
 
 [node name="TextEdit" type="RichTextLabel" parent="."]

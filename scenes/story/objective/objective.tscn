@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cbhhbcrabprlj"]
+
+[node name="Objective" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 816.0
+offset_top = 5.0
+offset_right = 1078.0
+offset_bottom = 85.0
+
+[node name="lblObjective" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -7.0
+offset_top = -2.0
+offset_right = 247.0
+offset_bottom = 89.0
+bbcode_enabled = true
+text = "Objective:"
+
+[node name="lblTask" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 56.0
+offset_top = -2.0
+offset_right = 261.0
+offset_bottom = 89.0
+bbcode_enabled = true
+text = "[center]Get a drink from the fridge[/center]"

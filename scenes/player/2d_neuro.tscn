@@ -1,19 +1,82 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5wbpha7blrh6"]
+[gd_scene load_steps=13 format=3 uid="uid://c5wbpha7blrh6"]
 
-[ext_resource type="Texture2D" uid="uid://plu1rmfyuxvh" path="res://assets/images/player/neuro_v3_model.png" id="1_6okbx"]
 [ext_resource type="Script" path="res://scenes/player/2d_neuro.gd" id="1_etimb"]
+[ext_resource type="Texture2D" uid="uid://cnysgrxq7er1r" path="res://assets/images/player/Hyori_runing_Sprize.png" id="2_cysxd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgjb6"]
+atlas = ExtResource("2_cysxd")
+region = Rect2(0, 0, 75, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqaq1"]
+atlas = ExtResource("2_cysxd")
+region = Rect2(75, 0, 75, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2qby"]
+atlas = ExtResource("2_cysxd")
+region = Rect2(150, 0, 75, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6jhv"]
+atlas = ExtResource("2_cysxd")
+region = Rect2(225, 0, 75, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy6yb"]
+atlas = ExtResource("2_cysxd")
+region = Rect2(300, 0, 75, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhd1o"]
+atlas = ExtResource("2_cysxd")
+region = Rect2(375, 0, 75, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr1kw"]
+atlas = ExtResource("2_cysxd")
+region = Rect2(450, 0, 75, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxpxh"]
+atlas = ExtResource("2_cysxd")
+region = Rect2(525, 0, 75, 108)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irsyy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgjb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqaq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2qby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6jhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy6yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhd1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr1kw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxpxh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4sxl"]
-size = Vector2(68, 226)
+size = Vector2(46, 101)
 
 [node name="2DNeuro" type="CharacterBody2D"]
 collision_mask = 31
 script = ExtResource("1_etimb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("1_6okbx")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_irsyy")
+frame_progress = 0.824467
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-1, 0)
@@ -21,6 +84,6 @@ scale = Vector2(0.7, 0.7)
 polygon = PackedVector2Array(-5, -112, -10, -110, -16, -104, -19, -98, -18, -79, -20, -49, -25, -31, -19, -20, -17, 9, -10, 34, -13, 49, -12, 61, -6, 91, -8, 109, -8, 112, -3, 115, 15, 115, 20, 111, 18, 101, 18, 94, 17, 90, 19, 54, 15, 35, 21, 8, 24, -10, 26, -30, 20, -52, 19, -83, 18, -99, 12, -108, 3, -112)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2(-4, 6.5)
 shape = SubResource("RectangleShape2D_o4sxl")
 disabled = true

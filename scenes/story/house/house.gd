@@ -1,19 +1,124 @@
 extends Node3D
 
-var opt = false
+var ControlLock = false
+var OptionLock = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	Dialogic.signal_event.connect(_narative)
 	$Options.hide()
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#controls the Option menu, ControlLock is used in Vedal's script to lock character movement
 	if Input.is_action_just_pressed("Options"):
-		if opt == false:
+		if OptionLock == false:
 			$Options.show()
-			opt = true
+			OptionLock = true
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
-			opt = false
+			OptionLock = false
 			$Options.hide()
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if $Options.visible == false:
+		OptionLock = false	
+	#Objective Updater
+	match $Vedal.gamestage:
+		1:
+			$Control/lblTask.text = "Get a drink from the fridge"
+		3:
+			$Control/lblTask.text = "Locate \"The Dog\""
+		4:
+			$Control/lblTask.text = "Explore"
+		6:
+			$Control/lblTask.text = "Check on the dog"
+		7:
+				$Control/lblTask.text = "Catch the dog"
+		8:
+				$Control/lblTask.text = "Follow the dog to the Bathroom"
+		9:
+				$Control/lblTask.text = "Head to the office (Right next to stairs)"
+	$Control/lblObjective.text = str($Vedal.gamestage)
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#This section controls the dialog progression using Dialogic.
+#the variable gamestage in Vedal determines which dialogs can display when. 
+#Each "game stage" is a different timeline in dialogic.
+#Even if the dialog is not initiated by Vedal entering an area, vedal's gamestage needs to be adjusted accordingly
+
+func _narative(argument: String):
+	#arguments are the Dialogic signal arguments.
+	#each timeline should end with unlock 
+	#which will bring gamestage up by one, and give control back to player
+	if argument == "lock":
+		ControlLock = true
+	elif argument == "unlock":
+		ControlLock = false
+		$Vedal.gamestage += 1
+	elif argument == "lava":
+		GameStateService.on_scene_transitioning()
+		get_tree().change_scene_to_file("res://scenes/minigames/platformer/level_1.tscn")
+	elif argument == "seagull":
+		GameStateService.on_scene_transitioning()
+		get_tree().change_scene_to_file("res://scenes/minigames/platformer/level_1.tscn")
+	elif argument == "auto":
+		Dialogic.Inputs.auto_advance.enabled_forced = true
+	elif argument == "manual":
+		Dialogic.Inputs.auto_advance.enabled_forced = false
+
+
+func _on_start_dialog_init_body_entered(body) -> void:
+	if body is Vedal:
+		if $Vedal.gamestage == 0:
+			Dialogic.start("House")
+
+func _on_lava_lamp_init_body_entered(body) -> void:
+	if body is Vedal:
+		if $Vedal.gamestage == 1:
+			Dialogic.start("Lava Lamp")
+
+func _on_lava_lamp_init_2_body_entered(body) -> void:
+	if body is Vedal:
+		if $Vedal.gamestage == 2:
+			Dialogic.start("Post Lava")
+			
+func _on_neurodog_init_1_body_entered(body) -> void:
+	if body is Vedal:
+		if $Vedal.gamestage == 3:
+			Dialogic.start("Neurodog")
+
+func _on_neurodog_init_2_body_entered(body) -> void:
+	if body is Vedal:
+		if $Vedal.gamestage == 5:
+			Dialogic.start("Post Seagull")
+
+func _on_beach_init_body_entered(body: Node3D) -> void:
+	if body is Vedal:
+		if $Vedal.gamestage == 4:
+			Dialogic.start("seagull")
+			
+func _on_stairs_init_body_entered(body: Node3D) -> void:
+	if body is Vedal:
+		if $Vedal.gamestage == 7:
+			Dialogic.start("seagull")
+
+
+func _on_shower_init_body_entered(body: Node3D) -> void:
+	if body is Vedal:
+		if $Vedal.gamestage == 8:
+			Dialogic.start("seagull")
+			
+func _on_office_init_body_entered(body: Node3D) -> void:
+	if body is Vedal:
+		if $Vedal.gamestage == 9:
+			Dialogic.start("Office Door - Locked")
+#END Dialogic Section
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+func _on_objective_locate_dog_init_body_entered(body) -> void:
+	if body is Vedal:
+		if $Vedal.gamestage == 6:
+			$Vedal.gamestage = 7
+			
+
+
+func _on_evil_birthday_card_interacted(body:Variant) -> void:
+	Dialogic.start("Evil Birthday Card")

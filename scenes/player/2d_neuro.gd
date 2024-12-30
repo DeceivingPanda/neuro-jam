@@ -37,7 +37,14 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED
+		if velocity.x == 300:
+			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.play("default")
+		elif velocity.x == -300:
+			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.play("default")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		$AnimatedSprite2D.stop()
+		
 	move_and_slide()

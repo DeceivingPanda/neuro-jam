@@ -8,15 +8,17 @@ const _max_health: float = 10.0
 var health: float
 
 var can_harpoon: bool = true
-@export var harpoonReload: float = 0.5
+@export var harpoonReload: float = 0.45
 
 const type:String = "Player"
 
 func _ready() -> void:
 	health = _max_health
-
+	$HealthBar/MarginContainer/ProgressBar.max_value = _max_health
 
 func _process(_delta: float) -> void:
+	$HealthBar/MarginContainer/ProgressBar.value = health
+	
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * SPEED
 	move_and_slide()

@@ -9,7 +9,7 @@ size = Vector2(10, 10)
 size = Vector2(10, 10)
 
 [node name="projectileSquare" type="Area2D"]
-collision_layer = 8
+collision_layer = 32
 collision_mask = 9
 script = ExtResource("1_hag17")
 

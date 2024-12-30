@@ -14,6 +14,7 @@ func _ready() -> void:
 func _on_player_lose(_name:String) -> void:
 	print("player lost in level %s" % [_name])
 	get_tree().paused = true
+	#TODO: send to bad ending
 
 
 func _on_player_win(_name:String) -> void:

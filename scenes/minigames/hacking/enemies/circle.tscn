@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjrpp0gaccw6o"]
+
+[ext_resource type="Script" path="res://scenes/minigames/hacking/enemies/circle.gd" id="1_1vuac"]
+[ext_resource type="Texture2D" uid="uid://bfiuv41qs3eur" path="res://assets/texture/yellow.png" id="2_1dc8h"]
+[ext_resource type="Shader" path="res://scenes/minigames/hacking/enemies/circle.gdshader" id="2_yd2nk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eq3wt"]
+radius = 32.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qeh3t"]
+shader = ExtResource("2_yd2nk")
+shader_parameter/circle_size = 0.5
+shader_parameter/ratio_width = 1.0
+shader_parameter/ratio_height = 1.0
+
+[node name="Circle" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 11
+script = ExtResource("1_1vuac")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eq3wt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qeh3t")
+scale = Vector2(4, 4)
+texture = ExtResource("2_1dc8h")
+
+[node name="FireTimer" type="Timer" parent="."]
+
+[node name="HealthBar" type="Marker2D" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="HealthBar"]
+offset_left = -50.0
+offset_top = 35.0
+offset_right = 50.0
+offset_bottom = 62.0
+
+[node name="ProgressBar" type="ProgressBar" parent="HealthBar/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+max_value = 10.0
+rounded = true
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]

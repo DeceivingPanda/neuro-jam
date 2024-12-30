@@ -5,9 +5,9 @@ signal despawn(body: Node2D)
 var speed: int = 1000
 var direction: Vector2 = Vector2.UP
 
-const type: String = "PLayer_Projectile"
+const type: String = "Player_Projectile"
 
-const damage: float = 2.0
+const damage: float = 1.5
 
 func _ready() -> void:
 	pass

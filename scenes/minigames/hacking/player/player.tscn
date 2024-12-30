@@ -1,26 +1,43 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2vxgrn5o3v6a"]
 
 [ext_resource type="Script" path="res://scenes/minigames/hacking/player/player.gd" id="1_tb1ho"]
+[ext_resource type="Texture2D" uid="uid://dx3hcklyifei6" path="res://assets/images/player/Tutel_Top.png" id="2_1555r"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kjwsk"]
-size = Vector2(128, 128)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r001s"]
-size = Vector2(128, 128)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x7hv"]
+bg_color = Color(0, 1, 0.207843, 1)
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 31
+collision_mask = 29
 script = ExtResource("1_tb1ho")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_kjwsk")
+rotation = -1.5708
+texture = ExtResource("2_1555r")
+metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_r001s")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = -1.5708
+polygon = PackedVector2Array(103, -87, 111, -78, 122, -64, 133, -46, 141, -30, 147, -9.99999, 150, 10, 149, 30, 143, 56, 135, 73, 144, 77, 149, 85, 153, 95, 153, 105, 150, 116, 143, 125, 126, 135, 114, 138, 101, 136, 93, 132, 91, 145, 85, 158, 78, 171, 67, 182, 49, 192, 31, 197, 16, 199, -7.00001, 200, -25, 198, -34, 194, -49, 185, -61, 172, -68, 162, -72, 148, -72, 141, -78, 146, -88, 151, -99, 153, -111, 149, -120, 144, -128, 135, -132, 125, -132, 110, -127, 95, -141, 79, -153, 62, -159, 48, -162, 38, -166, 8.99999, -162, -17, -151, -43, -141, -63, -132, -74, -137, -74, -141, -76, -148, -86, -151, -97, -151, -112, -147, -122, -141, -132, -130, -140, -122, -143, -112, -143, -103, -142, -94, -139, -84, -134, -78, -127, -76, -124, -64, -130, -54, -133, -53, -149, -49, -160, -42, -172, -33, -181, -28, -187, -20, -194, -14, -197, -7.99999, -195, -0.999992, -185, 7.34351e-06, -168, 8.00001, -152, 21, -137, 30, -135, 37, -132, 41, -138, 55, -149, 65.4027, -153.458, 76, -158, 89, -156, 97, -151, 104, -142, 107, -129, 106, -115, 101, -100, 96, -94)
 
 [node name="HarpoonTimeout" type="Timer" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(64, 0)
+position = Vector2(151, 110)
+
+[node name="HealthBar" type="Marker2D" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="HealthBar"]
+offset_left = -145.0
+offset_top = 190.0
+offset_right = 205.0
+offset_bottom = 268.0
+
+[node name="ProgressBar" type="ProgressBar" parent="HealthBar/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/fill = SubResource("StyleBoxFlat_5x7hv")
+max_value = 10.0
+rounded = true
 
 [connection signal="timeout" from="HarpoonTimeout" to="." method="_on_harpoon_timeout"]

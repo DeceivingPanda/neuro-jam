@@ -1,7 +1,5 @@
 extends Node2D
 
-
-
 func _sprial(numNodes: int, radius: float, _name:String) -> void:
 	for i in range(0, numNodes):
 		# create a new node

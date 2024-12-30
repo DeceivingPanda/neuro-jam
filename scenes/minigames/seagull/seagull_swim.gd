@@ -28,7 +28,9 @@ var timeElapsedSwimmer: float = 0
 var distanceTraveled: float = 0
 var level1: int = 10
 var level2: int = 35
-const SCORE_WIN: int = 50
+
+var max_time: float = 50.0
+
 
 func _ready() -> void:
 	player = neuro.instantiate()
@@ -63,6 +65,7 @@ func _ready() -> void:
 	seagullSwimmer.set_physics_process(true)
 	
 	randomize()
+	$LevelWin.start(max_time)
 
 
 func _process(_delta: float) -> void:
@@ -108,14 +111,13 @@ func _process(_delta: float) -> void:
 		#randomize spaqn
 		#spawnerDelaySwimmer = deltaT(spawnerDelaySwimmer, spawnerDelaySwimmerMIN, spawnerDelaySwimmerMAX, spawnerDelaySwimmerMINChange, spawnerDelaySwimmerMAXChange)
 		#print(spawnerDelaySwimmer)
-	
-	
-	if distanceTraveled > SCORE_WIN: _on_win()
+
 
 
 func _on_enemeny_hit(body: CharacterBody2D):
 	print("player hit something: %s, distance: %s" % [body, distanceTraveled])
 	get_tree().paused = true
+	#TODO: move to bad ending screen
 
 
 func deltaT(value: float,  minF: float, maxF: float, minChange: float, maxChange: float) -> float:
@@ -123,6 +125,6 @@ func deltaT(value: float,  minF: float, maxF: float, minChange: float, maxChange
 	return clamp(value+change, minF, maxF)
 
 
-func _on_win() -> void:
+func _on_level_win_timeout() -> void:
 	print("player won: Scored %s points" % [distanceTraveled])
-	get_tree().paused = true
+	get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")

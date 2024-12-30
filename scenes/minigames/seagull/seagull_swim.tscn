@@ -53,3 +53,8 @@ shape = SubResource("RectangleShape2D_d5u1l")
 [node name="Ceiling" type="CollisionShape2D" parent="Bounds"]
 position = Vector2(90, 330)
 shape = SubResource("RectangleShape2D_d5u1l")
+
+[node name="LevelWin" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LevelWin" to="." method="_on_level_win_timeout"]

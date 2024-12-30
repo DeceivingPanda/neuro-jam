@@ -12,39 +12,35 @@ script = ExtResource("1_o7epc")
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 2
 texture_repeat = 3
-position = Vector2(300, 260)
+position = Vector2(90, 400)
 texture = ExtResource("2_8vqvf")
 region_enabled = true
-region_rect = Rect2(0, 0, 800, 800)
+region_rect = Rect2(0, 0, 2000, 1080)
 
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="Player"]
-position = Vector2(89, 399)
+position = Vector2(89, 566)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(89, 427)
-limit_left = 5
-limit_top = -100
-limit_right = 650
-limit_bottom = 480
+position = Vector2(89, 399)
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Swimmer" type="Marker2D" parent="Enemies"]
-position = Vector2(700, 330)
+position = Vector2(1061, 523)
 
 [node name="foreground" type="Sprite2D" parent="."]
 modulate = Color(0, 0.886275, 1, 0.784314)
 texture_filter = 4
 texture_repeat = 2
-position = Vector2(300, 550)
+position = Vector2(88, 745)
 texture = ExtResource("2_8vqvf")
 region_enabled = true
-region_rect = Rect2(0, 0, 800, 400)
+region_rect = Rect2(0, 0, 2000, 400)
 
 [node name="Bounds" type="StaticBody2D" parent="."]
-position = Vector2(0, -28)
+position = Vector2(0, 139)
 
 [node name="Floor" type="CollisionShape2D" parent="Bounds"]
 position = Vector2(90, 600)

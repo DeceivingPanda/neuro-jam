@@ -66,7 +66,7 @@ func _narative(argument: String):
 		get_tree().change_scene_to_file("res://scenes/minigames/platformer/level_1.tscn")
 	elif argument == "seagull":
 		GameStateService.on_scene_transitioning()
-		get_tree().change_scene_to_file("res://scenes/minigames/platformer/level_1.tscn")
+		get_tree().change_scene_to_file("res://scenes/minigames/seagull/seagull_swim.tscn")
 	elif argument == "auto":
 		Dialogic.Inputs.auto_advance.enabled_forced = true
 	elif argument == "manual":

@@ -51,7 +51,7 @@ func _ready() -> void:
 	#move and apply scale on enemies
 	posSwimmer = $Enemies/Swimmer.global_position
 	seagullSwimmer.apply_scale(Vector2(3,3))
-	seagullSwimmer.global_position = Vector2(-200, posSwimmer.y)
+	seagullSwimmer.global_position = Vector2(-1000, posSwimmer.y)
 	
 	seagullSwimmerSprites = seagullSwimmer.get_node("Sprites").get_children(false)
 	seagullSwimmerSprites[seagullSwimmerSpritesCurr].visible = true
@@ -77,12 +77,12 @@ func _process(_delta: float) -> void:
 	timeElapsedSwimmer += _delta
 	distanceTraveled += _delta
 	
-	if seagullSwimmer.global_position.x < -200 && timeElapsedSwimmer <= spawnerDelaySwimmer:
+	if seagullSwimmer.global_position.x < -1000 && timeElapsedSwimmer <= spawnerDelaySwimmer:
 		seagullSwimmer.visible = false
 		seagullSwimmer.set_physics_process(false)
 	
 	#spawn enemies
-	if timeElapsedSwimmer >= spawnerDelaySwimmer && seagullSwimmer.global_position.x < -200:
+	if timeElapsedSwimmer >= spawnerDelaySwimmer && seagullSwimmer.global_position.x < -1000:
 		print("we can spawn some swimmers")
 		timeElapsedSwimmer = 0
 		seagullSwimmer.global_position = posSwimmer
@@ -113,11 +113,11 @@ func _process(_delta: float) -> void:
 		#print(spawnerDelaySwimmer)
 
 
-
 func _on_enemeny_hit(body: CharacterBody2D):
 	print("player hit something: %s, distance: %s" % [body, distanceTraveled])
 	get_tree().paused = true
 	#TODO: move to bad ending screen
+	#get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")
 
 
 func deltaT(value: float,  minF: float, maxF: float, minChange: float, maxChange: float) -> float:

@@ -18,9 +18,9 @@ texture = SubResource("PlaceholderTexture2D_kjwsk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_r001s")
 
-[node name="LaserTimeout" type="Timer" parent="."]
+[node name="HarpoonTimeout" type="Timer" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(64, 0)
 
-[connection signal="timeout" from="LaserTimeout" to="." method="_on_laser_timeout_timeout"]
+[connection signal="timeout" from="HarpoonTimeout" to="." method="_on_laser_timeout_timeout"]

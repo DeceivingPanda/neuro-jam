@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpljuu4sm71aw"]
+
+[ext_resource type="Script" path="res://scenes/minigames/hacking/enemies/square.gd" id="1_2ulnj"]
+[ext_resource type="Texture2D" uid="uid://dfm7dsp2h64a7" path="res://assets/texture/prototype_textures/Vector/texture_02.svg" id="1_nduni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmnop"]
+size = Vector2(100, 100)
+
+[node name="Square" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 11
+script = ExtResource("1_2ulnj")
+
+[node name="Sprite3D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nduni")
+region_enabled = true
+region_rect = Rect2(0, 0, 100, 100)
+
+[node name="CollisionShape3D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cmnop")

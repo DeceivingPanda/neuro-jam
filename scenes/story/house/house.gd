@@ -165,8 +165,8 @@ func _on_office_door_interacted(body:Variant) -> void:
 func _on_evils_harpoon_interacted(body: Variant) -> void:
 	if $Vedal.gamestage == 11:
 		Dialogic.VAR._set("get_harpoon_flag", true)
+		$House/Harpoon.hide()
 	Dialogic.start("Harpoon")
-	$House/Harpoon.hide()
 
 func _on_office_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:

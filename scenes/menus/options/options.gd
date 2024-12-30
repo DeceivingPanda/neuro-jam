@@ -36,6 +36,7 @@ func _on_slider_sfx_vol_value_changed(value: float) -> void:
 
 
 func _on_btn_close_pressed() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$".".hide()
 
 

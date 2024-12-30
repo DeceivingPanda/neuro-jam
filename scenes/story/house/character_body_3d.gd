@@ -27,7 +27,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
-			var sprint_flag = Input.is_action_pressed("Sprint")
+			var sprint_flag = Input.is_action_pressed("Sprint") and gamestage > 8
+			print(gamestage, sprint_flag)
 			velocity.x = direction.x * SPEED * (SPRINT_VELOCITY if sprint_flag else 1)
 			velocity.z = direction.z * SPEED * (SPRINT_VELOCITY if sprint_flag else 1)
 		else:

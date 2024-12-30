@@ -97,7 +97,9 @@ func _narative(argument: String):
 	elif argument == "stairdog":
 		$House/halldog.hide()
 		$"House/neuro dog Standing2/bathdog".show()
-	#elif argument == "hacking":
+	elif argument == "goodend":
+		GameStateService.on_scene_transitioning()
+		get_tree().change_scene_to_file("res://scenes/story/endings/good_ending.tscn")
 		
 
 func _on_start_dialog_init_body_entered(body) -> void:

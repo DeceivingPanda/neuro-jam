@@ -2,7 +2,7 @@ extends CharacterBody3D
 class_name Vedal
 @onready var head := $Head
 @onready var camera := $Head/Camera3D
-var gamestage = 0
+var gamestage = 12
 var starting_position
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -11,7 +11,6 @@ const SPRINT_VELOCITY = 2
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	starting_position = position
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

@@ -6,7 +6,7 @@ var OptionLock = false
 func _ready() -> void:
 	Dialogic.signal_event.connect(_narative)
 	$Options.hide()
-
+	$"Sounds/Chase".play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#controls the Option menu, ControlLock is used in Vedal's script to lock character movement
@@ -35,13 +35,13 @@ func _process(delta: float) -> void:
 			$Control/lblTask.text = "Catch the dog"
 		8:
 			$Control/lblTask.text = "Follow the dog to the Bathroom"
-		9:
-			$Control/lblTask.text = "Head to the office"
 		10:
-			$Control/lblTask.text = "Find a way to get into the office"
+			$Control/lblTask.text = "Head to the office"
 		11:
-			$Control/lblTask.text = "Break the office door with Evil's harpoon"
+			$Control/lblTask.text = "Find a way to get into the office"
 		12:
+			$Control/lblTask.text = "Break the office door with Evil's harpoon"
+		13:
 			$Control/lblTask.text = "Access Neuro's computer in the office"
 	$Control/lblObjective.text = str($Vedal.gamestage)
 	
@@ -60,7 +60,7 @@ func _process(delta: float) -> void:
 	if $Vedal.gamestage > 8:
 		$House/halldog.position.y =-10
 		$"House/neuro dog Standing2".position.y = -10
-	if $Vedal.gamestage >= 12:
+	if $Vedal.gamestage >= 13:
 		$House/Door.position.y = -10
 		
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -96,6 +96,8 @@ func _narative(argument: String):
 	elif argument == "stairdog":
 		$House/halldog.hide()
 		$"House/neuro dog Standing2/bathdog".show()
+	#elif argument == "hacking":
+		
 
 func _on_start_dialog_init_body_entered(body) -> void:
 	if body is Vedal:
@@ -140,16 +142,20 @@ func _on_stairs_init_body_entered(body: Node3D) -> void:
 func _on_shower_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 8:
+			$"Sounds/Chase".stop()
+			$"Sounds/Flooded Truth".play()
 			$Dialog/cutscene.play()
 			$"House/neuro dog Standing2/bathdog".hide()
 			$Vedal.gamestage += 1
 		if $Vedal.gamestage == 9:
-			$"Sounds/Flooded Truth".play()
+			
+			Dialogic.start("Post Shower")
+			
 
 func _on_office_door_interacted(body:Variant) -> void:
-	if $Vedal.gamestage == 9:
+	if $Vedal.gamestage == 10:
 		Dialogic.start("Office Door - Locked")
-	if $Vedal.gamestage == 11:
+	if $Vedal.gamestage == 12:
 		Dialogic.start("Office Door - Unlocked")
 		#$House/Door.hide()
 		$House/Door.position.y = -10
@@ -157,17 +163,18 @@ func _on_office_door_interacted(body:Variant) -> void:
 		#$House/Door.queue_free()
 
 func _on_evils_harpoon_interacted(body: Variant) -> void:
-	if $Vedal.gamestage == 10:
+	if $Vedal.gamestage == 11:
 		Dialogic.VAR._set("get_harpoon_flag", true)
 	Dialogic.start("Harpoon")
 	$House/Harpoon.hide()
 
 func _on_office_init_body_entered(body: Node3D) -> void:
 	if body is Vedal:
-		if $Vedal.gamestage == 12:
-			Dialogic.start("seagull")
-			pass
 		if $Vedal.gamestage == 13:
+			#Dialogic.start("final start")
+			GameStateService.on_scene_transitioning()
+			get_tree().change_scene_to_file("res://scenes/minigames/hacking/levels/level_1.tscn")
+		if $Vedal.gamestage == 14:
 			Dialogic.start("Final Act")
 
 func _on_evil_birthday_card_interacted(body:Variant) -> void:

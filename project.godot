@@ -53,6 +53,7 @@ directories/dtl_directory={
 "Post Lava": "res://scenes/story/dialog/Post Lava.dtl",
 "Post Seagull": "res://scenes/story/dialog/Post Seagull.dtl",
 "Post Shower": "res://scenes/story/dialog/Post Shower.dtl",
+"final start": "res://assets/sounds/final start.dtl",
 "platformer/platformer": "res://scenes/minigames/platformer/platformer.dtl",
 "seagull": "res://scenes/story/dialog/seagull.dtl",
 "stairs": "res://scenes/story/dialog/stairs.dtl",

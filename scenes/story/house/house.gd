@@ -7,6 +7,7 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_narative)
 	$Options.hide()
 	$"Sounds/Chase".play()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#controls the Option menu, ControlLock is used in Vedal's script to lock character movement
@@ -43,7 +44,7 @@ func _process(delta: float) -> void:
 			$Control/lblTask.text = "Break the office door with Evil's harpoon"
 		13:
 			$Control/lblTask.text = "Access Neuro's computer in the office"
-	$Control/lblObjective.text = str($Vedal.gamestage)
+	#$Control/lblObjective.text = str($Vedal.gamestage)
 	
 	if $Vedal.gamestage > 5:
 		$"House/neuro dog sitting".position.y = -10

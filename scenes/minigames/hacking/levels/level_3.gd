@@ -12,6 +12,7 @@ signal playerLose
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	#create enemies
 	var neuro:StaticBody2D = neuro_scene.instantiate()
 	neuro._max_health *= 1.5

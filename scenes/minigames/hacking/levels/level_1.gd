@@ -14,6 +14,7 @@ signal playerLose
 func _ready() -> void:
 	Dialogic.signal_event.connect(_narative)
 	Dialogic.start("Final - Tutorial")
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	#create enemies
 	var neuro:StaticBody2D = neuro_scene.instantiate()

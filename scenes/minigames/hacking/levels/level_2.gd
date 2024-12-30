@@ -14,10 +14,11 @@ signal playerLose
 func _ready() -> void:
 	#create enemies
 	var neuro:StaticBody2D = neuro_scene.instantiate()
-	
+	neuro._max_health *= 1.5
+	neuro.health = neuro._max_health
 	neuro.position = $Enemies/Markers/Boss.global_position
 	neuro.connect("death", _on_enemy_death.bind(neuro.type))
-	neuro.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(10, "neuro_", "CircleShape2D"))
+	neuro.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(15, "neuro_", "CircleShape2D"))
 	$Enemies.add_child(neuro)
 	
 	var circle1:StaticBody2D = circle_scene.instantiate()
@@ -34,12 +35,34 @@ func _ready() -> void:
 	circle2.name = "Circle2"
 	$Enemies.add_child(circle2)
 	
+	var circle3:StaticBody2D = circle_scene.instantiate()
+	circle3._max_health *= 1.5
+	circle3.health = circle3._max_health
+	circle3.position = $Enemies/Markers/Enemy3.global_position
+	circle3.connect("death", _on_enemy_death.bind(circle3.type))
+	circle3.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(6, "circle3_", "CircleShape2D"))
+	circle3.name = "Circle3"
+	$Enemies.add_child(circle3)
+
+	
+	var circle4:StaticBody2D = circle_scene.instantiate()
+	circle4._max_health *= 1.5
+	circle4.health = circle4._max_health
+	circle4.position = $Enemies/Markers/Enemy4.global_position
+	circle4.connect("death", _on_enemy_death.bind(circle4.type))
+	circle4.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(6, "circle4_", "CircleShape2D"))
+	circle4.name = "Circle4"
+	$Enemies.add_child(circle4)
+
+	
 	$Player.connect("shootHarpoon", _on_player_shoot_harpon)
 	$Player.connect("death", _on_player_death)
 	
-	neuro.find_child("FireTimer").start(4)
+	neuro.find_child("FireTimer").start(3)
 	circle1.find_child("FireTimer").start(2)
 	circle2.find_child("FireTimer").start(2)
+	circle3.find_child("FireTimer").start(1.5)
+	circle4.find_child("FireTimer").start(1.5)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -147,5 +170,5 @@ func _spawn_enemy_projectiles(body:Node2D, numProj: int, _name:String, _type:Str
 			emProjectile.direction = player_direction
 			emProjectile.visible = true
 			$EnemyProjectiles.add_child(emProjectile)
-			emProjectile.find_child("despawnTimer").start(5)
+			emProjectile.find_child("despawnTimer").start(7)
 	pass

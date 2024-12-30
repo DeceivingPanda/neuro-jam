@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-const _max_health: float = 10.0
+var _max_health: float = 10.0
 var health: float
 const type: String = "Enemy_Boss"
 

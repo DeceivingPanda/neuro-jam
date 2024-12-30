@@ -55,6 +55,7 @@ directories/dtl_directory={
 "Post Shower": "res://scenes/story/dialog/Post Shower.dtl",
 "platformer/platformer": "res://scenes/minigames/platformer/platformer.dtl",
 "seagull": "res://scenes/story/dialog/seagull.dtl",
+"stairs": "res://scenes/story/dialog/stairs.dtl",
 "vedalvedalvedal": "res://vedalvedalvedal.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"

@@ -1,3 +1,5 @@
 [signal arg="auto"]
 [style name="Speaker"]
+[background arg="res://assets/images/black.png" fade="1.0"]
+[background fade="1.0"]
 Evil: It’s open! Get in there! [aa=3]

@@ -2,6 +2,9 @@
 This ia the dog… ribht?
 *Click*
 [sound path="res://assets/sounds/dawg wakeup.mp3" volume="0.0" bus="SFX"]
+[signal arg="stand"]
+[background arg="res://assets/images/black.png" fade="1.0"]
+[background fade="1.0"]
 neurodog: *Powering on*
 Right, erm.. Someonw made thks for… zomeone...
 Someonw… I live woth...

@@ -118,6 +118,7 @@ func _process(_delta: float) -> void:
 
 func _on_enemeny_hit(_body: Node2D):
 	#print("player hit something: %s, distance: %s" % [_body, distanceTraveled])
+	Dialogic.clear()
 	get_tree().change_scene_to_file("res://scenes/story/endings/bad_ending.tscn")
 
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://go0ogseme3la"]
 
-[ext_resource type="Script" path="res://scenes/minigames/hacking/harpoon.gd" id="1_5oy3l"]
+[ext_resource type="Script" path="res://scenes/minigames/hacking/objects/harpoon.gd" id="1_5oy3l"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2le0w"]
 size = Vector2(10, 10)
@@ -20,5 +20,6 @@ texture = SubResource("PlaceholderTexture2D_2le0w")
 shape = SubResource("CapsuleShape2D_iamdh")
 
 [node name="despawnTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="timeout" from="despawnTimer" to="." method="_on_despawn_timer_timeout"]

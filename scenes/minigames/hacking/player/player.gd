@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-signal shotLaser(pos: Vector2, player_direction: Vector2)
-signal death(player: CharacterBody2D)
+signal shootHarpoon(pos: Vector2, player_direction: Vector2)
+signal death
 
 const SPEED: float = 500.0
 const _max_health: float = 10.0
@@ -26,14 +26,15 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Primary Action") and can_harpoon:
 		can_harpoon = false
-		shotLaser.emit($Marker2D.global_position, player_direction)
+		shootHarpoon.emit($Marker2D.global_position, player_direction)
 		$HarpoonTimeout.start(harpoonReload)
 
-func damage(damage: float):
-	health -= damage
-	print("player lost %s health and has %s health left" % [damage, health])
+func damage(_damage: float):
+	health -= _damage
+	print("player lost %s health and has %s health left" % [_damage, health])
 	if health <= 0: 
-		death.emit(self)
+		death.emit()
 
-func _on_laser_timeout_timeout() -> void:
+
+func _on_harpoon_timeout() -> void:
 	can_harpoon = true

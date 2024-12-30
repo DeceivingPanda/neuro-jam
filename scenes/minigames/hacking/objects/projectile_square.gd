@@ -2,11 +2,11 @@ extends Area2D
 
 signal despawn(body: Node2D)
 
-var speed: int = 1000
+var speed: int = 300
 var direction: Vector2 = Vector2.UP
 
 const damage: float = 2.0
-
+const type: String = "Enemy_Projectile"
 
 func _ready() -> void:
 	pass

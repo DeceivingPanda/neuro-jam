@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dijij6ywr51yf"]
+
+[ext_resource type="Script" path="res://scenes/minigames/hacking/levels/level_1.gd" id="1_8j0c3"]
+[ext_resource type="Texture2D" uid="uid://ffyibptr3vfd" path="res://assets/texture/prototype_textures/Vector/texture_01.svg" id="1_fjfb3"]
+[ext_resource type="PackedScene" uid="uid://b2vxgrn5o3v6a" path="res://scenes/minigames/hacking/player/player.tscn" id="2_rro67"]
+
+[node name="level1" type="Node2D"]
+script = ExtResource("1_8j0c3")
+
+[node name="Floor" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("1_fjfb3")
+centered = false
+region_rect = Rect2(0, 0, 2048, 2048)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="Enemies"]
+
+[node name="Box" type="Marker2D" parent="Enemies/Markers"]
+position = Vector2(383, 79)
+
+[node name="Cyclinder" type="Marker2D" parent="Enemies/Markers"]
+position = Vector2(84, 352)
+
+[node name="Player" parent="." instance=ExtResource("2_rro67")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="EnemyProjectiles" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="EnemyProjectiles"]
+
+[node name="BossFireTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="BossFireTimer" to="." method="_on_timer_timeout"]

@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0e1m7m7f0r5b"]
+[gd_scene load_steps=6 format=3 uid="uid://b0e1m7m7f0r5b"]
 
 [ext_resource type="Script" path="res://scenes/minigames/seagull/enemies/seagull.gd" id="1_a66de"]
 [ext_resource type="Texture2D" uid="uid://c76ohyr28g04b" path="res://assets/images/enemies/Seagull.png" id="2_umclf"]
 [ext_resource type="Texture2D" uid="uid://cmbwcnofs88fp" path="res://assets/images/enemies/Seagull half.png" id="3_arh2a"]
 [ext_resource type="Texture2D" uid="uid://dfxed1ad108tm" path="res://assets/images/enemies/Seagull cyber.png" id="4_taf7m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pvrj"]
+size = Vector2(38.9474, 24.7368)
 
 [node name="Seagull" type="StaticBody2D"]
 collision_layer = 2
@@ -14,27 +17,31 @@ script = ExtResource("1_a66de")
 texture_filter = 3
 
 [node name="Normal" type="Sprite2D" parent="Sprites"]
+scale = Vector2(3, 3)
 texture = ExtResource("2_umclf")
 
 [node name="Half" type="Sprite2D" parent="Sprites"]
 visible = false
+scale = Vector2(3, 3)
 texture = ExtResource("3_arh2a")
 
 [node name="Cyber" type="Sprite2D" parent="Sprites"]
 visible = false
+scale = Vector2(3, 3)
 texture = ExtResource("4_taf7m")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.24999, 1.49999)
 rotation = 1.5708
 scale = Vector2(0.95, 0.95)
-polygon = PackedVector2Array(7.00001, 1.99997, 7.00002, 4.99997, 6.00002, 4.99998, 6.00002, 5.99998, 5.00002, 5.99998, 5.00003, 7.99998, 2.89599e-05, 8, 2.53399e-05, 7, -2.99997, 7.00001, -2.99997, 9.00001, -5.99997, 9.00002, -5.99998, 6.00002, -6.99998, 6.00003, -6.99999, 2.00003, -5.99999, 2.00002, -6, 1.00002, -0.999996, 1, -1, -0.999996, -3.61999e-06, -1, -1.448e-05, -4, -1.00001, -4, -1.00002, -6, -2.17199e-05, -6, -2.89599e-05, -8, 0.999971, -8, 0.999975, -7, 1.99997, -7.00001, 1.99998, -6.00001, 2.99998, -6.00001, 2.99997, -7.00001, 4.99997, -7.00002, 4.99998, -5.00002, 5.99998, -5.00002, 5.99999, -3.00002, 6.99999, -3.00003)
+shape = SubResource("RectangleShape2D_3pvrj")
 disabled = true
 
 [node name="HitArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="HitArea"]
+position = Vector2(-8, -12)
 rotation = 1.5708
-polygon = PackedVector2Array(7.00001, 1.99997, 7.00002, 4.99997, 6.00002, 4.99998, 6.00002, 5.99998, 5.00002, 5.99998, 5.00003, 7.99998, 2.89599e-05, 8, 2.53399e-05, 7, -2.99997, 7.00001, -2.99997, 9.00001, -5.99997, 9.00002, -5.99998, 6.00002, -6.99998, 6.00003, -6.99999, 2.00003, -5.99999, 2.00002, -6, 1.00002, -0.999996, 1, -1, -0.999996, -3.61999e-06, -1, -1.448e-05, -4, -1.00001, -4, -1.00002, -6, -2.17199e-05, -6, -2.89599e-05, -8, 0.999971, -8, 0.999975, -7, 1.99997, -7.00001, 1.99998, -6.00001, 2.99998, -6.00001, 2.99997, -7.00001, 4.99997, -7.00002, 4.99998, -5.00002, 5.99998, -5.00002, 5.99999, -3.00002, 6.99999, -3.00003)
+polygon = PackedVector2Array(31.9999, -16.0001, 32, 5.99988, 29, 5.99989, 29, 8.9999, 26, 8.9999, 26.0001, 14.9999, 13.0001, 15, 13, 12, 2.00004, 12, 2.00007, 18, -4.99994, 18, -4.99997, 9.00002, -7.99997, 9.00003, -8, -0.999971, -5, -0.999982, -5.00001, -3.99998, 9.99999, -4.00004, 9.99996, -10, 13, -10, 12.9999, -18, 9.99994, -18, 9.99992, -21, 6.99992, -21, 6.99991, -25, 12.9999, -25, 12.9999, -27, 9.9999, -27, 9.99988, -34, 16.9999, -34.0001, 16.9999, -31.0001, 19.9999, -31.0001, 19.9999, -28.0001, 25.9999, -28.0001, 25.9999, -22.0001, 28.9999, -22.0001, 28.9999, -16.0001)
 
 [connection signal="body_entered" from="HitArea" to="." method="_on_area_2d_body_entered"]

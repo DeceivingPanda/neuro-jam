@@ -50,7 +50,6 @@ func _ready() -> void:
 	
 	#move and apply scale on enemies
 	posSwimmer = $Enemies/Swimmer.global_position
-	seagullSwimmer.apply_scale(Vector2(3,3))
 	seagullSwimmer.global_position = Vector2(-1000, posSwimmer.y)
 	
 	seagullSwimmerSprites = seagullSwimmer.get_node("Sprites").get_children(false)
@@ -58,7 +57,7 @@ func _ready() -> void:
 	
 	
 	if seagullSwimmer.has_signal("hitSomething"):
-		seagullSwimmer.hitSomething.connect(_on_enemeny_hit,2)
+		seagullSwimmer.hitSomething.connect(_on_enemeny_hit)
 	
 	player.set("SPEED", 0.0)
 	player.set_physics_process(true)
@@ -112,8 +111,8 @@ func _process(_delta: float) -> void:
 		#print(spawnerDelaySwimmer)
 
 
-func _on_enemeny_hit(body: StaticBody2D):
-	#print("player hit something: %s, distance: %s" % [body, distanceTraveled])
+func _on_enemeny_hit(_body: Node2D):
+	#print("player hit something: %s, distance: %s" % [_body, distanceTraveled])
 	get_tree().paused = true
 	#TODO: move to bad ending screen
 	#get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")

@@ -145,9 +145,10 @@ func _on_office_door_interacted(body:Variant) -> void:
 		Dialogic.start("Office Door - Locked")
 	if $Vedal.gamestage == 11:
 		Dialogic.start("Office Door - Unlocked")
-		$House/Door.hide()
+		#$House/Door.hide()
+		$House/Door.position.y = -10
 		$Vedal.gamestage += 1
-		$House/Door.queue_free()
+		#$House/Door.queue_free()
 
 func _on_evils_harpoon_interacted(body: Variant) -> void:
 	if $Vedal.gamestage == 10:

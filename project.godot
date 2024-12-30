@@ -25,13 +25,13 @@ GameStateService="*res://addons/game_state_saver/game_state_service.gd"
 [dialogic]
 
 directories/dch_directory={
-"characters/Door": "res://scenes/story/dialog/characters/Door.dch",
 "Evil": "res://scenes/story/dialog/characters/Evil.dch",
 "Evil Birthday Card": "res://scenes/story/dialog/characters/Evil Birthday Card.dch",
 "Neuro": "res://scenes/story/dialog/characters/Neuro.dch",
 "Phone": "res://scenes/story/dialog/characters/Phone.dch",
 "Unknown": "res://scenes/story/dialog/characters/Unknown.dch",
 "Vedal": "res://scenes/story/dialog/characters/Vedal.dch",
+"characters/Door": "res://scenes/story/dialog/characters/Door.dch",
 "neurodog": "res://scenes/story/dialog/characters/neurodog.dch"
 }
 directories/dtl_directory={

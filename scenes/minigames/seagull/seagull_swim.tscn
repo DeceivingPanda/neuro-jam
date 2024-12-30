@@ -47,7 +47,7 @@ position = Vector2(90, 600)
 shape = SubResource("RectangleShape2D_d5u1l")
 
 [node name="Ceiling" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(90, 330)
+position = Vector2(90, 355)
 shape = SubResource("RectangleShape2D_d5u1l")
 
 [node name="LevelWin" type="Timer" parent="."]

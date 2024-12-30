@@ -27,9 +27,9 @@ var timeElapsedSwimmer: float = 0
 #score
 var distanceTraveled: float = 0
 var level1: int = 10
-var level2: int = 35
+var level2: int = 30
 
-var max_time: float = 50.0
+var max_time: float = 40.0
 
 
 func _ready() -> void:
@@ -69,7 +69,6 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	
 	#$"Player/2DNeuro".set_physics_process(true)
 	#$Enemies/Seagull.set_physics_process(true)
 	#get_tree().root.content_scale_size
@@ -83,13 +82,13 @@ func _process(_delta: float) -> void:
 	
 	#spawn enemies
 	if timeElapsedSwimmer >= spawnerDelaySwimmer && seagullSwimmer.global_position.x < -1000:
-		print("we can spawn some swimmers")
+		#print("we can spawn some swimmers")
 		timeElapsedSwimmer = 0
 		seagullSwimmer.global_position = posSwimmer
 		
 		#change sprite
 		if distanceTraveled > 10 && changeSprite[0]:
-			print("sprite changed - 10")
+			#print("sprite changed - 10")
 			changeSprite[0] = false;
 			seagullSwimmerSprites[seagullSwimmerSpritesCurr].visible = false
 			seagullSwimmerSpritesCurr += 1
@@ -97,7 +96,7 @@ func _process(_delta: float) -> void:
 			spawnerDelaySwimmer -= 1
 			seagullSwimmer.SPEED = 350
 		elif distanceTraveled > 35 && changeSprite[1]:
-			print("sprite changed - 35")
+			#print("sprite changed - 35")
 			changeSprite[1] = false;
 			seagullSwimmerSprites[seagullSwimmerSpritesCurr].visible = false
 			seagullSwimmerSpritesCurr += 1
@@ -114,7 +113,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_enemeny_hit(body: CharacterBody2D):
-	print("player hit something: %s, distance: %s" % [body, distanceTraveled])
+	#print("player hit something: %s, distance: %s" % [body, distanceTraveled])
 	get_tree().paused = true
 	#TODO: move to bad ending screen
 	#get_tree().change_scene_to_file("res://scenes/story/house/house.tscn")

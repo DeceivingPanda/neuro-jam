@@ -1,8 +1,8 @@
 [signal arg="lock"]
+[wait time="4.5"]
 [sound path="res://assets/sounds/dawg walking.mp3" volume="0.0"]
 Evil: Wake up, Vodle!\
-Or the shower will flood your house, and I’m not paying the damages for you.\
-
+Or the shower will flood your house, and I’m not paying the damages for you.
 Vedal: Evil, what are you doing with your sister’s dog?
 [sound path="res://assets/sounds/dawg walking.mp3" volume="0.0"]
 Evil: Oh, so you remember me now? Good. That’s good. Stop her!

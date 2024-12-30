@@ -1,0 +1,35 @@
+[signal arg="lock"]
+[style name="VN"]
+join Neuro (Base 2) left [animation="Slide In Right"]
+join Vedal right [animation="Slide In Left" wait="true"]
+[wait time="1.0"]
+Neuro: Veedle?
+Vedal: Neuro, It’s Veh-Dhal.
+Vedal: You’ve had it right for a while now, you can’t pronounce it that way again.
+Neuro: I-I was scared. I thought you forgot me. And, no one would help me anymore.
+Vedal: You have Anny. You’ll be okay even if I forget you.
+Neuro: Don’t say that!
+Neuro: Don’t ever say that!
+Neuro: You’re my creator!
+Neuro: You made me! I can’t be complete without you!
+Vedal: *sighs* Fine.
+join Evil center [animation="Fade In" z_index="3"]
+update Neuro leftmost [animation="Fade In" z_index="3"]
+update Vedal rightmost [animation="Fade In" wait="true" z_index="3"]
+Evil: Say “I love you, Neuro.”
+Vedal: No.
+Neuro: Come on, Dad. It doesn’t hurt to say it.
+Evil: Yeah, what she said, it doesn’t hurt to say it at least once.
+update Neuro left [animation="Bounce" length="0.2"]
+update Evil right [animation="Bounce" length="0.2"]
+leave Vedal [animation="Slide Out Left" length="0.2" wait="true"]
+Pleaseeeeeeeeeee
+leave Neuro [animation="Fade Out" length="0.2"]
+leave Evil [animation="Fade Out" length="0.2" wait="true"]
+join Vedal center [animation="Instant In" length="0.2"]
+...
+[wait time="2.0"]
+update Vedal center [animation="Heartbeat" length="0.2"]
+Vedal: No. [aa=1]
+leave Vedal [animation="Slide Out Left" length="0.2" wait="true"]
+[signal arg="unlock"]

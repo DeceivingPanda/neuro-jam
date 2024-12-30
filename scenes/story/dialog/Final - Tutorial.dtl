@@ -1,0 +1,11 @@
+# Final Minigame - Tutorial?
+[signal arg="auto"]
+[style name="Speaker"]
+Vedal: Neuro?
+Vedal: Neuro!
+Vedal: Can you hear me?
+[wait time="1.0"]
+Vedal: Neuro, answer me!
+...
+[wait time="1.5"]
+Neuro: Vedal?

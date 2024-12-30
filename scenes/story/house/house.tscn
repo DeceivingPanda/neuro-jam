@@ -33,7 +33,7 @@ script = ExtResource("3_feat5")
 shape = SubResource("CapsuleShape3D_co7oo")
 
 [node name="StairsCollision3D" type="CollisionShape3D" parent="Vedal"]
-transform = Transform3D(-0.0348995, 0, -0.999391, 0, 1, 0, 0.999391, 0, -0.0348995, -0.546118, -0.790318, 0.0119209)
+transform = Transform3D(-0.0348995, 0, -0.999391, 0, 1, 0, 0.999391, 0, -0.0348995, -0.910778, -0.790318, 0.0119209)
 shape = SubResource("SeparationRayShape3D_fgl7p")
 
 [node name="Head" type="Node3D" parent="Vedal"]
@@ -52,7 +52,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="KitchenLight" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23234, 47.4475, 40.2794)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23234, 47.525, 40.2794)
 light_color = Color(0.945098, 0.87451, 0.760784, 1)
 light_energy = 5.0
 light_indirect_energy = 3.101

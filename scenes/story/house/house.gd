@@ -45,7 +45,7 @@ func _narative(argument: String):
 func _on_start_dialog_init_body_entered(body) -> void:
 	if body is Vedal:
 		if $Vedal.gamestage == 0:
-			Dialogic.start("House")
+			Dialogic.start("Final Act")
 
 func _on_lava_lamp_init_body_entered(body) -> void:
 	if body is Vedal:

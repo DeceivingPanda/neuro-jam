@@ -1115,21 +1115,21 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Flag" parent="Flag2" instance=ExtResource("6_5cy6h")]
-position = Vector2(2357, 182)
+position = Vector2(2637, 483)
 
 [node name="GameStateHelper" type="Node" parent="Flag2/Flag"]
 script = ExtResource("10_7cepi")
 save_properties = Array[String](["input_pickable"])
 
 [node name="Flag2" parent="Flag2" instance=ExtResource("6_5cy6h")]
-position = Vector2(2439, 182)
+position = Vector2(2719, 483)
 
 [node name="GameStateHelper" type="Node" parent="Flag2/Flag2"]
 script = ExtResource("10_7cepi")
 save_properties = Array[String](["input_pickable"])
 
 [node name="Flag3" parent="Flag2" instance=ExtResource("6_5cy6h")]
-position = Vector2(2439, 102)
+position = Vector2(2719, 403)
 
 [node name="GameStateHelper" type="Node" parent="Flag2/Flag3"]
 script = ExtResource("10_7cepi")

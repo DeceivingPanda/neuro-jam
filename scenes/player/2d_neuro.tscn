@@ -76,7 +76,7 @@ script = ExtResource("1_etimb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_irsyy")
-frame_progress = 0.824467
+frame_progress = 0.331435
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false

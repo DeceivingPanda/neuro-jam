@@ -6,7 +6,7 @@ const type: String = "Enemy_Boss"
 
 signal death(body: Node2D)
 signal spawnProjectiles(body: Node2D)
-
+signal curhealth(body: Node2D)
 func _ready() -> void:
 	health = _max_health
 	$HealthBar/MarginContainer/ProgressBar.max_value = _max_health
@@ -19,6 +19,8 @@ func _process(_delta: float) -> void:
 func damage(_damage: float):
 	health -= _damage
 	#print("enemy lost %s health and has %s health left" % [_damage, health])
+	if health <= 5:
+		curhealth.emit(self)
 	if health <= 0: 
 		#print("enemy has no health remaining")
 		death.emit(self)

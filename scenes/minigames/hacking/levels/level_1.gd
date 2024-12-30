@@ -12,12 +12,14 @@ signal playerLose
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Dialogic.start("Final - Tutorial")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	#create enemies
 	var neuro:StaticBody2D = neuro_scene.instantiate()
 	
 	neuro.position = $Enemies/Markers/Boss.global_position
 	neuro.connect("death", _on_enemy_death.bind(neuro.type))
+	neuro.connect("curhealth", _on_enemy_50.bind(neuro.type))
 	neuro.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(10, "neuro_", "CircleShape2D"))
 	$Enemies.add_child(neuro)
 	
@@ -106,6 +108,9 @@ func _on_enemy_death(body: Node2D, type: String) -> void:
 	$Enemies.remove_child(body)
 	if type == "Enemy_Boss":
 		playerWin.emit()
+		
+func _on_enemy_50(body: Node2D, type: String) -> void:
+	Dialogic.start("Final - Fighting")
 
 
 func _on_projectile_despawn(projectile: Node2D) -> void:

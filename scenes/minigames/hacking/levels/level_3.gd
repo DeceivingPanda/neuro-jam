@@ -12,6 +12,7 @@ signal playerLose
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Dialogic.start("Final - Boss 3")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	#create enemies
 	var neuro:StaticBody2D = neuro_scene.instantiate()
@@ -19,6 +20,7 @@ func _ready() -> void:
 	neuro.health = neuro._max_health
 	neuro.position = $Enemies/Markers/Boss.global_position
 	neuro.connect("death", _on_enemy_death.bind(neuro.type))
+	neuro.connect("curhealth", _on_enemy_50.bind(neuro.type))
 	neuro.connect("spawnProjectiles", _spawn_enemy_projectiles.bind(20, "neuro_", "CircleShape2D"))
 	$Enemies.add_child(neuro)
 	
@@ -143,6 +145,8 @@ func _on_enemny_projectile_despawn(projectile: Node2D) -> void:
 	
 func _on_player_death() -> void:
 	playerLose.emit()
+func _on_enemy_50(body: Node2D, type: String) -> void:
+	Dialogic.start("Final - Fighting")
 
 
 func _spawn_enemy_projectiles(body:Node2D, numProj: int, _name:String, _type:String) -> void:

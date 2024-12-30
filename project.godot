@@ -25,15 +25,14 @@ GameStateService="*res://addons/game_state_saver/game_state_service.gd"
 [dialogic]
 
 directories/dch_directory={
-"Door": "res://assets/sounds/Door.dch",
-"Evil": "res://assets/sounds/Evil.dch",
+"Evil": "res://scenes/story/dialog/characters/Evil.dch",
 "Evil Birthday Card": "res://scenes/story/dialog/characters/Evil Birthday Card.dch",
 "Neuro": "res://scenes/story/dialog/characters/Neuro.dch",
-"Phone": "res://scenes/story/dialog/Phone.dch",
-"Unknown": "res://scenes/story/dialog/Unknown.dch",
-"Vedal": "res://scenes/story/dialog/Vedal.dch",
-"characters/Evil": "res://scenes/story/dialog/characters/Evil.dch",
-"neurodog": "res://scenes/story/dialog/neurodog.dch"
+"Phone": "res://scenes/story/dialog/characters/Phone.dch",
+"Unknown": "res://scenes/story/dialog/characters/Unknown.dch",
+"Vedal": "res://scenes/story/dialog/characters/Vedal.dch",
+"characters/Door": "res://scenes/story/dialog/characters/Door.dch",
+"neurodog": "res://scenes/story/dialog/characters/neurodog.dch"
 }
 directories/dtl_directory={
 "Evil Birthday Card": "res://scenes/story/dialog/Evil Birthday Card.dtl",
@@ -44,6 +43,7 @@ directories/dtl_directory={
 "Final - Fighting": "res://scenes/story/dialog/Final - Fighting.dtl",
 "Final - Tutorial": "res://scenes/story/dialog/Final - Tutorial.dtl",
 "Final Act": "res://scenes/story/dialog/Final Act.dtl",
+"Harpoon": "res://scenes/story/dialog/Harpoon.dtl",
 "House": "res://scenes/story/dialog/House.dtl",
 "Lava Lamp": "res://scenes/story/dialog/Lava Lamp.dtl",
 "Neurodog": "res://scenes/story/dialog/Neurodog.dtl",
@@ -53,8 +53,9 @@ directories/dtl_directory={
 "Post Lava": "res://scenes/story/dialog/Post Lava.dtl",
 "Post Seagull": "res://scenes/story/dialog/Post Seagull.dtl",
 "Post Shower": "res://scenes/story/dialog/Post Shower.dtl",
-"platformer": "res://platformer.dtl",
-"seagull": "res://assets/sounds/seagull.dtl"
+"dialog/seagull": "res://scenes/story/dialog/seagull.dtl",
+"platformer": "res://scenes/minigames/platformer/platformer.dtl",
+"vedalvedalvedal": "res://vedalvedalvedal.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -82,18 +83,20 @@ translation/translation_folder=""
 translation/save_mode=0
 translation/add_separator=false
 text/autopauses={}
-layout/style_list=["res://scenes/story/house/Speaker.tres", "res://scenes/story/house/VN.tres"]
-layout/default_style="res://Speaker.tres"
+layout/style_list=["res://scenes/story/dialog/styles/Speaker.tres", "res://scenes/story/dialog/styles/VN.tres"]
+layout/default_style="res://scenes/story/dialog/styles/Speaker.tres"
+variables={
+"get_harpoon_flag": false
+}
+glossary/default_case_sensitive=true
 text/autocolor_names=true
 text/autoadvance_fixed_delay=1.0
 text/autoadvance_enabled=false
-variables={}
-glossary/default_case_sensitive=true
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1000
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
@@ -103,6 +106,11 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/game
 
 [input]
 
+Sprint={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
 Left={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
@@ -156,14 +164,14 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
-Sprint={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-]
-}
 Interact={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+Unstuck={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
 ]
 }
 

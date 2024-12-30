@@ -1,43 +1,43 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqrgkuo54gsq4"]
 
 [ext_resource type="Script" path="res://scenes/menus/main menu/main_menu.gd" id="1_05v5e"]
-[ext_resource type="AudioStream" uid="uid://17lo8ka8krt7" path="res://assets/sounds/MENUSONG_2_OMGOMGOMGYAAAAAY.mp3" id="2_66vky"]
+[ext_resource type="AudioStream" uid="uid://ysb7wm4e37hu" path="res://assets/sounds/Remnants of the Past.mp3" id="2_vnw1w"]
 [ext_resource type="PackedScene" uid="uid://cbfah0t4re54l" path="res://scenes/menus/options/options.tscn" id="3_6a2n2"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_05v5e")
 
 [node name="AudioStreamPlayerMenu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_66vky")
+stream = ExtResource("2_vnw1w")
 autoplay = true
 bus = &"Music"
 
 [node name="BtnNewGame" type="Button" parent="."]
-offset_left = 468.0
-offset_top = 216.0
-offset_right = 613.0
-offset_bottom = 263.0
+offset_left = 840.0
+offset_top = 463.0
+offset_right = 985.0
+offset_bottom = 510.0
 text = "New Game"
 
 [node name="BtnOptions" type="Button" parent="."]
-offset_left = 468.0
-offset_top = 296.0
-offset_right = 613.0
-offset_bottom = 343.0
+offset_left = 840.0
+offset_top = 543.0
+offset_right = 985.0
+offset_bottom = 590.0
 text = "Options"
 
 [node name="BtnExit" type="Button" parent="."]
-offset_left = 468.0
-offset_top = 376.0
-offset_right = 613.0
-offset_bottom = 423.0
+offset_left = 840.0
+offset_top = 623.0
+offset_right = 985.0
+offset_bottom = 670.0
 text = "Exit Game"
 
 [node name="TextEdit" type="RichTextLabel" parent="."]
-offset_left = 320.0
-offset_top = 72.0
-offset_right = 760.0
-offset_bottom = 124.0
+offset_left = 692.0
+offset_top = 319.0
+offset_right = 1132.0
+offset_bottom = 371.0
 theme_override_colors/default_color = Color(0.933333, 0.309804, 0.529412, 1)
 theme_override_colors/font_outline_color = Color(0.996078, 0.854902, 0.913725, 1)
 theme_override_constants/outline_size = 3
@@ -48,10 +48,10 @@ theme_override_font_sizes/normal_font_size = 36
 text = "Neuro-sama Game Jam 2"
 
 [node name="TextEdit2" type="RichTextLabel" parent="."]
-offset_left = 450.0
-offset_top = 124.0
-offset_right = 647.0
-offset_bottom = 176.0
+offset_left = 822.0
+offset_top = 371.0
+offset_right = 1019.0
+offset_bottom = 423.0
 theme_override_colors/default_color = Color(0.996078, 0.854902, 0.913725, 1)
 theme_override_colors/font_outline_color = Color(0.933333, 0.309804, 0.529412, 1)
 theme_override_constants/outline_size = 6

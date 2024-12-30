@@ -2,14 +2,16 @@ extends CharacterBody3D
 class_name Vedal
 @onready var head := $Head
 @onready var camera := $Head/Camera3D
-var gamestage = 10
+var gamestage = 0
+var starting_position
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SPRINT_VELOCITY = 2
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+	starting_position = position
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -41,7 +43,7 @@ func _input(event):
 	else:
 		if event is InputEventMouseButton:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		elif event.is_action_pressed('ui_cancel'):
+		elif event.is_action_pressed("ui_cancel"):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 		if Input.MOUSE_MODE_CAPTURED:
@@ -49,3 +51,7 @@ func _input(event):
 				head.rotate_y(event.relative.x * Save.game_data.mouse_sens)
 				camera.rotate_x(event.relative.y * Save.game_data.mouse_sens)
 				camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(125))
+
+		if Input.is_action_just_pressed("Unstuck"):
+			position = starting_position
+

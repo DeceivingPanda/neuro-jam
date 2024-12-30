@@ -4,18 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://lqs4wrpbodf4" path="res://scenes/minigames/objects/platform.tscn" id="2_e2jan"]
 [ext_resource type="Texture2D" uid="uid://bc66qpm0t48sv" path="res://assets/images/platformer/GJ_BG_2C.png" id="2_pnncg"]
 [ext_resource type="PackedScene" uid="uid://c5wbpha7blrh6" path="res://scenes/player/2d_neuro.tscn" id="3_adfe2"]
-[ext_resource type="Texture2D" uid="uid://c0d1lspy080mv" path="res://assets/images/platformer/GJ_BG_1.png" id="4_6gpfb"]
 [ext_resource type="Texture2D" uid="uid://k8xocusdv0lq" path="res://assets/images/screens/You-Lost.png" id="4_dg6q0"]
 [ext_resource type="Texture2D" uid="uid://bmgbccpmdb26g" path="res://assets/texture/lava.png" id="4_f68yq"]
 [ext_resource type="Texture2D" uid="uid://c13nqfps015h7" path="res://assets/images/screens/You-Win.png" id="5_6dmoo"]
 [ext_resource type="PackedScene" uid="uid://b2v4r1byia8t6" path="res://scenes/minigames/objects/flag.tscn" id="6_5cy6h"]
 [ext_resource type="Script" path="res://addons/game_state_saver/game_state_helper.gd" id="10_7cepi"]
+[ext_resource type="AudioStream" uid="uid://bb7315di6xdh2" path="res://assets/sounds/Glowing ember.mp3" id="10_rhhr4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2hq6"]
 size = Vector2(632, 55)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ioaof")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_rhhr4")
+autoplay = true
+bus = &"Music"
 
 [node name="Background" type="Control" parent="."]
 layout_mode = 3
@@ -26,17 +31,13 @@ offset_right = 892.0
 offset_bottom = 602.0
 
 [node name="GjBg2c" type="Sprite2D" parent="Background"]
-position = Vector2(163.5, -327.36)
-scale = Vector2(0.412745, 0.545625)
+position = Vector2(529, -458)
+scale = Vector2(0.785, 0.785)
 texture = ExtResource("2_pnncg")
 
-[node name="GjBg1" type="Sprite2D" parent="Background"]
-position = Vector2(2260, -329.56)
-scale = Vector2(0.413, 0.546)
-texture = ExtResource("4_6gpfb")
-
 [node name="2DNeuro" parent="." instance=ExtResource("3_adfe2")]
-position = Vector2(40, 460)
+position = Vector2(65, 438)
+scale = Vector2(1.445, 1.445)
 
 [node name="Camera2D" type="Camera2D" parent="2DNeuro"]
 scale = Vector2(0.435, 0.435)

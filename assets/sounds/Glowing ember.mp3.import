@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb7315di6xdh2"
+path="res://.godot/imported/Glowing ember.mp3-63d44bc9d4f0e57f0a3189c4083b7c8c.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Glowing ember.mp3"
+dest_files=["res://.godot/imported/Glowing ember.mp3-63d44bc9d4f0e57f0a3189c4083b7c8c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

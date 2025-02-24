@@ -189,6 +189,10 @@ Unstuck={
 2d_physics/layer_5="Items & Zones"
 2d_physics/layer_6="Enemy Projectiles"
 
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
+
 [rendering]
 
 renderer/rendering_method="mobile"
